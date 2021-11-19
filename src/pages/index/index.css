@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@900&display=swap');
+
+:root {
+  --welcome-logo-size: max(100px, min(20vw, 20vh));
+  --welcome-logo-word-size: calc(.2 * var(--welcome-logo-size));
+}
+
+.welcome-logo-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, calc(-.5 * var(--welcome-logo-size)));
+  width: var(--welcome-logo-size);
+}
+
+.welcome-logo {
+  width: var(--welcome-logo-size);
+  height: var(--welcome-logo-size);
+  background-image: url("../../assets/G-logo/GKP-2111.svg");
+  background-size: cover;
+  /* filter: invert(21%) sepia(94%) saturate(0%) hue-rotate(171deg) brightness(91%) contrast(95%); */
+}
+
+.welcome-logo-word {
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: var(--welcome-logo-word-size);
+  text-align: center;
+  letter-spacing: calc(-.05 * var(--welcome-logo-word-size));
+  margin: 0;
+  padding-top: calc((100vh - var(--welcome-logo-size)) / 4 - var(--welcome-logo-word-size) / 1.25);
+  color: #3e3e3e;
+  overflow: hidden;
+}
+
+.welcome-logo-word>.G {
+  letter-spacing: calc(-.04 * var(--welcome-logo-word-size));
+}
+
+.welcome-logo-word>.r {
+  letter-spacing: calc(-.03 * var(--welcome-logo-word-size));
+}
+
+.welcome-logo-word>.a {
+  letter-spacing: calc(-.05 * var(--welcome-logo-word-size));
+}
+
+.welcome-logo-word>.k {
+  letter-spacing: calc(-.1 * var(--welcome-logo-word-size));
+}
+
+.welcome-logo-word>.e {
+  letter-spacing: calc(.1 * var(--welcome-logo-word-size));
+}
