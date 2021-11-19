@@ -31,13 +31,13 @@ export const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     width: "min(448px, 75vw)",
     height: "min-content",
-    boxShadow: "none",
-    overflow: 'visible',
+    boxShadow: "none !important",
+    overflow: 'visible !important',
     margin: theme.spacing(3),
   },
   cardsActionArea: {
-    backgroundColor: "#3e3e3e",
-    color: theme.palette.background.default,
+    backgroundColor: `${theme.palette.background.invert} !important`,
+    color: `${theme.palette.background.default} !important`,
     height: 156,
     boxShadow: `0 0 0 0 ${theme.palette.primary.main}`,
     transition: "transform .2s cubic-bezier(.5,0,0,1), box-shadow .2s cubic-bezier(.5,0,0,1)",
@@ -49,7 +49,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   cardsActionBtn: {
     boxShadow: `0 0 0 0 ${theme.palette.primary.main}`,
-    transition: "transform .2s cubic-bezier(.5,0,0,1), box-shadow .2s cubic-bezier(.5,0,0,1)",
+    transition: "transform .2s cubic-bezier(.5,0,0,1), box-shadow .2s cubic-bezier(.5,0,0,1) !important",
 
     "&:hover": {
       transform: 'translateY(-.2rem)',
@@ -86,7 +86,7 @@ export const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),
     backgroundColor: theme.palette.background.paper,
-    boxShadow: "none",
+    boxShadow: "none !important",
   },
   friendCard_expanded: {
     margin: `${theme.spacing(3) + "px"}!important`,
@@ -98,13 +98,13 @@ export const useStyles = makeStyles((theme) => ({
   },
   friendCardTitle: {
     height: 96,
-    backgroundColor: theme.palette.background.paper,
-    boxShadow: `0 0 0 0 ${theme.palette.primary.main}`,
-    transition: "transform .2s cubic-bezier(.5,0,0,1), box-shadow .2s cubic-bezier(.5,0,0,1)",
+    backgroundColor: `${theme.palette.background.paper} !important`,
+    boxShadow: `0 0 0 0 ${theme.palette.primary.main} !important`,
+    transition: "transform .2s cubic-bezier(.5,0,0,1), box-shadow .2s cubic-bezier(.5,0,0,1) !important",
 
     "&:hover": {
       transform: 'translateY(-.5rem)',
-      boxShadow: `.33rem 1rem 0 0 ${theme.palette.primary.main}, -.33rem 1rem 0 0 ${theme.palette.primary.main}, .33rem -.33rem 0 0 ${theme.palette.primary.main}, -.33rem -.33rem 0 0 ${theme.palette.primary.main}`,
+      boxShadow: `.33rem 1rem 0 0 ${theme.palette.primary.main}, -.33rem 1rem 0 0 ${theme.palette.primary.main}, .33rem -.33rem 0 0 ${theme.palette.primary.main}, -.33rem -.33rem 0 0 ${theme.palette.primary.main} !important`,
     },
   },
   friendCardTitleContent: {
@@ -123,7 +123,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   friendLink: {
     boxShadow: `0 0 0 0 ${theme.palette.primary.main}`,
-    transition: "transform .2s cubic-bezier(.5,0,0,1), box-shadow .2s cubic-bezier(.5,0,0,1)",
+    transition: "transform .2s cubic-bezier(.5,0,0,1), box-shadow .2s cubic-bezier(.5,0,0,1) !important",
 
     "&:hover": {
       transform: 'translateY(-.2rem)',
