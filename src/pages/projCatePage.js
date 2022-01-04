@@ -10,7 +10,7 @@ import {
 import { useStyles } from "./projCatePage/projCatePageStyles";
 
 /*Data*/
-import { projects } from "../data/projectCategories";
+import { projects } from "../data/projects";
 import noneIcon from "../assets/project-icons/none.svg";
 
 export default function ProjCatePage(props) {
@@ -21,7 +21,7 @@ export default function ProjCatePage(props) {
   // Check path validation
   let projCateList = Object.keys(projects);
   if (!(projCateList.includes(id))) {
-    history.push("/404")
+    history.replace("/404")
     return (<></>);
   }
 
