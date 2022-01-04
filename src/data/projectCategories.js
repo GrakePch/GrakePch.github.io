@@ -45,6 +45,8 @@ export const projects = {
         ],
         date: [2020, 6],
         icon: icons["bpext"].default,
+        cover: covers["bpext"].default,
+        intro: "Fan-made add-ons of BlockPixel Resourcepack.",
       },
       "9squares": {
         title: [
@@ -53,6 +55,8 @@ export const projects = {
         ],
         date: [2019, 7],
         icon: icons["9squares"].default,
+        cover: covers["9squares"].default,
+        intro: "Original resourcepack series. (Temporarily stop updating)",
       },
     }
   },
@@ -94,9 +98,9 @@ export const projects = {
       }
     }
   },
-  "graphical-design": {
+  "graphic-design": {
     title: [
-      "Graphical Design",
+      "Graphic Design",
       "平面设计"
     ],
     children: {
@@ -106,6 +110,8 @@ export const projects = {
           "GZTime 标志"
         ],
         date: [2019, 6],
+        cover: covers["gztime"].default,
+        intro: "A series of logo designed for my friend GZTime.",
       }
     }
   },
