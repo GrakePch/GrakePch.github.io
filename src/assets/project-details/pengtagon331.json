@@ -1,0 +1,28 @@
+{
+  "links": [
+
+  ],
+  "contents": [
+    {
+      "texts":
+      "Only text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
+      "links": [],
+      "img": null
+    },
+    {
+      "texts":
+      "Right text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
+      "links": [],
+      "img": 1,
+      "imgPositionLeft": true
+    },
+    {
+      "texts":
+      "Left text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
+      "links": [],
+      "img": 0,
+      "imgPositionLeft": false
+    }
+  ]
+}
+

@@ -10,6 +10,7 @@ import { lightTheme } from "./assets/theme";
 import ScrollToTop from "./scrollToTop";
 import Index from "./pages/index";
 import ProjCatePage from "./pages/projCatePage";
+import ProjDetailPage from "./pages/projDetailPage";
 
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
           <Route exact path="/c/:id">
             <ScrollToTop />
             <ProjCatePage />
+          </Route>
+          <Route exact path="/p/:id">
+            <ProjDetailPage />
           </Route>
           <Route>
             <NotFound />

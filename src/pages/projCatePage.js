@@ -10,7 +10,7 @@ import {
 import { useStyles } from "./projCatePage/projCatePageStyles";
 
 /*Data*/
-import { projects } from "../data/projects";
+import { projects } from "../assets/projects";
 import noneIcon from "../assets/project-icons/none.svg";
 
 export default function ProjCatePage(props) {
@@ -63,7 +63,7 @@ export default function ProjCatePage(props) {
                   {
                     projects[id].children[key].intro ?
                       <Typography variant="body2">
-                        {projects[id].children[key].intro}
+                        {projects[id].children[key].intro[0]}
                       </Typography>
                       :
                       <>

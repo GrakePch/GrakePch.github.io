@@ -28,9 +28,9 @@ import Icon from '@mdi/react';
 import { mdiOpenInNew } from '@mdi/js';
 
 /*Data*/
-import { projects } from "../data/projects";
+import { projects } from "../assets/projects";
 import noneIcon from "../assets/project-icons/none.svg";
-import { friends } from "../data/friends";
+import { friends } from "../assets/friends";
 
 export default function Index() {
   const history = useHistory();
