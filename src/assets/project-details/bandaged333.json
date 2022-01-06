@@ -1,4 +1,5 @@
 {
+  "cover": "bandaged333",
   "links": [
 
   ],
@@ -13,14 +14,19 @@
       "texts":
       "Right text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
       "links": [],
-      "img": 1,
+      "img": "bandaged333_1",
       "imgPositionLeft": true
     },
     {
       "texts":
       "Left text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
       "links": [],
-      "img": 0,
+      "img": "bandaged333_2",
+      "imgPositionLeft": false
+    },
+    {
+      "links": [],
+      "img": "bandaged333_3",
       "imgPositionLeft": false
     }
   ]

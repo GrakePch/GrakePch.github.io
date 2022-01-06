@@ -18,12 +18,18 @@ export default function ProjCatePage(props) {
   const { id } = useParams();
   const history = useHistory();
 
+  const routeChange = (path) => {
+    history.push(path);
+  }
+
   // Check path validation
   let projCateList = Object.keys(projects);
   if (!(projCateList.includes(id))) {
     history.replace("/404")
     return (<></>);
   }
+
+  let lang = "en";
 
   // Get projects in this categories
   let projectsInThisCategory = Object.keys(projects[id].children);
@@ -33,14 +39,14 @@ export default function ProjCatePage(props) {
     <>
       <div className={classes.welcome_screen}>
         <div>
-          <Typography variant="h3" align="center">{projects[id].title[0]}</Typography>
+          <Typography variant="h3" align="center" style={{fontWeight: 600}}>{projects[id].title[lang]}</Typography>
         </div>
       </div>
       <div className={classes.main}>
         {
           projectsInThisCategory.map(key => (
             <Card className={classes.cards} key={key}>
-              <CardActionArea className={classes.cardActionArea}>
+              <CardActionArea className={classes.cardActionArea} onClick={() => routeChange(`/p/${key}`)}>
                 <CardMedia
                   className={classes.cardMedia}
                   style={{
@@ -54,16 +60,16 @@ export default function ProjCatePage(props) {
                     noneIcon
                     })`
                 }}>
-                  <Typography variant="h5" style={{ fontSize: "1.625rem" }}>
-                    {projects[id].children[key].title[0]}
+                  <Typography variant="h4">
+                    {projects[id].children[key].title[lang]}
                   </Typography>
                   <Typography variant="subtitle1">
                     {projects[id].children[key].date[0]} / {projects[id].children[key].date[1]}
                   </Typography>
                   {
                     projects[id].children[key].intro ?
-                      <Typography variant="body2">
-                        {projects[id].children[key].intro[0]}
+                      <Typography variant="body1">
+                        {projects[id].children[key].intro[lang]}
                       </Typography>
                       :
                       <>

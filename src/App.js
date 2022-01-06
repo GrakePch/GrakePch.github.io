@@ -1,10 +1,8 @@
 import { createTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 import {
   BrowserRouter as Router,
-  HashRouter,
   Route,
   Switch
-
 } from "react-router-dom";
 import { lightTheme } from "./assets/theme";
 import ScrollToTop from "./scrollToTop";
@@ -30,6 +28,7 @@ function App() {
             <ProjCatePage />
           </Route>
           <Route exact path="/p/:id">
+            <ScrollToTop />
             <ProjDetailPage />
           </Route>
           <Route>

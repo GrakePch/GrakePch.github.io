@@ -16,7 +16,9 @@ export const lightTheme = {
     }
   },
   typography: {
-    fontFamily: "'Red Hat Display', 'Roboto', 'Helvetica', 'Arial', sans-serif"
+    fontFamily: "'Lexend', 'Roboto', 'Helvetica', 'Arial', sans-serif",
+    fontWeightRegular: 500,
+    fontWeightMedium: 600,
   },
   shape: {
     borderRadius: 0,

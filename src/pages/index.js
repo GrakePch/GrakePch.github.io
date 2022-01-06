@@ -38,7 +38,8 @@ export default function Index() {
     history.push(path);
   }
 
-  let lang = 0;
+  let lang = "en";
+  
   const [vw, vh] = useWindowSize();
   const scrollPosY = useScrollPosition();
 
@@ -60,7 +61,7 @@ export default function Index() {
         <Card className={classes.cards} key={k}>
           <CardActionArea className={classes.cardsActionArea} onClick={() => routeChange(`/c/${k}`)}>
             <CardContent>
-              <Typography variant="h5" align="center">
+              <Typography variant="h4" align="center">
                 {projects[k].title[lang]}
               </Typography>
             </CardContent>
@@ -172,7 +173,7 @@ export default function Index() {
                     disableRipple={false}
                   >
                     <div className={classes.friendAvatar} style={{ backgroundImage: `url(${friends[item].avatar})` }}></div>
-                    <Typography variant="h5" style={{ flexGrow: 1 }}>{item}</Typography>
+                    <Typography variant="h5" style={{ flexGrow: 1, fontWeight: 600 }}>{item}</Typography>
                   </AccordionSummary>
                   <Divider />
                   {
