@@ -46,7 +46,7 @@ export default function ProjDetailPage(props) {
 
   return (
     <>
-      <div className={classes.main}>
+      <div className={classes.main} id="main">
         <div className={classes.top_banner} style={{backgroundImage: `url(${getProject(id).projInfo.icon})`}}>
           <Typography variant="body1">
             <Link to={`/c/${getProject(id).categ}`} className={classes.categLink}>{getProject(id).categTitle[lang]}</Link> /

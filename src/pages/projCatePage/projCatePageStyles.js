@@ -40,10 +40,11 @@ export const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "row",
     height: "100%",
+    padding: "1rem",
   },
   cardMedia: {
     height: "100%",
-    width: "56.9vw",
+    width: "calc((32vw - 2rem) * 16 / 9)",
     maxWidth: 1092.48,
     flexShrink: 0,
   },
@@ -51,9 +52,11 @@ export const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     width: 0,
     height: "100%",
-    paddingTop: `calc(60px + ${theme.spacing(4)+"px"})`,
+    marginLeft: theme.spacing(3),
+    padding: 0,
+    paddingTop: `calc(60px + ${theme.spacing(3)}px)`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 60,
-    backgroundPosition: `${theme.spacing(2)+"px"} ${theme.spacing(2)+"px"}`,
+    backgroundPosition: `0 ${theme.spacing(1)}px`,
   }
 }))

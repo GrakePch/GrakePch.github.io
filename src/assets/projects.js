@@ -28,8 +28,6 @@ const images = function (r) {
   icon: icons[""],
 */
 
-console.log(images)
-
 export const projects = {
   "minecraft-contents": {
     title: {

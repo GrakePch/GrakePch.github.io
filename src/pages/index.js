@@ -234,7 +234,7 @@ export default function Index() {
         <Typography variant="h3" align="center">Welcome to the website of GrakePCH</Typography>
       </div>
 
-      <div className={classes.main}>
+      <div className={classes.main} id="main">
         <div className={classes.section_projects}>
           <div>
             {renderProjects()}

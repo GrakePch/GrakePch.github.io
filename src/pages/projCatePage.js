@@ -42,7 +42,7 @@ export default function ProjCatePage(props) {
           <Typography variant="h3" align="center" style={{fontWeight: 600}}>{projects[id].title[lang]}</Typography>
         </div>
       </div>
-      <div className={classes.main}>
+      <div className={classes.main} id="main">
         {
           projectsInThisCategory.map(key => (
             <Card className={classes.cards} key={key}>
