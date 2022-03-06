@@ -32,13 +32,11 @@ import { projects } from "../assets/projects";
 import noneIcon from "../assets/project-icons/none.svg";
 import { friends } from "../assets/friends";
 
-export default function Index() {
+export default function Index({lang}) {
   const history = useHistory();
   const routeChange = (path) => {
     history.push(path);
   }
-
-  let lang = "en";
   
   const [vw, vh] = useWindowSize();
   const scrollPosY = useScrollPosition();

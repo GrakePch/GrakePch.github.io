@@ -36,7 +36,15 @@ export const darkTheme = {
     },
     warning: {
       main: '#f67858',
+    },
+    background: {
+      invert: '#e1e3e5',
     }
+  },
+  typography: {
+    fontFamily: "'Lexend', 'Roboto', 'Helvetica', 'Arial', sans-serif",
+    fontWeightRegular: 500,
+    fontWeightMedium: 600,
   },
   shape: {
     borderRadius: 0,
