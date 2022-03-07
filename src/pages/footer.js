@@ -1,15 +1,12 @@
-import React, { useState } from "react";
-import { useLayoutEffect } from "react";
-import { useEffect } from "react";
-import { Button, makeStyles, Typography } from "@material-ui/core";
+import React from "react";
+import { Button, makeStyles, Typography, useTheme } from "@material-ui/core";
 
 import GKPIconBlack from "../assets/G-logo/GKP-2111-black.svg";
 import bilibiliIcon from "../assets/svgs/bilibili.svg";
 
 import Icon from '@mdi/react';
 import { mdiEmail, mdiGithub, mdiTwitter } from "@mdi/js";
-import { useLocation } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { globalVars } from "./modules/globalVars";
 
 const useStyles = makeStyles((theme) => ({
   footer_main: {
@@ -19,12 +16,8 @@ const useStyles = makeStyles((theme) => ({
     width: "75vw",
     margin: "0 auto",
     marginTop: theme.spacing(12),
-    padding: "7rem 2rem 2rem 2rem",
+    padding: "2rem",
     backgroundColor: theme.palette.background.paper,
-    backgroundImage: `url(${GKPIconBlack})`,
-    backgroundSize: '4rem',
-    backgroundPosition: '2rem 2rem',
-    backgroundRepeat: "no-repeat",
   },
   linksContainer: {
     width: "100%",
@@ -48,23 +41,33 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Footer(props) {
   const classes = useStyles(props);
+  const theme = useTheme();
 
   const getFooterWidth = (widthType) => {
     switch (widthType) {
       case "index":
-        return {width: "min(75vw, 1440px)"};
+        return { width: "min(75vw, 1440px)" };
       case "projCate":
-        return {width: "min(75vw, 1440px)"};
+        return { width: "min(75vw, 1440px)" };
       case "projDetail":
-        return {width: "min(calc(100% - 6rem), 1152px)"};
+        return { width: "min(calc(100% - 6rem), 1152px)" };
       default:
-        return {width: "min(75vw, 1440px)"};
+        return { width: "min(75vw, 1440px)" };
     }
   }
 
 
   return (
     <div className={classes.footer_main} style={getFooterWidth(props.widthType)}>
+      <div style={{
+        width: "4rem",
+        height: "4rem",
+        backgroundImage: `url(${GKPIconBlack})`,
+        backgroundSize: "4rem",
+        backgroundRepeat: "no-repeat",
+        marginBottom: "1rem",
+        filter: globalVars.isThemeLight ? "none" : "invert(1)"
+      }}></div>
       <Typography variant="h5">GrakePCH © 2017-2022</Typography>
       <Typography variant="subtitle1">grakep.ch</Typography>
 
@@ -100,7 +103,13 @@ export default function Footer(props) {
         </Button>
         <Button
           variant="text"
-          startIcon={<div style={{ backgroundImage: `url(${bilibiliIcon})`, backgroundSize: "cover", width: "1.5rem", height: "1.5rem" }} />}
+          startIcon={<div style={{
+            backgroundImage: `url(${bilibiliIcon})`,
+            backgroundSize: "cover",
+            width: "1.5rem",
+            height: "1.5rem",
+            filter: globalVars.isThemeLight ? "none" : "invert(1)"
+          }} />}
           href="https://space.bilibili.com/1020137"
           target="_blank"
           className={classes.linkBtn}

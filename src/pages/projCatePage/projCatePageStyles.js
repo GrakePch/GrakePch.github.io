@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import { hexToRgb, makeStyles } from "@material-ui/core";
 import GKPIconBlack from "../../assets/G-logo/GKP-2111-black.svg";
 
 export const useStyles = makeStyles((theme) => ({
@@ -8,10 +8,10 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     width: '100%',
     height: '100vh',
-    backgroundColor: '#e1e3e5',
+    backgroundColor: theme.palette.background.paper,
     position: 'relative',
     overflow: 'hidden',
-    backgroundImage: `linear-gradient(rgba(225, 227, 229, 0.9), rgba(225, 227, 229, 0.9)), url(${GKPIconBlack})`,
+    backgroundImage: `linear-gradient(${theme.palette.background.paper}e6, ${theme.palette.background.paper}e6), url(${GKPIconBlack})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: '10rem',
     backgroundPosition: 'center',
@@ -54,9 +54,5 @@ export const useStyles = makeStyles((theme) => ({
     height: "100%",
     marginLeft: theme.spacing(3),
     padding: 0,
-    paddingTop: `calc(60px + ${theme.spacing(3)}px)`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 60,
-    backgroundPosition: `0 ${theme.spacing(1)}px`,
   }
 }))

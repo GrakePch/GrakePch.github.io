@@ -3,9 +3,10 @@ import { useParams, useHistory, Link } from "react-router-dom";
 import { useStyles } from "./projDetailPage/projDetailPageStyles";
 
 /*Data*/
-import { projects } from "../assets/projects";
+// import { projects } from "../assets/projects";
 import { Typography } from "@material-ui/core";
 import getProject from "../assets/projects";
+import { globalVars } from "./modules/globalVars";
 
 export default function ProjDetailPage(props) {
   const classes = useStyles(props);
@@ -15,8 +16,6 @@ export default function ProjDetailPage(props) {
   const routeChange = (path) => {
     history.push(path);
   }
-
-  let lang = "en";
 
   const projs = function (r) {
     let k = r.keys()
@@ -47,13 +46,24 @@ export default function ProjDetailPage(props) {
   return (
     <>
       <div className={classes.main} id="main">
-        <div className={classes.top_banner} style={{backgroundImage: `url(${getProject(id).projInfo.icon})`}}>
+        <div className={classes.top_banner}>
           <Typography variant="body1">
-            <Link to={`/c/${getProject(id).categ}`} className={classes.categLink}>{getProject(id).categTitle[lang]}</Link> /
+            <Link to={`/c/${getProject(id).categ}`} className={classes.categLink}>{getProject(id).categTitle[globalVars.langList[globalVars.langId]]}</Link> /
           </Typography>
           <Typography variant="h4">
-            {getProject(id).projInfo.title[lang]}
+            {getProject(id).projInfo.title[globalVars.langList[globalVars.langId]]}
           </Typography>
+          <div style={{
+            position: "absolute",
+            width: 60,
+            height: 60,
+            right: "2rem",
+            bottom: "2rem",
+            backgroundImage: `url(${getProject(id).projInfo.icon})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            filter: globalVars.isThemeLight ? "none" : "invert(1)"
+          }}></div>
         </div>
         {/* <img src={images[projs[id].cover]} alt={projs[id].cover} width="100%" style={{ marginBottom: "1rem" }} /> */}
         {

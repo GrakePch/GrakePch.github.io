@@ -3,7 +3,10 @@ import { CardActionArea, useTheme } from "@material-ui/core";
 
 // MDI icons
 import Icon from '@mdi/react';
-import { mdiBrightness4, mdiCogOutline, mdiWeb } from '@mdi/js';
+import { mdiBrightness4, mdiBrightness7, mdiCogOutline, mdiTranslate } from '@mdi/js';
+
+// Data
+import { globalVars } from "./globalVars";
 
 export default function FloatSettings(props) {
     const theme = useTheme();
@@ -29,11 +32,11 @@ export default function FloatSettings(props) {
     })
     
     // Read theme from localStorage
-    if (localStorage.getItem('isThemeLight') == 'false') {
+    if (localStorage.getItem('isThemeLight') === 'false') {
         props.setTheme(false);
     }
     // Read language from localStorage
-    if (localStorage.getItem('lang') == 1) {
+    if (localStorage.getItem('lang') === "1") {
         props.setLang(1);
     }
 
@@ -76,7 +79,7 @@ export default function FloatSettings(props) {
                 }}
                     onClick={() => props.themeToggle()}
                 >
-                    <Icon size={1} path={mdiBrightness4} />
+                    <Icon size={1} path={globalVars.isThemeLight? mdiBrightness4: mdiBrightness7} />
                 </CardActionArea>
                 <CardActionArea
                 style={{
@@ -88,7 +91,7 @@ export default function FloatSettings(props) {
                 }}
                     onClick={() => props.langToggle()}
                 >
-                    <Icon size={1} path={mdiWeb} />
+                    <Icon size={1} path={mdiTranslate} />
                 </CardActionArea>
             </div>
         </div>

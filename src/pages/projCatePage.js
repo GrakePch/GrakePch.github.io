@@ -12,6 +12,7 @@ import { useStyles } from "./projCatePage/projCatePageStyles";
 /*Data*/
 import { projects } from "../assets/projects";
 import noneIcon from "../assets/project-icons/none.svg";
+import { globalVars } from "./modules/globalVars";
 
 export default function ProjCatePage(props) {
   const classes = useStyles(props);
@@ -29,8 +30,6 @@ export default function ProjCatePage(props) {
     return (<></>);
   }
 
-  let lang = "en";
-
   // Get projects in this categories
   let projectsInThisCategory = Object.keys(projects[id].children);
 
@@ -39,7 +38,7 @@ export default function ProjCatePage(props) {
     <>
       <div className={classes.welcome_screen}>
         <div>
-          <Typography variant="h3" align="center" style={{fontWeight: 600}}>{projects[id].title[lang]}</Typography>
+          <Typography variant="h3" align="center" style={{ fontWeight: 600 }}>{projects[id].title[globalVars.langList[globalVars.langId]]}</Typography>
         </div>
       </div>
       <div className={classes.main} id="main">
@@ -52,16 +51,24 @@ export default function ProjCatePage(props) {
                   style={{
                     backgroundImage: `url(${projects[id].children[key].cover})`
                   }}
-                  component="img" />
-                <CardContent className={classes.cardContent} style={{
-                  backgroundImage: `url(${projects[id].children[key].icon ?
-                    projects[id].children[key].icon
-                    :
-                    noneIcon
-                    })`
-                }}>
+                />
+                <CardContent className={classes.cardContent}>
+                  <div style={{
+                    width: 60,
+                    height: 60,
+                    marginTop: ".5rem",
+                    marginBottom: "1rem",
+                    backgroundImage: `url(${projects[id].children[key].icon ?
+                      projects[id].children[key].icon
+                      :
+                      noneIcon
+                      })`,
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      filter: globalVars.isThemeLight ? "none" : "invert(1)"
+                  }}></div>
                   <Typography variant="h4">
-                    {projects[id].children[key].title[lang]}
+                    {projects[id].children[key].title[globalVars.langList[globalVars.langId]]}
                   </Typography>
                   <Typography variant="subtitle1">
                     {projects[id].children[key].date[0]} / {projects[id].children[key].date[1]}
@@ -69,7 +76,7 @@ export default function ProjCatePage(props) {
                   {
                     projects[id].children[key].intro ?
                       <Typography variant="body1">
-                        {projects[id].children[key].intro[lang]}
+                        {projects[id].children[key].intro[globalVars.langList[globalVars.langId]]}
                       </Typography>
                       :
                       <>

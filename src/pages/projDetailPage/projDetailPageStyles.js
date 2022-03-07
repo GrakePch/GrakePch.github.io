@@ -9,15 +9,13 @@ export const useStyles = makeStyles((theme) => ({
     // marginTop: "-5rem",
   },
   top_banner: {
+    position: "relative",
     width: "100%",
     height: "20rem",
-    backgroundColor: '#e1e3e5',
+    backgroundColor: theme.palette.background.paper,
     margin: 0,
     marginBottom: "2rem",
     padding: "2rem",
-    backgroundPosition: 'bottom 2rem right 2rem',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 60,
   },
   categLink: {
     textDecoration: 'none',

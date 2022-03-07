@@ -31,13 +31,14 @@ import { mdiOpenInNew } from '@mdi/js';
 import { projects } from "../assets/projects";
 import noneIcon from "../assets/project-icons/none.svg";
 import { friends } from "../assets/friends";
+import { globalVars } from "./modules/globalVars";
 
-export default function Index({lang}) {
+export default function Index() {
   const history = useHistory();
   const routeChange = (path) => {
     history.push(path);
   }
-  
+
   const [vw, vh] = useWindowSize();
   const scrollPosY = useScrollPosition();
 
@@ -60,28 +61,32 @@ export default function Index({lang}) {
           <CardActionArea className={classes.cardsActionArea} onClick={() => routeChange(`/c/${k}`)}>
             <CardContent>
               <Typography variant="h4" align="center">
-                {projects[k].title[lang]}
+                {projects[k].title[globalVars.langList[globalVars.langId]]}
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
             {projInThisCategory.map(key => (
-              <Button style={{
-                height: 80,
-                width: 80,
-                padding: 0,
-                backgroundImage: `url(${projects[k].children[key].icon ?
-                  projects[k].children[key].icon
-                  :
-                  noneIcon
-                  })`,
-                backgroundSize: 60,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-              }}
+              <Button
+                style={{ padding: 0 }}
                 className={classes.cardsActionBtn}
                 key={key}
-              ></Button>
+                onClick={() => routeChange(`/p/${key}`)}
+              >
+                <div style={{
+                  width: 80,
+                  height: 80,
+                  backgroundImage: `url(${projects[k].children[key].icon ?
+                    projects[k].children[key].icon
+                    :
+                    noneIcon
+                    })`,
+                  backgroundSize: 60,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  filter: globalVars.isThemeLight ? "none" : "invert(1)"
+                }}></div>
+              </Button>
             ))}
           </CardActions>
         </Card>

@@ -13,34 +13,38 @@ import ProjDetailPage from "./pages/projDetailPage";
 import Footer from "./pages/footer";
 import FloatSettings from "./pages/modules/floatSettings";
 
+// Data
+import { globalVars } from "./pages/modules/globalVars";
+
 
 function App() {
   // Set Theme
-  const [isThemeLight, setTheme] = useState(true);
+  const [isThemeLight, setTheme] = useState(globalVars.isThemeLight);
   const themeToggle = () => {
-    setTheme(!isThemeLight);
+    let newValue = !isThemeLight;
+    setTheme(newValue);
     if (!window.localStorage) {
       alert("The browser does not support localstorage");
     } else {
-      localStorage.setItem("isThemeLight", !isThemeLight);
+      localStorage.setItem("isThemeLight", newValue);
     }
   }
   const theme = createTheme(isThemeLight ? lightTheme : darkTheme);
+  globalVars.isThemeLight = isThemeLight;
 
   // Set Language
   // 0: English; 1: Simplified Chinese
-  const [langId, setLangId] = useState(0);
+  const [langId, setLangId] = useState(globalVars.langId);
   const langIdToggle = () => {
-    setLangId(langId == 0? 1: 0);
+    let newValue = langId == 0 ? 1 : 0
+    setLangId(newValue);
     if (!window.localStorage) {
       alert("The browser does not support localstorage");
     } else {
-      localStorage.setItem("lang", langId == 0? 1: 0);
+      localStorage.setItem("lang", newValue);
     }
   }
-
-  var langList = ["en", "zh"];
-  var lang = langList[langId];
+  globalVars.langId = langId;
 
   return (
     <ThemeProvider theme={theme}>
@@ -49,25 +53,25 @@ function App() {
         <Switch>
           <Route exact path="/">
             <ScrollToTop />
-            <Index lang={lang}/>
+            <Index/>
             <Footer widthType="index" />
           </Route>
           <Route exact path="/c/:id">
             <ScrollToTop />
-            <ProjCatePage />
+            <ProjCatePage/>
             <Footer widthType="projCate" />
           </Route>
           <Route exact path="/p/:id">
             <ScrollToTop />
-            <ProjDetailPage />
+            <ProjDetailPage/>
             <Footer widthType="projDetail" />
           </Route>
           <Route>
-            <NotFound />
+            <NotFound/>
           </Route>
         </Switch>
       </Router>
-      <FloatSettings themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId}/>
+      <FloatSettings themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
     </ThemeProvider>
   );
 }
