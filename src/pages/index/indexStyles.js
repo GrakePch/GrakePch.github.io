@@ -106,7 +106,6 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(3),
     backgroundColor: theme.palette.background.paper,
     boxShadow: "none !important",
-    overflow: "hidden",
   },
   friendCard_expanded: {
     margin: `${theme.spacing(3) + "px"}!important`,
@@ -122,6 +121,7 @@ export const useStyles = makeStyles((theme) => ({
     boxShadow: `0 0 0 0 ${theme.palette.primary.main} !important`,
     transition: "transform .2s cubic-bezier(.5,0,0,1), box-shadow .2s cubic-bezier(.5,0,0,1) !important",
     justifyContent: "flex-start",
+    overflow: "hidden",
 
     "&:hover": {
       transform: 'translateY(-.5rem)',
