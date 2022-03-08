@@ -58,7 +58,6 @@ function App() {
           <Route exact path="/c/:id">
             <ScrollToTop />
             <ProjCatePage/>
-            <Footer widthType="projCate" />
           </Route>
           <Route exact path="/p/:id">
             <ScrollToTop />

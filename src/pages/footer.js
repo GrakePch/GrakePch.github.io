@@ -7,6 +7,7 @@ import bilibiliIcon from "../assets/svgs/bilibili.svg";
 import Icon from '@mdi/react';
 import { mdiEmail, mdiGithub, mdiTwitter } from "@mdi/js";
 import { globalVars } from "./modules/globalVars";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   footer_main: {
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 auto",
     marginTop: theme.spacing(12),
     padding: "2rem",
+    overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
   },
   linksContainer: {
@@ -42,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Footer(props) {
   const classes = useStyles(props);
   const theme = useTheme();
+  const history = useHistory();
 
   const getFooterWidth = (widthType) => {
     switch (widthType) {
@@ -62,12 +65,15 @@ export default function Footer(props) {
       <div style={{
         width: "4rem",
         height: "4rem",
+        cursor: "pointer",
         backgroundImage: `url(${GKPIconBlack})`,
         backgroundSize: "4rem",
         backgroundRepeat: "no-repeat",
         marginBottom: "1rem",
         filter: globalVars.isThemeLight ? "none" : "invert(1)"
-      }}></div>
+      }}
+      onClick={() => history.push("/")}
+      ></div>
       <Typography variant="h5">GrakePCH © 2017-2022</Typography>
       <Typography variant="subtitle1">grakep.ch</Typography>
 

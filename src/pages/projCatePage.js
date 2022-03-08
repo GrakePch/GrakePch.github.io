@@ -8,11 +8,13 @@ import {
   Typography
 } from "@material-ui/core";
 import { useStyles } from "./projCatePage/projCatePageStyles";
+import useWindowSize from "./modules/viewportDimensions";
 
 /*Data*/
 import { projects } from "../assets/projects";
 import noneIcon from "../assets/project-icons/none.svg";
 import { globalVars } from "./modules/globalVars";
+import Footer from "./footer";
 
 export default function ProjCatePage(props) {
   const classes = useStyles(props);
@@ -22,6 +24,8 @@ export default function ProjCatePage(props) {
   const routeChange = (path) => {
     history.push(path);
   }
+
+  const [vw, vh] = useWindowSize();
 
   // Check path validation
   let projCateList = Object.keys(projects);
@@ -56,37 +60,41 @@ export default function ProjCatePage(props) {
                   <div style={{
                     width: 60,
                     height: 60,
-                    marginTop: ".5rem",
-                    marginBottom: "1rem",
+                    flexShrink: 0,
+                    margin: vw > 1088? ".5rem 0 1rem 0" : "0 .5rem 0 1rem",
                     backgroundImage: `url(${projects[id].children[key].icon ?
                       projects[id].children[key].icon
                       :
                       noneIcon
                       })`,
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                      filter: globalVars.isThemeLight ? "none" : "invert(1)"
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    filter: globalVars.isThemeLight ? "none" : "invert(1)"
                   }}></div>
-                  <Typography variant="h4">
-                    {projects[id].children[key].title[globalVars.langList[globalVars.langId]]}
-                  </Typography>
-                  <Typography variant="subtitle1">
-                    {projects[id].children[key].date[0]} / {projects[id].children[key].date[1]}
-                  </Typography>
-                  {
-                    projects[id].children[key].intro ?
-                      <Typography variant="body1">
-                        {projects[id].children[key].intro[globalVars.langList[globalVars.langId]]}
-                      </Typography>
-                      :
-                      <>
-                      </>
-                  }
+                  <div style={{flexGrow: 1}}>
+                    <Typography variant={vw >= 1400 || vw <= 1088 ? "h4" : "h5"}>
+                      {projects[id].children[key].title[globalVars.langList[globalVars.langId]]}
+                    </Typography>
+                    <Typography variant={vw >= 1400 || vw <= 1088 ? "subtitle1" : "subtitle2"}>
+                      {projects[id].children[key].date[0]} / {projects[id].children[key].date[1]}
+                    </Typography>
+                    {
+                      projects[id].children[key].intro ?
+                        <Typography variant={vw >= 1400 || vw <= 1088 ? "body1" : "body2"}>
+                          {projects[id].children[key].intro[globalVars.langList[globalVars.langId]]}
+                        </Typography>
+                        :
+                        <>
+                        </>
+                    }
+                  </div>
                 </CardContent>
               </CardActionArea>
             </Card>
           ))
         }
+        
+        <Footer />
       </div>
     </>
   );

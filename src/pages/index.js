@@ -249,7 +249,9 @@ export default function Index() {
             {renderFriends()}
           </div>
         </div>
-        <Footer />
+        <div className={classes.footerWrapper}>
+          <Footer />
+        </div>
       </div>
     </>
   )
