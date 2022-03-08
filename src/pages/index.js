@@ -116,7 +116,13 @@ export default function Index() {
       return (
         <Button
           variant="text"
-          startIcon={<div style={{ backgroundImage: `url(${link[2]})`, backgroundSize: "cover", width: "1.5rem", height: "1.5rem" }} />}
+          startIcon={<div style={{
+            backgroundImage: `url(${link[2]})`,
+            backgroundSize: "cover",
+            width: "1.5rem",
+            height: "1.5rem",
+            filter: globalVars.isThemeLight ? "none" : "invert(1)"
+          }} />}
           href={link[1]}
           target="_blank"
           className={classes.friendLink}

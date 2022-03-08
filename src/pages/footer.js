@@ -8,6 +8,7 @@ import Icon from '@mdi/react';
 import { mdiEmail, mdiGithub, mdiTwitter } from "@mdi/js";
 import { globalVars } from "./modules/globalVars";
 import { useHistory } from "react-router-dom";
+import useWindowSize from "./modules/viewportDimensions";
 
 const useStyles = makeStyles((theme) => ({
   footer_main: {
@@ -45,6 +46,7 @@ export default function Footer(props) {
   const classes = useStyles(props);
   const theme = useTheme();
   const history = useHistory();
+  const [vw, vh] = useWindowSize();
 
   const getFooterWidth = (widthType) => {
     switch (widthType) {
@@ -72,57 +74,101 @@ export default function Footer(props) {
         marginBottom: "1rem",
         filter: globalVars.isThemeLight ? "none" : "invert(1)"
       }}
-      onClick={() => history.push("/")}
+        onClick={() => history.push("/")}
       ></div>
       <Typography variant="h5">GrakePCH © 2017-2022</Typography>
       <Typography variant="subtitle1">grakep.ch</Typography>
 
       <div style={{ flexGrow: 1 }}></div>
 
-      <div className={classes.linksContainer}>
-        <Button
-          variant="text"
-          startIcon={<Icon size={1} path={mdiEmail} />}
-          href="mailto:grakepch@gmail.com"
-          target="_blank"
-          className={classes.linkBtn}
-        >
-          Email
-        </Button>
-        <Button
-          variant="text"
-          startIcon={<Icon size={1} path={mdiGithub} />}
-          href="https://github.com/GrakePch"
-          target="_blank"
-          className={classes.linkBtn}
-        >
-          Github
-        </Button>
-        <Button
-          variant="text"
-          startIcon={<Icon size={1} path={mdiTwitter} />}
-          href="https://twitter.com/Grake_Pch"
-          target="_blank"
-          className={classes.linkBtn}
-        >
-          Twitter
-        </Button>
-        <Button
-          variant="text"
-          startIcon={<div style={{
-            backgroundImage: `url(${bilibiliIcon})`,
-            backgroundSize: "cover",
-            width: "1.5rem",
-            height: "1.5rem",
-            filter: globalVars.isThemeLight ? "none" : "invert(1)"
-          }} />}
-          href="https://space.bilibili.com/1020137"
-          target="_blank"
-          className={classes.linkBtn}
-        >
-          Bilibili
-        </Button>
-      </div>
+      {
+        vw > 512 ?
+          <div className={classes.linksContainer}>
+            <Button
+              variant="text"
+              startIcon={<Icon size={1} path={mdiEmail} />}
+              href="mailto:grakepch@gmail.com"
+              target="_blank"
+              className={classes.linkBtn}
+            >
+              Email
+            </Button>
+            <Button
+              variant="text"
+              startIcon={<Icon size={1} path={mdiGithub} />}
+              href="https://github.com/GrakePch"
+              target="_blank"
+              className={classes.linkBtn}
+            >
+              Github
+            </Button>
+            <Button
+              variant="text"
+              startIcon={<Icon size={1} path={mdiTwitter} />}
+              href="https://twitter.com/Grake_Pch"
+              target="_blank"
+              className={classes.linkBtn}
+            >
+              Twitter
+            </Button>
+            <Button
+              variant="text"
+              startIcon={<div style={{
+                backgroundImage: `url(${bilibiliIcon})`,
+                backgroundSize: "cover",
+                width: "1.5rem",
+                height: "1.5rem",
+                filter: globalVars.isThemeLight ? "none" : "invert(1)"
+              }} />}
+              href="https://space.bilibili.com/1020137"
+              target="_blank"
+              className={classes.linkBtn}
+            >
+              Bilibili
+            </Button>
+          </div>
+          :
+          <div className={classes.linksContainer}>
+            <Button
+              variant="text"
+              href="mailto:grakepch@gmail.com"
+              target="_blank"
+              className={classes.linkBtn}
+            >
+              <Icon size={1} path={mdiEmail} />
+            </Button>
+            <Button
+              variant="text"
+              href="https://github.com/GrakePch"
+              target="_blank"
+              className={classes.linkBtn}
+            >
+              <Icon size={1} path={mdiGithub} />
+            </Button>
+            <Button
+              variant="text"
+              href="https://twitter.com/Grake_Pch"
+              target="_blank"
+              className={classes.linkBtn}
+            >
+              <Icon size={1} path={mdiTwitter} />
+            </Button>
+            <Button
+              variant="text"
+              href="https://space.bilibili.com/1020137"
+              target="_blank"
+              className={classes.linkBtn}
+            >
+              <div style={{
+                backgroundImage: `url(${bilibiliIcon})`,
+                backgroundSize: "cover",
+                width: "1.5rem",
+                height: "1.5rem",
+                filter: globalVars.isThemeLight ? "none" : "invert(1)"
+              }} />
+            </Button>
+          </div>
+      }
     </div>
   )
 }
