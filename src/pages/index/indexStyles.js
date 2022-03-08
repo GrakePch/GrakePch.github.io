@@ -3,7 +3,8 @@ import { makeStyles } from "@material-ui/core";
 export const useStyles = makeStyles((theme) => ({
 
   main: {
-    width: `calc(75vw + ${theme.spacing(6) + "px"})`,
+    // width: `calc(75vw + ${theme.spacing(6) + "px"})`,
+    width: "min-content",
     maxWidth: `calc(1440px + ${theme.spacing(6) + "px"})`,
     margin: "0 auto",
   },
@@ -19,17 +20,17 @@ export const useStyles = makeStyles((theme) => ({
       flexDirection: "row",
       flexWrap: "wrap",
     },
-    "@media (max-width: 1919px)": { // 2 in a row
+    "@media (max-width: 1584px)": { // 2 in a row
       width: `calc((448px + ${theme.spacing(6) + "px"}) * 2)`,
     },
-    "@media (max-width: 1258px)": { // 1 in a row
-      width: `min(calc(448px + ${theme.spacing(6) + "px"}), calc(75vw + ${theme.spacing(6) + "px"}))`,
+    "@media (max-width: 1088px)": { // 1 in a row
+      width: `min(calc(448px + ${theme.spacing(6) + "px"}), calc(100% + ${theme.spacing(6) + "px"}))`,
     }
   },
   cards: {
     display: "flex",
     flexDirection: "column",
-    width: "min(448px, 75vw)",
+    width: "min(448px, 100%)",
     height: "min-content",
     boxShadow: "none !important",
     overflow: 'visible !important',
@@ -68,20 +69,20 @@ export const useStyles = makeStyles((theme) => ({
       flexDirection: "row",
       flexWrap: "wrap",
     },
-    "@media (max-width: 1919px)": { // 2 in a row
+    "@media (max-width: 1584px)": { // 2 in a row
       width: `calc((448px + ${theme.spacing(6) + "px"}) * 2)`,
     },
-    "@media (max-width: 1258px)": { // 1 in a row
-      width: `min(calc(448px + ${theme.spacing(6) + "px"}), calc(75vw + ${theme.spacing(6) + "px"}))`,
+    "@media (max-width: 1088px)": { // 1 in a row
+      width: `min(calc(448px + ${theme.spacing(6) + "px"}), calc(100% + ${theme.spacing(6) + "px"}))`,
     }
   },
   friendColumn: {
-    width: `min(calc(448px + ${theme.spacing(6) + "px"}), 75vw)`,
+    width: `min(calc(448px + ${theme.spacing(6) + "px"}), 100%)`,
     display: "flex",
     flexDirection: "column",
   },
   friendCard: {
-    width: `min(448px, 75vw)`,
+    width: `min(448px, 100%)`,
     margin: theme.spacing(3),
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),

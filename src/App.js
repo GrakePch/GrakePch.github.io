@@ -54,7 +54,6 @@ function App() {
           <Route exact path="/">
             <ScrollToTop />
             <Index/>
-            <Footer widthType="index" />
           </Route>
           <Route exact path="/c/:id">
             <ScrollToTop />

@@ -21,6 +21,7 @@ import {
 /*Modules*/
 import useWindowSize from "./modules/viewportDimensions";
 import useScrollPosition from "./modules/scrollPosition";
+import Footer from "./footer";
 
 /*Icons*/
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -145,9 +146,9 @@ export default function Index() {
     let eleFriend = [];
 
     let columnNum = 1;
-    if (vw > 1919) {
+    if (vw > 1584) {
       columnNum = 3;
-    } else if (vw > 1258) {
+    } else if (vw > 1088) {
       columnNum = 2;
     }
 
@@ -248,6 +249,7 @@ export default function Index() {
             {renderFriends()}
           </div>
         </div>
+        <Footer />
       </div>
     </>
   )

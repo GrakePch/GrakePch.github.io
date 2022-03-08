@@ -52,7 +52,7 @@ export default function Footer(props) {
       case "projDetail":
         return { width: "min(calc(100% - 6rem), 1152px)" };
       default:
-        return { width: "min(75vw, 1440px)" };
+        return { width: "calc(100% - 3rem)" };
     }
   }
 
