@@ -15,6 +15,8 @@ import FloatSettings from "./pages/modules/floatSettings";
 
 // Data
 import { globalVars } from "./pages/modules/globalVars";
+import BottomNav from "./pages/modules/bottomNav";
+import useWindowSize from "./pages/modules/viewportDimensions";
 
 
 function App() {
@@ -46,6 +48,10 @@ function App() {
   }
   globalVars.langId = langId;
 
+  const [vw, vh] = useWindowSize();
+  globalVars.vw = vw;
+  globalVars.vh = vh;
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -53,23 +59,28 @@ function App() {
         <Switch>
           <Route exact path="/">
             <ScrollToTop />
-            <Index/>
+            <Index />
           </Route>
           <Route exact path="/c/:id">
             <ScrollToTop />
-            <ProjCatePage/>
+            <ProjCatePage />
           </Route>
           <Route exact path="/p/:id">
             <ScrollToTop />
-            <ProjDetailPage/>
+            <ProjDetailPage />
             <Footer widthType="projDetail" />
           </Route>
           <Route>
-            <NotFound/>
+            <NotFound />
           </Route>
         </Switch>
       </Router>
-      <FloatSettings themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
+      {
+        vw >= 600 ?
+          <FloatSettings themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
+          :
+          <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
+      }
     </ThemeProvider>
   );
 }

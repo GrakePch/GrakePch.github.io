@@ -8,7 +8,6 @@ import {
   Typography
 } from "@material-ui/core";
 import { useStyles } from "./projCatePage/projCatePageStyles";
-import useWindowSize from "./modules/viewportDimensions";
 
 /*Data*/
 import { projects } from "../assets/projects";
@@ -25,7 +24,8 @@ export default function ProjCatePage(props) {
     history.push(path);
   }
 
-  const [vw, vh] = useWindowSize();
+  const vw = globalVars.vw;
+  const vh = globalVars.vh;
 
   // Check path validation
   let projCateList = Object.keys(projects);

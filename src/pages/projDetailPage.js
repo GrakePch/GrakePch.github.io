@@ -7,7 +7,6 @@ import { useStyles } from "./projDetailPage/projDetailPageStyles";
 import { Typography } from "@material-ui/core";
 import getProject from "../assets/projects";
 import { globalVars } from "./modules/globalVars";
-import useWindowSize from "./modules/viewportDimensions";
 
 export default function ProjDetailPage(props) {
   const classes = useStyles(props);
@@ -18,7 +17,8 @@ export default function ProjDetailPage(props) {
     history.push(path);
   }
 
-  const [vw, vh] = useWindowSize();
+  const vw = globalVars.vw;
+  const vh = globalVars.vh;
 
   const projs = function (r) {
     let k = r.keys()

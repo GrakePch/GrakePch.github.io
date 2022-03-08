@@ -19,7 +19,6 @@ import {
 } from '@material-ui/core/';
 
 /*Modules*/
-import useWindowSize from "./modules/viewportDimensions";
 import useScrollPosition from "./modules/scrollPosition";
 import Footer from "./footer";
 
@@ -40,7 +39,8 @@ export default function Index() {
     history.push(path);
   }
 
-  const [vw, vh] = useWindowSize();
+  const vw = globalVars.vw;
+  const vh = globalVars.vh;
   const scrollPosY = useScrollPosition();
 
   const props = {

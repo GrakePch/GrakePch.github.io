@@ -8,7 +8,6 @@ import Icon from '@mdi/react';
 import { mdiEmail, mdiGithub, mdiTwitter } from "@mdi/js";
 import { globalVars } from "./modules/globalVars";
 import { useHistory } from "react-router-dom";
-import useWindowSize from "./modules/viewportDimensions";
 
 const useStyles = makeStyles((theme) => ({
   footer_main: {
@@ -46,7 +45,9 @@ export default function Footer(props) {
   const classes = useStyles(props);
   const theme = useTheme();
   const history = useHistory();
-  const [vw, vh] = useWindowSize();
+  
+  const vw = globalVars.vw;
+  const vh = globalVars.vh;
 
   const getFooterWidth = (widthType) => {
     switch (widthType) {
