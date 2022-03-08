@@ -82,7 +82,7 @@ export default function Footer(props) {
       <div style={{ flexGrow: 1 }}></div>
 
       {
-        vw > 512 ?
+        vw >= 768 ?
           <div className={classes.linksContainer}>
             <Button
               variant="text"

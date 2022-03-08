@@ -7,6 +7,7 @@ import { useStyles } from "./projDetailPage/projDetailPageStyles";
 import { Typography } from "@material-ui/core";
 import getProject from "../assets/projects";
 import { globalVars } from "./modules/globalVars";
+import useWindowSize from "./modules/viewportDimensions";
 
 export default function ProjDetailPage(props) {
   const classes = useStyles(props);
@@ -16,6 +17,8 @@ export default function ProjDetailPage(props) {
   const routeChange = (path) => {
     history.push(path);
   }
+
+  const [vw, vh] = useWindowSize();
 
   const projs = function (r) {
     let k = r.keys()
@@ -68,23 +71,34 @@ export default function ProjDetailPage(props) {
         {/* <img src={images[projs[id].cover]} alt={projs[id].cover} width="100%" style={{ marginBottom: "1rem" }} /> */}
         {
           projs[id].contents.map((item, index) => (
-            <div className={classes.content_block} key={index}>
+            <div className={classes.content_block} key={index} style={{
+              flexDirection:
+                vw >= 768 ? "row" : "column"
+            }}>
               {
                 item.texts ?
                   item.img ?
-                    item.imgPositionLeft ?
-                      <>
-                        <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginRight: "2rem" }} />
-                        <Typography>
-                          {item.texts}
-                        </Typography>
-                      </>
+                    vw >= 768 ?
+                      item.imgPositionLeft ?
+                        <>
+                          <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginRight: "2rem" }} />
+                          <Typography>
+                            {item.texts}
+                          </Typography>
+                        </>
+                        :
+                        <>
+                          <Typography>
+                            {item.texts}
+                          </Typography>
+                          <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginLeft: "2rem" }} />
+                        </>
                       :
                       <>
+                        <img src={images[item.img]} alt={item.img} width="100%" style={{ marginBottom: "2rem" }}/>
                         <Typography>
                           {item.texts}
                         </Typography>
-                        <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginLeft: "2rem" }} />
                       </>
                     :
                     <Typography>
