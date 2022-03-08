@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "0 auto",
     marginTop: theme.spacing(12),
     padding: "2rem",
+    paddingBottom: globalVars.vw >= 600 ? "auto" : "calc(48px + 3rem)",
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
   },
@@ -45,7 +46,7 @@ export default function Footer(props) {
   const classes = useStyles(props);
   const theme = useTheme();
   const history = useHistory();
-  
+
   const vw = globalVars.vw;
   const vh = globalVars.vh;
 

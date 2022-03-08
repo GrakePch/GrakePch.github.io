@@ -4,4 +4,5 @@ export var globalVars = {
   langList: ["en", "zh"],
   vw: 0,
   vh: 0,
+  scrollY: 0,
 }

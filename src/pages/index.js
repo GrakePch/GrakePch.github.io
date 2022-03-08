@@ -19,7 +19,6 @@ import {
 } from '@material-ui/core/';
 
 /*Modules*/
-import useScrollPosition from "./modules/scrollPosition";
 import Footer from "./footer";
 
 /*Icons*/
@@ -32,6 +31,7 @@ import { projects } from "../assets/projects";
 import noneIcon from "../assets/project-icons/none.svg";
 import { friends } from "../assets/friends";
 import { globalVars } from "./modules/globalVars";
+import useScrollPosition from "./modules/scrollPosition";
 
 export default function Index() {
   const history = useHistory();

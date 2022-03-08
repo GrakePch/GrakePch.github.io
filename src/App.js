@@ -17,6 +17,7 @@ import FloatSettings from "./pages/modules/floatSettings";
 import { globalVars } from "./pages/modules/globalVars";
 import BottomNav from "./pages/modules/bottomNav";
 import useWindowSize from "./pages/modules/viewportDimensions";
+import useScrollPosition from "./pages/modules/scrollPosition";
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
   const [vw, vh] = useWindowSize();
   globalVars.vw = vw;
   globalVars.vh = vh;
+  // globalVars.scrollY = useScrollPosition();
 
   return (
     <ThemeProvider theme={theme}>
