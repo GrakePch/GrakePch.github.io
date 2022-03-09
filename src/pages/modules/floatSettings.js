@@ -16,14 +16,6 @@ export default function FloatSettings(props) {
 
 
     const onScroll = e => {
-      // if (noShadowAtTop) {
-      //   if (window.pageYOffset <= 0) {
-      //     setNoShadow(true);
-      //   } else {
-      //     setNoShadow(false);
-      //   }
-      // }
-      // console.log(window.pageYOffset);
       setIsSettingOpen(false);
     };
     window.addEventListener("scroll", onScroll);

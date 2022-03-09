@@ -74,13 +74,13 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
+        {
+          vw >= 600 ?
+            <FloatSettings themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
+            :
+            <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
+        }
       </Router>
-      {
-        vw >= 600 ?
-          <FloatSettings themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
-          :
-          <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
-      }
     </ThemeProvider>
   );
 }

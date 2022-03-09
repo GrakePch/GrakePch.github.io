@@ -8,30 +8,28 @@ import { mdiBrightness4, mdiBrightness7, mdiCogOutline, mdiTranslate } from '@md
 // Data
 import { globalVars } from "./globalVars";
 import useScrollPosition from "./scrollPosition";
+import { useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function BottomNav(props) {
   const theme = useTheme();
   const [isSettingsOpen, setIsSettingOpen] = useState(false);
   const scrollPosY = useScrollPosition();
+  const location = useLocation();
+
+  const [dockAtTop, setDockAtTop] = useState(false);
 
   useEffect(() => {
 
+    setDockAtTop(location.pathname == "/" || location.pathname.startsWith("/c/"));
 
     const onScroll = e => {
-      // if (noShadowAtTop) {
-      //   if (window.pageYOffset <= 0) {
-      //     setNoShadow(true);
-      //   } else {
-      //     setNoShadow(false);
-      //   }
-      // }
-      // console.log(window.pageYOffset);
       setIsSettingOpen(false);
     };
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  })
+  }, [location])
 
   // Read theme from localStorage
   if (localStorage.getItem('isThemeLight') === 'false') {
@@ -48,7 +46,6 @@ export default function BottomNav(props) {
       bottom: "1.5rem",
       width: "100%",
       height: 48,
-      // overflow: "hidden",
       padding: "0 1.5rem",
       zIndex: 99,
     }}>
@@ -58,10 +55,10 @@ export default function BottomNav(props) {
         height: "100%",
         backgroundColor: `${theme.palette.background.paper}cc`,
         transform:
-          scrollPosY <= 0 || scrollPosY >= document.body.offsetHeight - globalVars.vh ?
+          (dockAtTop && scrollPosY <= 0) || scrollPosY >= document.body.offsetHeight - globalVars.vh ?
             'translateY(0)' : 'translateY(-.2rem)',
         boxShadow:
-          scrollPosY <= 0 || scrollPosY >= document.body.offsetHeight - globalVars.vh ?
+          (dockAtTop && scrollPosY <= 0) || scrollPosY >= document.body.offsetHeight - globalVars.vh ?
             "0 0 0 0 rgba(0,0,0,.15)" : "0 .4rem 0 0 rgba(0,0,0,.15)",
         transition: "transform .2s cubic-bezier(.5,0,0,1), box-shadow .2s cubic-bezier(.5,0,0,1)",
         backdropFilter: "blur(10px)",
