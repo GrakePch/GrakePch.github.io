@@ -17,9 +17,11 @@ import {
   AccordionActions,
   Divider,
 } from '@material-ui/core/';
+import { useTheme } from "@material-ui/styles";
 
 /*Modules*/
 import Footer from "./footer";
+import useScrollPosition from "./modules/scrollPosition";
 
 /*Icons*/
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -31,7 +33,6 @@ import { projects } from "../assets/projects";
 import noneIcon from "../assets/project-icons/none.svg";
 import { friends } from "../assets/friends";
 import { globalVars } from "./modules/globalVars";
-import useScrollPosition from "./modules/scrollPosition";
 
 export default function Index() {
   const history = useHistory();
@@ -52,6 +53,7 @@ export default function Index() {
 
   const classes = useStyles(props);
   const logoSection = useStylesLogo(props);
+  const theme = useTheme();
 
   const renderProjects = () => {
     let eleProjects = [];
@@ -241,7 +243,7 @@ export default function Index() {
       <div className={logoSection.first_page_bg}></div>
 
       <div className={logoSection.second_page}>
-        <Typography variant="h5" align="left">GrakePCH, a cool guy who love graphic design and Minecraft contents. Interested in sci-fi stuffs related to space. Currently learning programming and music.</Typography>
+        <Typography variant="h5" align="left">GrakePCH, a Sol III native who love graphic design and Minecraft contents. Interested in sci-fi stuffs related to space. Currently learning programming and music. Preferred music genres are synthwave, melodic dubstep, & classical. Favourite color is <span style={{ color: theme.palette.primary.main }}>red with a little desaturation</span>.</Typography>
       </div>
 
       <div className={classes.main} id="main">
