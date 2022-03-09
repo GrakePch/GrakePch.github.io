@@ -241,7 +241,7 @@ export default function Index() {
       <div className={logoSection.first_page_bg}></div>
 
       <div className={logoSection.second_page}>
-        <Typography variant="h3" align="center">Welcome to the website of GrakePCH</Typography>
+        <Typography variant="h5" align="left">GrakePCH, a cool guy who love graphic design and Minecraft contents. Interested in sci-fi stuffs related to space. Currently learning programming and music.</Typography>
       </div>
 
       <div className={classes.main} id="main">

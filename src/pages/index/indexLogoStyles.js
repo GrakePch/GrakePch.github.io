@@ -116,11 +116,13 @@ export const useStylesLogo = makeStyles(theme => ({
   },
   second_page: {
     display: 'flex',
+    flexDirection: "column",
     justifyContent: 'center',
     alignItems: 'center',
     position: 'relative',
     width: "100%",
     height: "100vh",
+    padding: "0 10vw",
     color: theme.palette.background.default,
     backgroundColor: theme.palette.background.invert,
     zIndex: 10,
