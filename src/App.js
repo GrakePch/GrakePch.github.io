@@ -18,6 +18,7 @@ import { globalVars } from "./pages/modules/globalVars";
 import BottomNav from "./pages/modules/bottomNav";
 import useWindowSize from "./pages/modules/viewportDimensions";
 import useScrollPosition from "./pages/modules/scrollPosition";
+import NotFound from "./pages/notFound";
 
 
 function App() {
@@ -85,10 +86,6 @@ function App() {
       }
     </ThemeProvider>
   );
-}
-
-function NotFound() {
-  return <h1>404 Not Found</h1>
 }
 
 export default App;
