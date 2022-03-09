@@ -4,9 +4,12 @@ export const useStyles = makeStyles((theme) => ({
   main: {
     display: "flex",
     flexDirection: "column",
-    width: "min(calc(100% - 6rem), 1152px)",
+    width: "min(calc(100% - 128px), 1152px)",
     margin: "0 auto",
-    // marginTop: "-5rem",
+    
+    "@media (max-width: 599px)": {
+      width: "calc(100% - 3rem)"
+    }
   },
   top_banner: {
     position: "relative",

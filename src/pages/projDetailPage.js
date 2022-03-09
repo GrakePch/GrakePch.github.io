@@ -7,6 +7,7 @@ import { useStyles } from "./projDetailPage/projDetailPageStyles";
 import { Typography } from "@material-ui/core";
 import getProject from "../assets/projects";
 import { globalVars } from "./modules/globalVars";
+import Footer from "./footer";
 
 export default function ProjDetailPage(props) {
   const classes = useStyles(props);
@@ -95,7 +96,7 @@ export default function ProjDetailPage(props) {
                         </>
                       :
                       <>
-                        <img src={images[item.img]} alt={item.img} width="100%" style={{ marginBottom: "2rem" }}/>
+                        <img src={images[item.img]} alt={item.img} width="100%" style={{ marginBottom: "2rem" }} />
                         <Typography>
                           {item.texts[globalVars.langList[globalVars.langId]]}
                         </Typography>
@@ -113,6 +114,7 @@ export default function ProjDetailPage(props) {
             </div>
           ))
         }
+        <Footer marginRem={0} />
       </div>
     </>
   )

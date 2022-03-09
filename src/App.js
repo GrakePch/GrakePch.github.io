@@ -10,14 +10,12 @@ import ScrollToTop from "./scrollToTop";
 import Index from "./pages/index";
 import ProjCatePage from "./pages/projCatePage";
 import ProjDetailPage from "./pages/projDetailPage";
-import Footer from "./pages/footer";
 import FloatSettings from "./pages/modules/floatSettings";
 
 // Data
 import { globalVars } from "./pages/modules/globalVars";
 import BottomNav from "./pages/modules/bottomNav";
 import useWindowSize from "./pages/modules/viewportDimensions";
-import useScrollPosition from "./pages/modules/scrollPosition";
 import NotFound from "./pages/notFound";
 
 
@@ -71,7 +69,6 @@ function App() {
           <Route exact path="/p/:id">
             <ScrollToTop />
             <ProjDetailPage />
-            <Footer widthType="projDetail" />
           </Route>
           <Route>
             <NotFound />

@@ -13,8 +13,8 @@ const useStyles = makeStyles((theme) => ({
   footer_main: {
     display: "flex",
     flexDirection: "column",
-    height: '20rem',
-    width: "75vw",
+    minHeight: '20rem',
+    width: "calc(100% - 3rem)",
     margin: "0 auto",
     marginTop: theme.spacing(12),
     padding: "2rem",
@@ -50,26 +50,18 @@ export default function Footer(props) {
   const vw = globalVars.vw;
   const vh = globalVars.vh;
 
-  const getFooterWidth = (widthType) => {
-    switch (widthType) {
-      case "index":
-        return { width: "min(75vw, 1440px)" };
-      case "projCate":
-        return { width: "min(75vw, 1440px)" };
-      case "projDetail":
-        return { width: "min(calc(100% - 6rem), 1152px)" };
-      default:
-        return { width: "calc(100% - 3rem)" };
-    }
-  }
-
-
   return (
-    <div className={classes.footer_main} style={getFooterWidth(props.widthType)}>
+    <div className={classes.footer_main}
+      style={{
+        width: props.marginRem ?
+          "calc(100% - 3rem)" :
+          `calc(100% - ${props.marginRem}rem)`
+      }}>
       <div style={{
         width: "4rem",
         height: "4rem",
         cursor: "pointer",
+        flexShrink: 0,
         backgroundImage: `url(${GKPIconBlack})`,
         backgroundSize: "4rem",
         backgroundRepeat: "no-repeat",
@@ -81,7 +73,7 @@ export default function Footer(props) {
       <Typography variant="h5">GrakePCH © 2017-2022</Typography>
       <Typography variant="subtitle1">grakep.ch</Typography>
 
-      <div style={{ flexGrow: 1 }}></div>
+      <div style={{ flexGrow: 1, minHeight: "2rem" }}></div>
 
       {
         vw >= 768 ?
@@ -130,7 +122,7 @@ export default function Footer(props) {
             </Button>
           </div>
           :
-          <div className={classes.linksContainer}>
+          <div className={classes.linksContainer} style={{justifyContent: "center"}}>
             <Button
               variant="text"
               href="mailto:grakepch@gmail.com"
