@@ -83,13 +83,13 @@ export default function ProjDetailPage(props) {
                         <>
                           <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginRight: "2rem" }} />
                           <Typography>
-                            {item.texts}
+                            {item.texts[globalVars.langList[globalVars.langId]]}
                           </Typography>
                         </>
                         :
                         <>
                           <Typography>
-                            {item.texts}
+                            {item.texts[globalVars.langList[globalVars.langId]]}
                           </Typography>
                           <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginLeft: "2rem" }} />
                         </>
@@ -97,12 +97,12 @@ export default function ProjDetailPage(props) {
                       <>
                         <img src={images[item.img]} alt={item.img} width="100%" style={{ marginBottom: "2rem" }}/>
                         <Typography>
-                          {item.texts}
+                          {item.texts[globalVars.langList[globalVars.langId]]}
                         </Typography>
                       </>
                     :
                     <Typography>
-                      {item.texts}
+                      {item.texts[globalVars.langList[globalVars.langId]]}
                     </Typography>
                   :
                   item.img ?

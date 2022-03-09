@@ -1,25 +1,29 @@
 {
   "cover": "bandaged333",
-  "links": [
-
-  ],
+  "links": [],
   "contents": [
     {
-      "texts":
-      "Only text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
+      "texts": {
+        "en": "Only text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
+        "zh": "仅文本. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus."
+      },
       "links": [],
       "img": null
     },
     {
-      "texts":
-      "Right text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
+      "texts": {
+        "en": "Right text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
+        "zh": "文本在右侧. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus."
+      },
       "links": [],
       "img": "bandaged333_1",
       "imgPositionLeft": true
     },
     {
-      "texts":
-      "Left text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
+      "texts":  {
+        "en": "Left text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
+        "zh": "文本在左侧. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus."
+      },
       "links": [],
       "img": "bandaged333_2",
       "imgPositionLeft": false
@@ -31,4 +35,3 @@
     }
   ]
 }
-
