@@ -53,7 +53,12 @@ export default function ProjDetailPage(props) {
     <Typography
       variant={item.variant ? item.variant : "body1"}
       align={item.align ? item.align : "inherit"}>
-      {item.texts[globalVars.langList[globalVars.langId]]}
+      {item.texts[globalVars.langList[globalVars.langId]].split("\n").map((str, index) => (
+        index == 0 ?
+          str
+          :
+          <><br /> {str}</>
+      ))}
     </Typography>
   );
 
