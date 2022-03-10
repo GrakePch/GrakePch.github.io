@@ -17,6 +17,7 @@ import { globalVars } from "./pages/modules/globalVars";
 import BottomNav from "./pages/modules/bottomNav";
 import useWindowSize from "./pages/modules/viewportDimensions";
 import NotFound from "./pages/notFound";
+import { Redirect } from "react-router-dom";
 
 
 function App() {
@@ -69,6 +70,9 @@ function App() {
           <Route exact path="/p/:id">
             <ScrollToTop />
             <ProjDetailPage />
+          </Route>
+          <Route exact path="/bpext">
+            <Redirect to="/p/bpext" />
           </Route>
           <Route>
             <NotFound />

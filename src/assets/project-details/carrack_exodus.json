@@ -1,0 +1,31 @@
+{
+  "contents": [
+    {
+      "img": "carrack"
+    },
+    {
+      "texts": {
+        "en": "A short film shot in the game Star Citizen. A Carrack filled with cargo departures from Lorville as usual. However, this trip may not be as normal as before for the only three crew members on the ship... Credits: DIRECTOR, CAMERA, & SOUND DESIGN: Lapernum; WRITER: Lapernum, GrakePCH, & Seel; EDITOR: Lapernum, GrakePCH; CAST: Lapuernum, GrakePCH, Seel, & Yuer; MUSIC: Rachel Portman - Bailey, Lapernum - Carrack: Exodus OST1, Roger Subirana - Between worlds",
+        "zh": "一个在星际公民游戏内完成拍摄的微电影。一艘克拉克满载着货物从罗威尔起飞，一切似乎如常，但此次旅程对于飞船上仅有的三名乘员来说有些不同……导演、摄影、声音设计：拉邦那；编剧：拉邦那、GrakePCH、Seel；分镜、剪辑：拉邦那、GrakePCH；参演：拉邦那、GrakePCH、Seel、Yuer；使用音乐：Rachel Portman - Bailey, 拉邦那 - Carrack: Exodus OST1, Roger Subirana - Between worlds"
+      },
+      "links": [
+        [
+          {
+            "en": "Watch On Youtube",
+            "zh": "在Youtube上观看"
+          },
+          "https://youtu.be/Mv15ID4JuX0",
+          "Youtube"
+        ],
+        [
+          {
+            "en": "Watch On Bilibili",
+            "zh": "在哔哩哔哩上观看"
+          },
+          "https://www.bilibili.com/video/BV1ht4y1U7eT",
+          "Bilibili"
+        ]
+      ]
+    }
+  ]
+}

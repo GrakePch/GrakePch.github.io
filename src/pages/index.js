@@ -100,54 +100,34 @@ export default function Index() {
 
   const renderFriendLinks = (link) => {
     const customIconList = ["bilibili"]
-
-    if (!link[2]) { // Icon not found
-      return (
-        <Button
-          variant="text"
-          startIcon={<Icon size={1} path={mdiOpenInNew} />}
-          href={link[1]}
-          target="_blank"
-          className={classes.friendLink}
-          key={link[0]}
-        >
-          {link[0]}
-        </Button>
-      )
-    } else if (customIconList.includes(link[0])) { // Custom Icon
-      return (
-        <Button
-          variant="text"
-          startIcon={<div style={{
-            backgroundImage: `url(${link[2]})`,
-            backgroundSize: "cover",
-            width: "1.5rem",
-            height: "1.5rem",
-            filter: globalVars.isThemeLight ? "none" : "invert(1)"
-          }} />}
-          href={link[1]}
-          target="_blank"
-          className={classes.friendLink}
-          key={link[0]}
-        >
-          {link[0]}
-        </Button>
-      )
-    } else { // Icon in mdi lib
-      return (
-        <Button
-          variant="text"
-          startIcon={<Icon size={1} path={link[2]} />}
-          href={link[1]}
-          target="_blank"
-          className={classes.friendLink}
-          key={link[0]}
-        >
-          {link[0]}
-        </Button>
-      )
-    }
+    return (
+      <Button
+        variant="text"
+        startIcon={
+          !link[2] ? // Icon not found
+            <Icon size={1} path={mdiOpenInNew} />
+            :
+            customIconList.includes(link[0]) ? // Custom Icon
+              <div style={{
+                backgroundImage: `url(${link[2]})`,
+                backgroundSize: "cover",
+                width: "1.5rem",
+                height: "1.5rem",
+                filter: globalVars.isThemeLight ? "none" : "invert(1)"
+              }} />
+              : // Icon in mdi lib
+              <Icon size={1} path={link[2]} />
+        }
+        href={link[1]}
+        target="_blank"
+        className={classes.friendLink}
+        key={link[0]}
+      >
+        {link[0]}
+      </Button>
+    )
   }
+
 
   const renderFriends = () => {
     let friendList = Object.keys(friends).sort();

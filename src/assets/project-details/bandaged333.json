@@ -7,7 +7,24 @@
         "en": "Only text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
         "zh": "仅文本. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus."
       },
-      "links": [],
+      "links": [
+        [
+          {
+            "en": "Download1",
+            "zh": "下载1"
+          },
+          "",
+          "Download"
+        ],
+        [
+          {
+            "en": "Download2",
+            "zh": "下载2"
+          },
+          "",
+          "Download"
+        ]
+      ],
       "img": null
     },
     {
@@ -15,12 +32,29 @@
         "en": "Right text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
         "zh": "文本在右侧. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus."
       },
-      "links": [],
+      "links": [
+        [
+          {
+            "en": "Watch On Youtube",
+            "zh": "在Youtube上观看"
+          },
+          "",
+          "Youtube"
+        ],
+        [
+          {
+            "en": "Watch On Bilibili",
+            "zh": "在哔哩哔哩上观看"
+          },
+          "",
+          "Bilibili"
+        ]
+      ],
       "img": "bandaged333_1",
       "imgPositionLeft": true
     },
     {
-      "texts":  {
+      "texts": {
         "en": "Left text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus.",
         "zh": "文本在左侧. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis lobortis ligula. Sed mattis vehicula tristique. Sed euismod maximus bibendum. Aenean eleifend interdum dapibus."
       },

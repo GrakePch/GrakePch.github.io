@@ -1,13 +1,15 @@
 import React from "react";
 import { useParams, useHistory, Link } from "react-router-dom";
 import { useStyles } from "./projDetailPage/projDetailPageStyles";
+// import { projects } from "../assets/projects";
+import { Button, Typography } from "@material-ui/core";
+import Icon from '@mdi/react';
+import Footer from "./footer";
 
 /*Data*/
-// import { projects } from "../assets/projects";
-import { Typography } from "@material-ui/core";
 import getProject from "../assets/projects";
 import { globalVars } from "./modules/globalVars";
-import Footer from "./footer";
+import { iconTable } from "../assets/project-details/iconTable";
 
 export default function ProjDetailPage(props) {
   const classes = useStyles(props);
@@ -47,6 +49,53 @@ export default function ProjDetailPage(props) {
     return d
   }(require.context('../assets/project-images/', true, /\.(png|jpe?g|svg|JPE?G)$/));
 
+  const renderText = (item) => (
+    <Typography
+      variant={item.variant ? item.variant : "body1"}
+      align={item.align ? item.align : "inherit"}>
+      {item.texts[globalVars.langList[globalVars.langId]]}
+    </Typography>
+  );
+
+  const renderLinks = (links) => {
+    return (<>{links ?
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "1rem" }}>
+        {
+          links.map((item, index) => (
+            <Button
+              variant="text"
+              startIcon={
+                !iconTable._customIcons.includes(item[2]) ?
+                  <Icon size={1} path={iconTable[item[2]]} />
+                  :
+                  <div style={{
+                    backgroundImage: `url(${iconTable[item[2]]})`,
+                    backgroundSize: "cover",
+                    width: "1.5rem",
+                    height: "1.5rem",
+                    filter: globalVars.isThemeLight ? "none" : "invert(1)"
+                  }} />
+              }
+              href={
+                item.length > 3 && item[3] ?  // Internal link
+                  process.env.PUBLIC_URL + item[1]
+                  : // External link
+                  item[1]
+              }
+              target="_blank"
+              className={classes.friendLink}
+              key={item[0]}
+            >
+              {item[0][globalVars.langList[globalVars.langId]]}
+            </Button>
+          ))
+        }
+      </div>
+      :
+      <></>
+    }</>)
+  }
+
   return (
     <>
       <div className={classes.main} id="main">
@@ -83,31 +132,38 @@ export default function ProjDetailPage(props) {
                       item.imgPositionLeft ?
                         <>
                           <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginRight: "2rem" }} />
-                          <Typography>
-                            {item.texts[globalVars.langList[globalVars.langId]]}
-                          </Typography>
+                          <div style={{ flexGrow: 1 }}>
+                            {renderText(item)}
+                            {renderLinks(item.links)}
+                          </div>
                         </>
                         :
                         <>
-                          <Typography>
-                            {item.texts[globalVars.langList[globalVars.langId]]}
-                          </Typography>
+                          <div style={{ flexGrow: 1 }}>
+                            {renderText(item)}
+                            {renderLinks(item.links)}
+                          </div>
                           <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginLeft: "2rem" }} />
                         </>
                       :
                       <>
                         <img src={images[item.img]} alt={item.img} width="100%" style={{ marginBottom: "2rem" }} />
-                        <Typography>
-                          {item.texts[globalVars.langList[globalVars.langId]]}
-                        </Typography>
+                        <div style={{ flexGrow: 1 }}>
+                          {renderText(item)}
+                          {renderLinks(item.links)}
+                        </div>
                       </>
                     :
-                    <Typography>
-                      {item.texts[globalVars.langList[globalVars.langId]]}
-                    </Typography>
+                    <div style={{ flexGrow: 1 }}>
+                      {renderText(item)}
+                      {renderLinks(item.links)}
+                    </div>
                   :
                   item.img ?
-                    <img src={images[item.img]} alt={item.img} width="100%" />
+                    <div style={{ flexGrow: 1 }}>
+                      <img src={images[item.img]} alt={item.img} style={{ width: "100%" }} />
+                      {renderLinks(item.links)}
+                    </div>
                     :
                     <></>
               }

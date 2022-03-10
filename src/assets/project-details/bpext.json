@@ -1,0 +1,137 @@
+{
+  "cover": null,
+  "contents": [
+    {
+      "texts": {
+        "en": "BlockPixel Extend is a resourcepack project which extends the support of the original BlockPixel, launched by GrakePCH from RainbowPixel Team. This project is authorized by the author of BlockPixel, Jakob.zero. The project focuses on improving the completeness of BlockPixel to support Mods and Optifine custom textures. The resourcepacks of the project are considered add-ons or DLCs, which require the original BlockPixel pack loaded to work properly. In the UI of Minecraft resourcepack settings, BlockPixel Extend packs should be placed above the original BlockPixel pack in the loading list.",
+        "zh": "方块概念扩展 是由彩虹像素团队的GrakePCH发起的方块概念材质的扩展材质项目，经由方块概念材质原作者兼彩虹像素团队负责人Jakob.zero的授权。本系列材质旨在完善方块概念在MC更多角度上的适配，包括Optifine对材质多样化的提升以及模组适配。\n方块概念扩展系列作为用户可自行选择添加的附加包，需要搭配方块概念原版材质使用，并在资源包列表排序置于原材质上级。"
+      },
+      "links": [
+        [
+          {
+            "en": "BlockPixel.net",
+            "zh": "方块概念官网"
+          },
+          "https://blockpixel.net/",
+          "Web",
+          true
+        ],
+        [
+          {
+            "en": "Jakob.zero",
+            "zh": "Jakob.zero"
+          },
+          "https://twitter.com/Jakob_zero",
+          "People",
+          true
+        ]
+      ]
+    },
+    {
+      "texts": {
+        "en": "BlockPixel Extend: PBR Alpha Version",
+        "zh": "方块概念：PBR补充包Alpha"
+      },
+      "variant": "h4",
+      "align": "center"
+    },
+    {
+      "img": "pbr-alphaV1-clear"
+    },
+    {
+      "texts": {
+        "en": "Alpha version 2. \nBest work with Minecraft Java Edition 1.14.x. \nRequire the lastest OptifineHD for correct version. \nPlease load SEUS PTGI E12 shaderpack for the best experience.",
+        "zh": "Alpha版本V2。\n最佳适配版本：Java 1.14.x。 \n需要安装符合版本的最新OptifineHD。\n加载SEUS PTGI E12光影包获得最佳体验。"
+      },
+      "links": [
+        [
+          {
+            "en": "Download",
+            "zh": "下载"
+          },
+          "/project-files/bpext/BlockPixel_Extend_pbr_1-14_alpha_v2.zip",
+          "Download",
+          true
+        ]
+      ],
+      "img": "pbr-alphaV2"
+    },
+    {
+      "texts": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "texts": {
+        "en": "BlockPixel Extend: CTM",
+        "zh": "方块概念：ctm连接纹理补充包"
+      },
+      "variant": "h4",
+      "align": "center"
+    },
+    {
+      "img": "ctmNature1"
+    },
+    {
+      "texts": {
+        "en": "Connections between the same type of glass become smooth. \n Grass, sand, and gravel now have pixelated gradient between them (require Java edition 1.14 and higher). \nRequire the lastest OptifineHD for correct version.",
+        "zh": "为玻璃和染色玻璃制作了无缝衔接。\n为草地、沙子以及沙砾等制作了更加像素化的过渡（需要Java 1.14 版本及以上)。\n需要安装符合版本的最新OptifineHD。"
+      },
+      "links": [
+        [
+          {
+            "en": "Download for 1.14.x",
+            "zh": "下载 1.14.x 版本"
+          },
+          "/project-files/bpext/BlockPixel_DLC_ctm_1-14_v0-5.zip",
+          "Download",
+          true
+        ],
+        [
+          {
+            "en": "Download for 1.12.x",
+            "zh": "下载 1.12.x 版本"
+          },
+          "/project-files/bpext/BlockPixel_DLC_ctm_1-12_v0-2.zip",
+          "Download",
+          true
+        ]
+      ],
+      "img": "ctmGlass",
+      "imgPositionLeft": true
+    },
+    {
+      "texts": {
+        "en": "",
+        "zh": ""
+      }
+    },
+    {
+      "texts": {
+        "en": "BlockPixel Extend: JEI Mod",
+        "zh": "方块概念：JEI模组包"
+      },
+      "variant": "h4",
+      "align": "center"
+    },
+    {
+      "texts": {
+        "en": "JEI now in the style of BlockPixel. Support Java edition 1.12.2.",
+        "zh": "为JEI适配了方块概念风格的GUI。适配版本：Java 1.12.2。"
+      },
+      "links": [
+        [
+          {
+            "en": "Download for 1.12.x",
+            "zh": "下载 1.12.x 版本"
+          },
+          "/project-files/bpext/BlockPixel_DLC_JEI_1-12-2.zip",
+          "Download",
+          true
+        ]
+      ],
+      "img": "modjei"
+    }
+  ]
+}

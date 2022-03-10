@@ -1,5 +1,3 @@
-import React, { Component } from "react";
-import Icon from '@mdi/react';
 import {
   mdiWeb,
   mdiGithub,
@@ -64,7 +62,7 @@ export const friends = {
       ["Instagram", "https://www.instagram.com/willandalexdrones/", mdiInstagram]
     ],
   },
-  "Laboner6": {
+  "Lapernum": {
     avatar: "https://avatars.githubusercontent.com/u/64993946?v=4",
     links: [
       ["bilibili", "https://space.bilibili.com/57234212", iconBili],
