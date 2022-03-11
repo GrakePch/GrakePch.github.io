@@ -5,7 +5,9 @@ import {
   mdiInstagram,
   mdiYoutube,
   mdiDownload,
-  mdiAccountCircle
+  mdiAccountCircle,
+  mdiEarth,
+  mdiCubeOutline
 } from '@mdi/js';
 import iconBili from "../svgs/bilibili.svg";
 
@@ -18,6 +20,8 @@ export const iconTable = {
   "Bilibili": iconBili,
   "Download": mdiDownload,
   "People": mdiAccountCircle,
+  "Earth": mdiEarth,
+  "Cube-outline": mdiCubeOutline,
 
   "_customIcons": ["Bilibili"]
 }

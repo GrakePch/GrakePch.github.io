@@ -50,7 +50,7 @@ export const projects = {
       },
       "9squares": {
         title: {
-          en: "9-Squares Textures",
+          en: "9-Squares Texture",
           zh: "九宫格材质"
         },
         date: [2019, 7],

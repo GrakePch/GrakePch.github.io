@@ -5,6 +5,7 @@ import { useStyles } from "./projDetailPage/projDetailPageStyles";
 import { Button, Typography } from "@material-ui/core";
 import Icon from '@mdi/react';
 import Footer from "./footer";
+import clsx from 'clsx';
 
 /*Data*/
 import getProject from "../assets/projects";
@@ -62,9 +63,15 @@ export default function ProjDetailPage(props) {
     </Typography>
   );
 
-  const renderLinks = (links) => {
+  const renderLinks = (links, isLinkStacked) => {
     return (<>{links ?
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "1rem" }}>
+      <div style={{
+        display: "flex",
+        flexDirection: isLinkStacked ? "column" : "row",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "1rem"
+      }}>
         {
           links.map((item, index) => (
             <Button
@@ -81,14 +88,9 @@ export default function ProjDetailPage(props) {
                     filter: globalVars.isThemeLight ? "none" : "invert(1)"
                   }} />
               }
-              href={
-                item.length > 3 && item[3] ?  // Internal link
-                  process.env.PUBLIC_URL + item[1]
-                  : // External link
-                  item[1]
-              }
+              href={process.env.PUBLIC_URL + item[1]}
               target="_blank"
-              className={classes.friendLink}
+              className={clsx(classes.friendLink, isLinkStacked ? classes.friendLinkStacked : classes.friendLinkRow)}
               key={item[0]}
             >
               {item[0][globalVars.langList[globalVars.langId]]}
@@ -139,14 +141,14 @@ export default function ProjDetailPage(props) {
                           <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginRight: "2rem" }} />
                           <div style={{ flexGrow: 1 }}>
                             {renderText(item)}
-                            {renderLinks(item.links)}
+                            {renderLinks(item.links, item.isLinkStacked)}
                           </div>
                         </>
                         :
                         <>
                           <div style={{ flexGrow: 1 }}>
                             {renderText(item)}
-                            {renderLinks(item.links)}
+                            {renderLinks(item.links, item.isLinkStacked)}
                           </div>
                           <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginLeft: "2rem" }} />
                         </>
@@ -155,19 +157,19 @@ export default function ProjDetailPage(props) {
                         <img src={images[item.img]} alt={item.img} width="100%" style={{ marginBottom: "2rem" }} />
                         <div style={{ flexGrow: 1 }}>
                           {renderText(item)}
-                          {renderLinks(item.links)}
+                          {renderLinks(item.links, item.isLinkStacked)}
                         </div>
                       </>
                     :
                     <div style={{ flexGrow: 1 }}>
                       {renderText(item)}
-                      {renderLinks(item.links)}
+                      {renderLinks(item.links, item.isLinkStacked)}
                     </div>
                   :
                   item.img ?
                     <div style={{ flexGrow: 1 }}>
                       <img src={images[item.img]} alt={item.img} style={{ width: "100%" }} />
-                      {renderLinks(item.links)}
+                      {renderLinks(item.links, item.isLinkStacked)}
                     </div>
                     :
                     <></>

@@ -1,0 +1,137 @@
+{
+  "contents": [
+    {
+      "texts": {
+        "en": "9-Squares Texture is a Minecraft resourcepack created by GrakePCH. Its predecessors, 3x3 Texture (published on April.3 2015) and Nine-Squares Texture (published on May.8 2015), were modified from the oCd texturepack, and they were using the resolution of odd numbers, so they have been no longer supported and offered. On Jan.29, 2016, the brand new 9-Squares Texture was released, which keeps the flavor of 3x3, but completely remade in the more compatible resolution of 16x16.",
+        "zh": "9-Squares九宫格是一款由 GrakePCH 原创的 Minecraft 材质资源包。其前身3x3材质（问世于2015年4月3日）以及旧版九宫格材质（问世于2015年5月8日）是基于著名材质 oCd 的魔改，且采用奇数分辨率，目前已停止更新。2016年1月29日，全新的九宫格材质问世，采用兼容性更强的16x16分辨率，依靠纹理打造3x3的风格，并且完全重制。"
+      }
+    },
+    {
+      "img": "colorful_blocks"
+    },
+    {
+      "texts": {
+        "en": "Pixel Art in 3×3 Matrix",
+        "zh": "3乘3矩阵中的像素艺术"
+      },
+      "variant": "h4",
+      "align": "center"
+    },
+    {
+      "img": "9S-screenshot1_alt1"
+    },
+    {
+      "texts": {
+        "en": "Delicate Palette Chose from Vanilla",
+        "zh": "来自原版精心搭配的色彩"
+      },
+      "variant": "h4",
+      "align": "center"
+    },
+    {
+      "img": "9S-screenshot2_alt1"
+    },
+    {
+      "texts": {
+        "en": "Simplified Textures with Respect to Vanilla",
+        "zh": "尊重原版质感的简化纹理"
+      },
+      "variant": "h4",
+      "align": "center"
+    },
+    {
+      "img": "9S-screenshot3_alt1"
+    },
+    {
+      "texts": {
+        "en": "Pixelated Shadows Reflect the Depth of Material",
+        "zh": "饱满平面深度的像素阴影"
+      },
+      "variant": "h4",
+      "align": "center"
+    },
+    {
+      "img": "9squares"
+    },
+    {
+      "texts": {
+        "en": "Well-designed 3D Models for Java Edition",
+        "zh": "为Java版特别设计的3D立体模型"
+      },
+      "variant": "h4",
+      "align": "center"
+    },
+    {
+      "img": "9S-models"
+    },
+    {
+      "texts": {
+        "en": "Downloads",
+        "zh": "下载"
+      },
+      "variant": "h4",
+      "align": "center",
+      "links": [
+        [
+          {
+            "en": "Bedrock 1.11+ (190728)",
+            "zh": "基岩版 1.11+ (190728)"
+          },
+          "/project-files/9squares/9-SQuares_B.19.07b_1_11.mcpack",
+          "Download"
+        ],
+        [
+          {
+            "en": "Java 1.13~1.14.x (290629)",
+            "zh": "Java版1.13~1.14.x (290629)"
+          },
+          "https://github.com/GrakePch/9-SQuares_resourcepack_forMC1.13/releases/download/J.19.06b/9-SQuares_J.19.06b_1_13_1_14.zip",
+          "Download"
+        ],
+        [
+          {
+            "en": "Java 1.12.x (1807xx) old",
+            "zh": "Java版 1.12.x (1807xx) 旧版"
+          },
+          "https://github.com/GrakePch/9-SQuares_resourcepack_forMC1.12/releases/download/J.18.07a/9-SQuares_J.18.07a_1_12.zip",
+          "Download"
+        ],
+        [
+          {
+            "en": "Java 1.8.x (1807xx) old",
+            "zh": "Java版 1.8.x (1807xx) 旧版"
+          },
+          "https://github.com/GrakePch/9-SQuares_resourcepack_forMC1.8/releases/download/J.18.07a/9-SQuares_J.18.07a_1_8.zip",
+          "Download"
+        ]
+      ],
+      "isLinkStacked": true
+    },
+    {
+      "texts": {
+        "en": "Also Publish on",
+        "zh": "其他发布页面"
+      },
+      "variant": "h4",
+      "align": "center",
+      "links": [
+        [
+          {
+            "en": "MCBBS",
+            "zh": "MCBBS"
+          },
+          "http://www.mcbbs.net/thread-579677-1-1.html",
+          "Cube-outline"
+        ],
+        [
+          {
+            "en": "PlanetMinecraft",
+            "zh": "PlanetMinecraft"
+          },
+          "https://www.planetminecraft.com/texture_pack/9-squares-texture-aka-3x3-texture/",
+          "Earth"
+        ]
+      ]
+    }
+  ]
+}

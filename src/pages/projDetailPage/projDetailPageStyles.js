@@ -36,13 +36,21 @@ export const useStyles = makeStyles((theme) => ({
   friendLink: {
     boxShadow: `0 0 0 0 ${theme.palette.primary.main}`,
     transition: "transform .2s cubic-bezier(.5,0,0,1), box-shadow .2s cubic-bezier(.5,0,0,1) !important",
-    "&:not(:last-child)": {
-      marginRight: ".5rem",
-    },
 
     "&:hover": {
       transform: 'translateY(-.2rem)',
       boxShadow: `0 .4rem 0 0 ${theme.palette.primary.main}`,
     }
   },
+  friendLinkRow: {
+    "&:not(:last-child)": {
+      marginRight: ".5rem",
+    },
+  },
+  friendLinkStacked: {
+    width: "max-content",
+    "&:not(:last-child)": {
+      marginBottom: ".5rem",
+    },
+  }
 }))

@@ -13,8 +13,7 @@
             "zh": "方块概念官网"
           },
           "https://blockpixel.net/",
-          "Web",
-          true
+          "Web"
         ],
         [
           {
@@ -22,8 +21,7 @@
             "zh": "Jakob.zero"
           },
           "https://twitter.com/Jakob_zero",
-          "People",
-          true
+          "People"
         ]
       ]
     },
@@ -50,8 +48,7 @@
             "zh": "下载"
           },
           "/project-files/bpext/BlockPixel_Extend_pbr_1-14_alpha_v2.zip",
-          "Download",
-          true
+          "Download"
         ]
       ],
       "img": "pbr-alphaV2"
@@ -85,8 +82,7 @@
             "zh": "下载 1.14.x 版本"
           },
           "/project-files/bpext/BlockPixel_DLC_ctm_1-14_v0-5.zip",
-          "Download",
-          true
+          "Download"
         ],
         [
           {
@@ -94,8 +90,7 @@
             "zh": "下载 1.12.x 版本"
           },
           "/project-files/bpext/BlockPixel_DLC_ctm_1-12_v0-2.zip",
-          "Download",
-          true
+          "Download"
         ]
       ],
       "img": "ctmGlass",
@@ -127,8 +122,7 @@
             "zh": "下载 1.12.x 版本"
           },
           "/project-files/bpext/BlockPixel_DLC_JEI_1-12-2.zip",
-          "Download",
-          true
+          "Download"
         ]
       ],
       "img": "modjei"
