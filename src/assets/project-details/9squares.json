@@ -22,7 +22,7 @@
     },
     {
       "texts": {
-        "en": "Delicate Palette Chose from Vanilla",
+        "en": "Delicate Palette Chosen from Vanilla",
         "zh": "来自原版精心搭配的色彩"
       },
       "variant": "h4",
@@ -82,8 +82,8 @@
         ],
         [
           {
-            "en": "Java 1.13~1.14.x (290629)",
-            "zh": "Java版1.13~1.14.x (290629)"
+            "en": "Java 1.13~1.14.x (190629)",
+            "zh": "Java版 1.13~1.14.x (190629)"
           },
           "https://github.com/GrakePch/9-SQuares_resourcepack_forMC1.13/releases/download/J.19.06b/9-SQuares_J.19.06b_1_13_1_14.zip",
           "Download"
