@@ -41,7 +41,7 @@ export default function FloatSettings(props) {
       height: isSettingsOpen ? 48 * 3 : 48,
       overflow: "hidden",
       transition: "height .2s cubic-bezier(.5,0,0,1)",
-      zIndex: 99,
+      zIndex: 199,
     }}>
       <CardActionArea
         style={{

@@ -47,7 +47,7 @@ export default function BottomNav(props) {
       width: "100%",
       height: 48,
       padding: "0 1.5rem",
-      zIndex: 99,
+      zIndex: 199,
     }}>
       <div style={{
         position: "relative",

@@ -5,8 +5,11 @@ export const useStyles = makeStyles((theme) => ({
   main: {
     // width: `calc(75vw + 3rem)`,
     // width: "min-content",
+    position: "relative",
     maxWidth: `calc(1440px + 3rem)`,
     margin: "0 auto",
+    zIndex: 100,
+    backgroundColor: theme.palette.background.default,
 
     "@media (max-width: 512px)": {
       width: "100%"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index/index.css";
 import { useStyles } from "./index/indexStyles";
 import { useStylesLogo } from "./index/indexLogoStyles";
@@ -33,6 +33,7 @@ import { projects } from "../assets/projects";
 import noneIcon from "../assets/project-icons/none.svg";
 import { friends } from "../assets/friends";
 import { globalVars } from "./modules/globalVars";
+import { useStylesWelcome } from "./index/indexWelcome";
 
 export default function Index() {
   const history = useHistory();
@@ -43,16 +44,27 @@ export default function Index() {
   const vw = globalVars.vw;
   const vh = globalVars.vh;
   const scrollPosY = useScrollPosition();
+  const [t_hours, setTHours] = useState(0);
+  const [t_mins, setTMins] = useState(0);
 
   const props = {
     vw: vw,
     vh: vh,
     scrollPosY: scrollPosY,
-    logo_size: Math.max(100, Math.min(.2 * vw, .2 * vh)),
+    logo_unit: Math.max(100, Math.min(.2 * vw, .2 * vh)) / 1400,
+    t_hours: t_hours,
+    t_mins: t_mins,
   }
+
+  setTimeout(() => {
+    let date = new Date();
+    setTHours(date.getHours())
+    setTMins(date.getMinutes())
+  }, 500);
 
   const classes = useStyles(props);
   const logoSection = useStylesLogo(props);
+  const welcomeCls = useStylesWelcome(props);
   const theme = useTheme();
 
   const renderProjects = () => {
@@ -192,37 +204,28 @@ export default function Index() {
 
   return (
     <>
-      <div className={logoSection.welcome_screen}>
-        {/* <div className="welcome-logo-container">
-          <div className="welcome-logo"></div>
-          <h1 className="welcome-logo-word">
-            <span className="G">G</span>
-            <span className="r">r</span>
-            <span className="a">a</span>
-            <span className="k">k</span>
-            <span className="e">e</span>
-            PCH
-          </h1>
-        </div> */}
+      <div className={welcomeCls.welcome_screen}>
 
-        <div className={logoSection.logo_main}>
-          <div className={logoSection.logo_line_1}></div>
-          <div className={logoSection.logo_line_2}></div>
-          <div className={logoSection.logo_line_3}></div>
-          <div className={logoSection.logo_line_4}></div>
-          <div className={logoSection.logo_dot}></div>
+        <div className={welcomeCls.logo_bg}></div>
+
+        <div className={welcomeCls.logo_main}>
+          <div className={welcomeCls.logo_line_1}></div>
+          <div className={welcomeCls.logo_line_2}></div>
+          <div className={welcomeCls.logo_line_3}></div>
+          <div className={welcomeCls.logo_line_4}></div>
+          <div className={welcomeCls.logo_dot}></div>
         </div>
 
-        <div className={logoSection.mask_top}></div>
-        <div className={logoSection.mask_right}></div>
-        <div className={logoSection.mask_bottom}></div>
-        <div className={logoSection.mask_left}></div>
+        {/* <div className={welcomeCls.mask_top}></div>
+        <div className={welcomeCls.mask_right}></div>
+        <div className={welcomeCls.mask_bottom}></div>
+        <div className={welcomeCls.mask_left}></div> */}
 
       </div>
 
-      <div className={logoSection.first_page_bg}></div>
+      <div className={welcomeCls.first_page_bg}></div>
 
-      <div className={logoSection.second_page}>
+      <div className={welcomeCls.second_page}>
         <Typography variant="h5" align="left">GrakePCH, a Sol III native who love graphic design and Minecraft contents. Interested in sci-fi stuffs related to space. Currently learning programming and music. Preferred music genres are synthwave, melodic dubstep, & classical. Favourite color is <span style={{ color: theme.palette.primary.main }}>red with a little desaturation</span>.</Typography>
       </div>
 
