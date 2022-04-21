@@ -131,10 +131,10 @@ export const projects = {
       }
     }
   },
-  "music-works": {
+  "midi-works": {
     title: {
-      en: "Music Works",
-      zh: "音乐作品",
+      en: "MIDI Works",
+      zh: "MIDI作品",
     },
     children: {
       "bs-rise": {

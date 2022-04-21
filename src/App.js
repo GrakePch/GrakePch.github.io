@@ -11,6 +11,7 @@ import Index from "./pages/index";
 import ProjCatePage from "./pages/projCatePage";
 import ProjDetailPage from "./pages/projDetailPage";
 import FloatSettings from "./pages/modules/floatSettings";
+import LeftNav from "./pages/modules/leftNav";
 
 // Data
 import { globalVars } from "./pages/modules/globalVars";
@@ -18,6 +19,9 @@ import BottomNav from "./pages/modules/bottomNav";
 import useWindowSize from "./pages/modules/viewportDimensions";
 import NotFound from "./pages/notFound";
 import { Redirect } from "react-router-dom";
+
+// MDI icons
+import { mdiAccountMultipleOutline, mdiArchiveOutline, mdiPageFirst } from "@mdi/js";
 
 
 function App() {
@@ -62,27 +66,53 @@ function App() {
           <Route exact path="/">
             <ScrollToTop />
             <Index />
+            {
+              vw >= 600 ?
+                <LeftNav anchors={anchors_index} showIndicator={true} />
+                :
+                <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_index} showIndicator={true} />
+            }
           </Route>
           <Route exact path="/c/:id">
             <ScrollToTop />
             <ProjCatePage />
+            {
+              vw >= 600 ?
+                <LeftNav anchors={anchors_topBtm} />
+                :
+                <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_topBtm} />
+            }
           </Route>
           <Route exact path="/p/:id">
             <ScrollToTop />
             <ProjDetailPage />
+            {
+              vw >= 600 ?
+                <LeftNav anchors={anchors_topBtm} />
+                :
+                <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_topBtm} />
+            }
           </Route>
           <Route exact path="/bpext">
             <Redirect to="/p/bpext" />
           </Route>
           <Route>
             <NotFound />
+            {
+              vw >= 600 ?
+                <LeftNav anchors={anchors_logoOnly} />
+                :
+                <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_logoOnly} />
+            }
           </Route>
         </Switch>
         {
           vw >= 600 ?
-            <FloatSettings themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
+            <>
+              <FloatSettings themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
+            </>
             :
-            <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
+            null
         }
       </Router>
     </ThemeProvider>
@@ -90,3 +120,44 @@ function App() {
 }
 
 export default App;
+
+const anchors_index = [
+  {
+    label: "Top",
+    icon: "Grake",
+  },
+  {
+    label: "Archived Projects",
+    icon: mdiArchiveOutline,
+    id: "anchor-projects",
+  },
+  {
+    label: "Friends",
+    icon: mdiAccountMultipleOutline,
+    id: "anchor-friends",
+  }
+];
+
+const anchors_topBtm = [
+  {
+    label: "Home",
+    icon: "Grake",
+  },
+  {
+    label: "Top",
+    icon: mdiPageFirst,
+    rotate: 90,
+  },
+  {
+    label: "Footer",
+    icon: mdiPageFirst,
+    rotate: -90,
+  },
+];
+
+const anchors_logoOnly = [
+  {
+    label: "Home",
+    icon: "Grake",
+  }
+];

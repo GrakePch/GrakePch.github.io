@@ -226,16 +226,16 @@ export default function Index() {
       <div className={welcomeCls.first_page_bg}></div>
 
       <div className={welcomeCls.second_page}>
-        <Typography variant="h5" align="left">GrakePCH, a Sol III native who love graphic design and Minecraft contents. Interested in sci-fi stuffs related to space. Currently learning programming and music. Preferred music genres are synthwave, melodic dubstep, & classical. Favourite color is <span style={{ color: theme.palette.primary.main }}>red with a little desaturation</span>.</Typography>
+        <Typography variant="h5" align="left">GrakePCH, a Sol III native who love graphic design and Minecraft contents. Interested in sci-fi stuffs related to space. Currently learning programming and music. Preferred music genres are synthwave, melodic dubstep, & classical.</Typography>
       </div>
 
       <div className={classes.main} id="main">
-        <div className={classes.section_projects}>
+        <div className={classes.section_projects} id="anchor-projects">
           <div>
             {renderProjects()}
           </div>
         </div>
-        <div className={classes.section_friends}>
+        <div className={classes.section_friends} id="anchor-friends">
           <div>
             {renderFriends()}
           </div>
