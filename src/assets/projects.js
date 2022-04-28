@@ -122,9 +122,8 @@ export const projects = {
           en: "GZTime Logo",
           zh: "GZTime 标志"
         },
-        date: [2019, 6],
+        date: [2021, 1],
         cover: images["gztime"],
-        coverHalfSized: true,
         intro: {
           en: "A series of logo designed for my friend GZTime.",
           zh: "为好友 GZTime 设计的标志系列。"
@@ -200,7 +199,8 @@ export const projects = {
           zh: "Will&AlexDrones 标志"
         },
         date: [2018, 3],
-        cover: images["will_and_alex_drones"],
+        cover: images["will_and_alex_drones_multicolor"],
+        coverHalfSized: true,
       },
       "genres-logo": {
         title: {
