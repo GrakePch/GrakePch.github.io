@@ -80,10 +80,10 @@ export default function Index() {
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
+          <CardActions style={{ overflowX: "auto" }}>
             {projInThisCategory.map(key => (
               <Button
-                style={{ padding: 0 }}
+                style={{ padding: 0, flexShrink: 0 }}
                 className={classes.cardsActionBtn}
                 key={key}
                 onClick={() => routeChange(`/p/${key}`)}

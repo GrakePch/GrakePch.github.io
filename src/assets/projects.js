@@ -117,17 +117,99 @@ export const projects = {
       zh: "平面设计"
     },
     children: {
-      "gztime": {
+      "gztime-logo": {
         title: {
-          en: "GZTime logo",
+          en: "GZTime Logo",
           zh: "GZTime 标志"
         },
         date: [2019, 6],
         cover: images["gztime"],
+        coverHalfSized: true,
         intro: {
           en: "A series of logo designed for my friend GZTime.",
-          zh: "为好友GZTime设计的标志系列"
+          zh: "为好友 GZTime 设计的标志系列。"
         }
+      },
+      "bmap-icon": {
+        title: {
+          en: "Bmap App Icon",
+          zh: "Bmap 应用图标"
+        },
+        date: [2019, 7],
+        cover: images["bmap"],
+        coverHalfSized: true,
+        intro: {
+          en: "An app icon designed for Bmap.",
+          zh: "为 Bmap 设计的应用图标。"
+        }
+      },
+      "eaxt-logo": {
+        title: {
+          en: "Eaxt Logo",
+          zh: "Eaxt 标志"
+        },
+        date: [2017, 1],
+        cover: images["eaxt"],
+        coverHalfSized: true,
+      },
+      "ethan-logo": {
+        title: {
+          en: "Ethan Logo",
+          zh: "Ethan 标志"
+        },
+        date: [2018, 9],
+        cover: images["ethan-logo-title"],
+        intro: {
+          en: "A logo designed for my friend Ethan.",
+          zh: "为好友 Ethan 设计的标志。"
+        }
+      },
+      "fragmem-icon": {
+        title: {
+          en: "FragMem App Icon",
+          zh: "碎记 应用图标"
+        },
+        date: [2018, 9],
+        cover: images["fragmem"],
+        coverHalfSized: true,
+        intro: {
+          en: "An app icon designed for FragMem.",
+          zh: "为 碎记 设计的应用图标。"
+        }
+      },
+      "guzhi-studio-logo": {
+        title: {
+          en: "GuZhi Studio Logo",
+          zh: "崮郅工作室标志"
+        },
+        date: [2017, 2],
+        cover: images["guzhi_studio"],
+      },
+      "mere-news-icon": {
+        title: {
+          en: "Mere News App Icon",
+          zh: "Mere 新闻 应用图标"
+        },
+        date: [2019, 7],
+        cover: images["mere_news"],
+        coverHalfSized: true,
+      },
+      "will-and-alex-drones-logo": {
+        title: {
+          en: "Will&AlexDrones Logo",
+          zh: "Will&AlexDrones 标志"
+        },
+        date: [2018, 3],
+        cover: images["will_and_alex_drones"],
+      },
+      "genres-logo": {
+        title: {
+          en: "Genres Website Logo",
+          zh: "Genres 网站标志"
+        },
+        date: [2021, 12],
+        cover: images["genres_light"],
+        coverHalfSized: true,
       }
     }
   },
@@ -145,7 +227,7 @@ export const projects = {
         date: [2020, 8],
         icon: icons["bs-shield-op-rise"],
       },
-      "wave_partical": {
+      "wave-partical": {
         title: {
           en: "Improvisation: Wave-particle",
           zh: "即兴作：波粒二象性",
@@ -163,13 +245,13 @@ export const projects = {
       }
     }
   },
-  "misc": {
+  "short-film": {
     title: {
-      en: "Miscellaneous",
-      zh: "杂项"
+      en: "Short Film",
+      zh: "微电影"
     },
     children: {
-      "carrack_exodus": {
+      "carrack-exodus": {
         title: {
           en: "Carrack: Exodus",
           zh: "克拉克：离家"
