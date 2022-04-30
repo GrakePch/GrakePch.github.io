@@ -1,0 +1,78 @@
+{
+  "contents": [
+    {
+      "texts": {
+        "en": "The logo was designed for friend GZTime in July 2017. The design was inspired by Material Design 2014, using flat-design-style shadows to indicate a sense of depth, while big chunks of color improve the interestingness of the logo.\nIn the visual center is a reshaped letter T, representing the initial letter of Time in the name GZTime. The hard hexagonal shape builds a sense of technology and tidiness. In response to GZTime's preference, the palette was chosen to be blue-toned.",
+        "zh": "为好友 GZTime 于2017年7月设计完成的标志。此设计受 Material Design 2014 启发，采用扁平化的投影体现层次感，以及大面积的色块使整体更有趣味性。\n视觉中心主要的元素是一个变形的字母 T ，代表 GZTime 中 Time 的首字母。硬朗的六边形的外形制造一种科技感与规则感。应 GZTime 喜好选用了浅蓝色作为主色调。"
+      },
+      "img": "gztime_2017",
+      "links": [
+        [
+          {
+            "en": "GZTime's Website",
+            "zh": "GZTime 个人网站"
+          },
+          "https://blog.gztime.cc/",
+          "Web"
+        ],
+        [
+          {
+            "en": "Material Design Official Site",
+            "zh": "Material Design 官方网站"
+          },
+          "https://material.io/",
+          "Material-Design"
+        ]
+      ],
+      "isLinkStacked": true
+    },
+    {
+      "texts": {
+        "en": "The red version of the logo is in the same series as the blue one above, being used in a different situation.\n(Usually used as a celebration of the Spring Festival)",
+        "zh": "红色版本的标志与上面的蓝色版本属于同一系列，使用于不同场合。\n（通常是庆祝新年什么的）"
+      },
+      "img": "gztime_2017_alt",
+      "imgPositionLeft": true
+    },
+    {
+      "texts": {
+        "en": "In June 2019, a big update was made for GZTime's logo. The design was inspired by Fluent Design. The hexagonal shape from the previous version is transformed into a rounded-cornered, Mobius-band-shaped ribbon. The center element T is kept but becomes translucent which is like acrylic material. Moreover, the tilt of T is changed so that some right part of T is hidden behind the ribbon, adding a sense of the third dimension of the logo.",
+        "zh": "2019年6月对 GZTime 的标志进行了一次较大的更新。此设计受 Fluent Design 启发。原本六边形的外形发生了一定的形变，转角部分更加圆润，变成了莫比乌斯环形的缎带。中心元素 T 依旧保留，增加了一定的透明度使其具有类似亚克力的质感，并且调整了倾斜角度，使右端被缎带遮挡，这样的设计让标志更有立体感。"
+      },
+      "img": "gztime_2019",
+      "links": [
+        [
+          {
+            "en": "Fluent Design Official Site",
+            "zh": "Fluent Design 官方网站"
+          },
+          "https://developer.microsoft.com/fluentui",
+          "Microsoft"
+        ]
+      ]
+    },
+    {
+      "texts": {
+        "en": "Same as before, the red version of the logo is in the same series as the blue one above, being used in a different situation.",
+        "zh": "一如既往，红色版本的标志与上面的蓝色版本属于同一系列，使用于不同场合。"
+      },
+      "img": "gztime_2019_alt",
+      "imgPositionLeft": true
+    },
+    {
+      "texts": {
+        "en": "In Jan 2021, a new iteration of GZTime's logo was released. The shape is inherited from the design in 2019 which is the letter T with Mobius ribbon around, but gets further flattened. The shadow is removed, and the color palette is simplified. Compared to the previous one, the design is more readable in small size and more convenient for color substitution.",
+        "zh": "2021年1月再次对 GZTime 的标志进行了一次迭代。整体形态继承了2019版的莫比乌斯缎带环绕字母 T 的设计，但是进一步扁平化，去除了投影效果，色彩也进行了简化处理，相比过去的设计在小尺寸场景辨识度更高，也更便于有需要的进行色彩替换。"
+      },
+      "img": "gztime_2021"
+    },
+    {
+      "texts": {
+        "en": "In the dark-color background, use the white Mobius ribbon to improve readability.\n(Why not show the red version of the logo? Because the color theme of the current version can be changed unlimitedly.)",
+        "zh": "在暗色背景下，使用白色莫比乌斯环带以提升辨识度。\n（为什么没展示红色版本？因为现在这个标志可以更加随心地选择主色调了）"
+      },
+      "img": "gztime_2021_alt",
+      "imgPositionLeft": true
+    }
+  ]
+}

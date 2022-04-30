@@ -138,7 +138,7 @@ export default function ProjDetailPage(props) {
                     vw >= 768 ?
                       item.imgPositionLeft ?
                         <>
-                          <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginRight: "2rem" }} />
+                          <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginRight: "2rem", backgroundColor: item.imgBgColor ? item.imgBgColor : "auto" }} />
                           <div style={{ flexGrow: 1 }}>
                             {renderText(item)}
                             {renderLinks(item.links, item.isLinkStacked)}
@@ -150,11 +150,11 @@ export default function ProjDetailPage(props) {
                             {renderText(item)}
                             {renderLinks(item.links, item.isLinkStacked)}
                           </div>
-                          <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginLeft: "2rem" }} />
+                          <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginLeft: "2rem", backgroundColor: item.imgBgColor ? item.imgBgColor : "auto" }} />
                         </>
                       :
                       <>
-                        <img src={images[item.img]} alt={item.img} width="100%" style={{ marginBottom: "2rem" }} />
+                        <img src={images[item.img]} alt={item.img} width="100%" style={{ marginBottom: "2rem", backgroundColor: item.imgBgColor ? item.imgBgColor : "auto" }} />
                         <div style={{ flexGrow: 1 }}>
                           {renderText(item)}
                           {renderLinks(item.links, item.isLinkStacked)}
@@ -168,7 +168,7 @@ export default function ProjDetailPage(props) {
                   :
                   item.img ?
                     <div style={{ flexGrow: 1 }}>
-                      <img src={images[item.img]} alt={item.img} style={{ width: "100%" }} />
+                      <img src={images[item.img]} alt={item.img} style={{ width: "100%", backgroundColor: item.imgBgColor ? item.imgBgColor : "auto" }} />
                       {renderLinks(item.links, item.isLinkStacked)}
                     </div>
                     :

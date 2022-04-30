@@ -136,7 +136,7 @@ export const projects = {
         },
         date: [2019, 7],
         cover: images["bmap"],
-        coverHalfSized: true,
+        coverSize: "35%",
         intro: {
           en: "An app icon designed for Bmap.",
           zh: "为 Bmap 设计的应用图标。"
@@ -149,7 +149,7 @@ export const projects = {
         },
         date: [2017, 1],
         cover: images["eaxt"],
-        coverHalfSized: true,
+        coverSize: "50%",
       },
       "ethan-logo": {
         title: {
@@ -170,7 +170,7 @@ export const projects = {
         },
         date: [2018, 9],
         cover: images["fragmem"],
-        coverHalfSized: true,
+        coverSize: "40%",
         intro: {
           en: "An app icon designed for FragMem.",
           zh: "为 碎记 设计的应用图标。"
@@ -191,16 +191,16 @@ export const projects = {
         },
         date: [2019, 7],
         cover: images["mere_news"],
-        coverHalfSized: true,
+        coverSize: "50%",
       },
       "will-and-alex-drones-logo": {
         title: {
-          en: "Will&AlexDrones Logo",
-          zh: "Will&AlexDrones 标志"
+          en: "Will&Alex Drones Logo",
+          zh: "Will&Alex Drones 标志"
         },
         date: [2018, 3],
         cover: images["will_and_alex_drones_multicolor"],
-        coverHalfSized: true,
+        coverSize: "50%",
       },
       "genres-logo": {
         title: {
@@ -208,8 +208,12 @@ export const projects = {
           zh: "Genres 网站标志"
         },
         date: [2021, 12],
-        cover: images["genres_light"],
-        coverHalfSized: true,
+        cover: images["genres_with_title"],
+        coverSize: "70%",
+        intro: {
+          en: "A logo designed for Genres Website - a student startup project aiming to build a web novel community for both writer and reader.",
+          zh: "为 Genres 网站设计的logo。Genres是一个学生创业项目，致力于打造服务于作者与读者的在线网络小说社区。"
+        }
       }
     }
   },

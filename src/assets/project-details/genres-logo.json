@@ -1,0 +1,32 @@
+{
+  "contents": [
+    {
+      "img": "genres_comparison_alt"
+    },
+    {
+      "texts": {
+        "en": "A logo designed for Genres Website - a student startup project aiming to build a web novel community for both writer and reader. The logo is an improved version of a previous Genres logo which is not created by me. The update made by me is to change the color palette to a brighter and lively flavor, reshape the main logo, and switch to a rounded font.",
+        "zh": "为 Genres 网站设计的标志。Genres 是一个学生创业项目，致力于打造服务于作者与读者的在线网络小说社区。此标志基于他人制作的旧版 Genres 标志改进。我改进的部分包含使用更明亮、更生动的色彩搭配，调整主要元素的形状，以及更换成更加圆润的字体。"
+      }
+    },
+    {
+      "img": "genres_light_dark"
+    },
+    {
+      "texts": {
+        "en": "The light version and dark version of the logo",
+        "zh": "亮色版本和暗色版本的标志"
+      },
+      "align": "center"
+    },
+    {
+      "texts": {
+        "en": "The logo without texts",
+        "zh": "无文字的标志"
+      },
+      "align": "center",
+      "img": "genres_light",
+      "imgBgColor": "#fff"
+    }
+  ]
+}

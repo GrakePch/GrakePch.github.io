@@ -61,7 +61,7 @@ export default function ProjCatePage(props) {
                   className={classes.cardMedia}
                   style={{
                     backgroundImage: `url(${projects[id].children[key].cover})`,
-                    backgroundSize: projects[id].children[key].coverHalfSized? "50%" : "cover",
+                    backgroundSize: projects[id].children[key].coverSize? projects[id].children[key].coverSize : "cover",
                     backgroundColor: "#fff"
                   }}
                 />
