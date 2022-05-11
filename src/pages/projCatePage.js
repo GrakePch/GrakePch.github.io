@@ -93,8 +93,7 @@ export default function ProjCatePage(props) {
                           {projects[id].children[key].intro[globalVars.langList[globalVars.langId]]}
                         </Typography>
                         :
-                        <>
-                        </>
+                        null
                     }
                   </div>
                 </CardContent>

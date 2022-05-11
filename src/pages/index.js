@@ -34,6 +34,7 @@ import noneIcon from "../assets/project-icons/none.svg";
 import { friends } from "../assets/friends";
 import { globalVars } from "./modules/globalVars";
 import { useStylesWelcome } from "./index/indexWelcome";
+import ProjCateShowcase from "./modules/projCateShowcase";
 
 export default function Index() {
   const history = useHistory();
@@ -67,9 +68,12 @@ export default function Index() {
   const welcomeCls = useStylesWelcome(props);
   const theme = useTheme();
 
+  const showProjectList = ["twisty-puzzle-design", "midi-works", "short-film"];
+
   const renderProjects = () => {
     let eleProjects = [];
-    for (let k in projects) {
+    for (let i in showProjectList) {
+      let k = showProjectList[i];
       let projInThisCategory = Object.keys(projects[k].children)
       eleProjects.push(
         <Card className={classes.cards} key={k}>
@@ -231,7 +235,18 @@ export default function Index() {
 
       <div className={classes.main} id="main">
         <div className={classes.section_projects} id="anchor-projects">
-          <div>
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+          }}>
+            <ProjCateShowcase projCateId="minecraft-contents" margin="1.5rem" />
+            <ProjCateShowcase projCateId="graphic-design" margin="1.5rem" />
+          </div>
+          <div style={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+          }}>
             {renderProjects()}
           </div>
         </div>

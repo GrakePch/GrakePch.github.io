@@ -22,11 +22,6 @@ export const useStyles = makeStyles((theme) => ({
     margin: "0 auto",
     width: `calc((448px + 3rem) * 3)`, // 3 in a row
 
-    "& > div": {
-      display: "flex",
-      flexDirection: "row",
-      flexWrap: "wrap",
-    },
     "@media (max-width: 1584px)": { // 2 in a row
       width: `calc((448px + 3rem) * 2)`,
     },
