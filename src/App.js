@@ -66,31 +66,25 @@ function App() {
           <Route exact path="/">
             <ScrollToTop />
             <Index />
-            {
-              vw >= 600 ?
-                <LeftNav anchors={anchors_index} showIndicator={true} />
-                :
-                <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_index} showIndicator={true} />
+            {vw >= 600
+              ? <LeftNav anchors={anchors_index} showIndicator={true} />
+              : <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_index} showIndicator={true} />
             }
           </Route>
           <Route exact path="/c/:id">
             <ScrollToTop />
             <ProjCatePage />
-            {
-              vw >= 600 ?
-                <LeftNav anchors={anchors_topBtm} />
-                :
-                <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_topBtm} />
+            {vw >= 600
+              ? <LeftNav anchors={anchors_topBtm} />
+              : <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_topBtm} />
             }
           </Route>
           <Route exact path="/p/:id">
             <ScrollToTop />
             <ProjDetailPage />
-            {
-              vw >= 600 ?
-                <LeftNav anchors={anchors_topBtm} />
-                :
-                <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_topBtm} />
+            {vw >= 600
+              ? <LeftNav anchors={anchors_topBtm} />
+              : <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_topBtm} />
             }
           </Route>
           <Route exact path="/bpext">
@@ -98,21 +92,15 @@ function App() {
           </Route>
           <Route>
             <NotFound />
-            {
-              vw >= 600 ?
-                <LeftNav anchors={anchors_logoOnly} />
-                :
-                <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_logoOnly} />
+            {vw >= 600
+              ? <LeftNav anchors={anchors_logoOnly} />
+              : <BottomNav themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} anchors={anchors_logoOnly} />
             }
           </Route>
         </Switch>
-        {
-          vw >= 600 ?
-            <>
-              <FloatSettings themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
-            </>
-            :
-            null
+        {vw >= 600
+          ? <FloatSettings themeToggle={themeToggle} setTheme={setTheme} langToggle={langIdToggle} setLang={setLangId} />
+          : null
         }
       </Router>
     </ThemeProvider>
