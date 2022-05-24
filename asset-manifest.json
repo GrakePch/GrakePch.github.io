@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.8d1f1567.chunk.css",
-    "main.js": "/static/js/main.393b61fd.chunk.js",
-    "main.js.map": "/static/js/main.393b61fd.chunk.js.map",
+    "main.css": "/static/css/main.fe26baf1.chunk.css",
+    "main.js": "/static/js/main.89f12c03.chunk.js",
+    "main.js.map": "/static/js/main.89f12c03.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.1fdd1a18.js",
     "runtime-main.js.map": "/static/js/runtime-main.1fdd1a18.js.map",
-    "static/js/2.934881db.chunk.js": "/static/js/2.934881db.chunk.js",
-    "static/js/2.934881db.chunk.js.map": "/static/js/2.934881db.chunk.js.map",
+    "static/js/2.0322bb97.chunk.js": "/static/js/2.0322bb97.chunk.js",
+    "static/js/2.0322bb97.chunk.js.map": "/static/js/2.0322bb97.chunk.js.map",
     "static/js/3.862ab602.chunk.js": "/static/js/3.862ab602.chunk.js",
     "static/js/3.862ab602.chunk.js.map": "/static/js/3.862ab602.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.8d1f1567.chunk.css.map": "/static/css/main.8d1f1567.chunk.css.map",
-    "static/js/2.934881db.chunk.js.LICENSE.txt": "/static/js/2.934881db.chunk.js.LICENSE.txt",
+    "static/css/main.fe26baf1.chunk.css.map": "/static/css/main.fe26baf1.chunk.css.map",
+    "static/js/2.0322bb97.chunk.js.LICENSE.txt": "/static/js/2.0322bb97.chunk.js.LICENSE.txt",
     "static/media/9S-models.png": "/static/media/9S-models.76f0307f.png",
     "static/media/9S-screenshot1_alt1.png": "/static/media/9S-screenshot1_alt1.9a711c65.png",
     "static/media/9S-screenshot2_alt1.png": "/static/media/9S-screenshot2_alt1.48dd6107.png",
@@ -19,7 +19,7 @@
     "static/media/9squares.svg": "/static/media/9squares.57dd1df9.svg",
     "static/media/9squares.png": "/static/media/9squares.81b2590d.png",
     "static/media/GKP-2111-black.2c0a47a2.svg": "/static/media/GKP-2111-black.2c0a47a2.svg",
-    "static/media/index.css": "/static/media/GKP-2111.372ff579.svg",
+    "static/media/index.css": "/static/media/Geometos.f643a91a.ttf",
     "static/media/Originuim.svg": "/static/media/Originuim.e6e8dd95.svg",
     "static/media/Orundum.svg": "/static/media/Orundum.2bc24810.svg",
     "static/media/bandaged333.JPG": "/static/media/bandaged333.11e3194c.JPG",
@@ -98,8 +98,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.1fdd1a18.js",
-    "static/js/2.934881db.chunk.js",
-    "static/css/main.8d1f1567.chunk.css",
-    "static/js/main.393b61fd.chunk.js"
+    "static/js/2.0322bb97.chunk.js",
+    "static/css/main.fe26baf1.chunk.css",
+    "static/js/main.89f12c03.chunk.js"
   ]
 }
