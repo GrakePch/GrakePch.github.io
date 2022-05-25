@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.fe26baf1.chunk.css",
-    "main.js": "/static/js/main.a2b30af0.chunk.js",
-    "main.js.map": "/static/js/main.a2b30af0.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.5c0ab9c4.js",
-    "runtime-main.js.map": "/static/js/runtime-main.5c0ab9c4.js.map",
-    "static/js/2.4e06e8fe.chunk.js": "/static/js/2.4e06e8fe.chunk.js",
-    "static/js/2.4e06e8fe.chunk.js.map": "/static/js/2.4e06e8fe.chunk.js.map",
-    "static/js/3.ff90dfb0.chunk.js": "/static/js/3.ff90dfb0.chunk.js",
-    "static/js/3.ff90dfb0.chunk.js.map": "/static/js/3.ff90dfb0.chunk.js.map",
+    "main.js": "/static/js/main.a2ba94d3.chunk.js",
+    "main.js.map": "/static/js/main.a2ba94d3.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bac541fb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bac541fb.js.map",
+    "static/js/2.9c1dba27.chunk.js": "/static/js/2.9c1dba27.chunk.js",
+    "static/js/2.9c1dba27.chunk.js.map": "/static/js/2.9c1dba27.chunk.js.map",
+    "static/js/3.6977f6cf.chunk.js": "/static/js/3.6977f6cf.chunk.js",
+    "static/js/3.6977f6cf.chunk.js.map": "/static/js/3.6977f6cf.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.fe26baf1.chunk.css.map": "/static/css/main.fe26baf1.chunk.css.map",
-    "static/js/2.4e06e8fe.chunk.js.LICENSE.txt": "/static/js/2.4e06e8fe.chunk.js.LICENSE.txt",
+    "static/js/2.9c1dba27.chunk.js.LICENSE.txt": "/static/js/2.9c1dba27.chunk.js.LICENSE.txt",
     "static/media/9S-models.png": "/static/media/9S-models.76f0307f.png",
     "static/media/9S-screenshot1_alt1.png": "/static/media/9S-screenshot1_alt1.9a711c65.png",
     "static/media/9S-screenshot2_alt1.png": "/static/media/9S-screenshot2_alt1.48dd6107.png",
@@ -60,6 +60,7 @@
     "static/media/fragmem-icon.svg": "/static/media/fragmem-icon.3e24c386.svg",
     "static/media/fragmem.png": "/static/media/fragmem.a9c624ac.png",
     "static/media/fragmem_circle.png": "/static/media/fragmem_circle.166699e4.png",
+    "static/media/ftb2.png": "/static/media/ftb2.83c1a7e9.png",
     "static/media/genres-logo.svg": "/static/media/genres-logo.0d26ba68.svg",
     "static/media/genres_comparison.png": "/static/media/genres_comparison.fc55d58c.png",
     "static/media/genres_comparison_alt.png": "/static/media/genres_comparison_alt.4bf69bf5.png",
@@ -107,9 +108,9 @@
     "static/media/will_wu_1024x1024.f3fbca8e.png": "/static/media/will_wu_1024x1024.f3fbca8e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.5c0ab9c4.js",
-    "static/js/2.4e06e8fe.chunk.js",
+    "static/js/runtime-main.bac541fb.js",
+    "static/js/2.9c1dba27.chunk.js",
     "static/css/main.fe26baf1.chunk.css",
-    "static/js/main.a2b30af0.chunk.js"
+    "static/js/main.a2ba94d3.chunk.js"
   ]
 }
