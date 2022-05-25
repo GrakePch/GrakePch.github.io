@@ -32,7 +32,7 @@ export const projects = {
   "minecraft-contents": {
     title: {
       en: "Minecraft Contents",
-      zh: "Minecraft作品"
+      zh: "Minecraft 作品"
     },
     children: {
       "bpext": {
@@ -123,6 +123,7 @@ export const projects = {
           zh: "GZTime 标志"
         },
         date: [2021, 1],
+        icon: icons["gztime-logo"],
         cover: images["gztime"],
         intro: {
           en: "A series of logo designed for my friend GZTime.",
@@ -135,11 +136,12 @@ export const projects = {
           zh: "Bmap 应用图标"
         },
         date: [2019, 7],
+        icon: icons["bmap-icon"],
         cover: images["bmap"],
         coverSize: "35%",
         intro: {
-          en: "An app icon designed for Bmap.",
-          zh: "为 Bmap 设计的应用图标。"
+          en: "An app icon designed for a map application named Bmap.",
+          zh: "为地图应用 Bmap 设计的应用图标。"
         }
       },
       "eaxt-logo": {
@@ -148,8 +150,13 @@ export const projects = {
           zh: "Eaxt 标志"
         },
         date: [2017, 1],
-        cover: images["eaxt"],
-        coverSize: "50%",
+        icon: icons["eaxt-logo"],
+        cover: images["eaxt-new"],
+        coverSize: "75%",
+        intro: {
+          en: "The app icon/logo is designed for a student project in my high school. ",
+          zh: "为高中时期的一个学生项目设计的应用图标/标志。"
+        }
       },
       "ethan-logo": {
         title: {
@@ -157,6 +164,7 @@ export const projects = {
           zh: "Ethan 标志"
         },
         date: [2018, 9],
+        icon: icons["ethan-logo"],
         cover: images["ethan-logo-title"],
         intro: {
           en: "A logo designed for my friend Ethan.",
@@ -169,11 +177,12 @@ export const projects = {
           zh: "碎记 应用图标"
         },
         date: [2018, 9],
+        icon: icons["fragmem-icon"],
         cover: images["fragmem"],
         coverSize: "40%",
         intro: {
-          en: "An app icon designed for FragMem.",
-          zh: "为 碎记 设计的应用图标。"
+          en: "An app icon designed for a learning assistance application named FragMem.",
+          zh: "为学习辅助应用 碎记 设计的应用图标。"
         }
       },
       "guzhi-studio-logo": {
@@ -182,7 +191,12 @@ export const projects = {
           zh: "崮郅工作室标志"
         },
         date: [2017, 2],
+        icon: icons["guzhi-studio-logo"],
         cover: images["guzhi_studio"],
+        intro: {
+          en: "A logo designed for my friend GZTime, used for his studio named GuZhi（崮郅）.",
+          zh: "为好友 GZTime 的工作室“崮郅”设计的标志。"
+        }
       },
       "mere-news-icon": {
         title: {
@@ -190,8 +204,13 @@ export const projects = {
           zh: "Mere 新闻 应用图标"
         },
         date: [2019, 7],
+        icon: icons["mere-news-icon"],
         cover: images["mere_news"],
         coverSize: "50%",
+        intro: {
+          en: "An app icon designed for a newsletter application named Mere News.",
+          zh: "为新闻应用 Mere新闻 设计的应用图标。"
+        }
       },
       "will-and-alex-drones-logo": {
         title: {
@@ -199,8 +218,13 @@ export const projects = {
           zh: "Will&Alex Drones 标志"
         },
         date: [2018, 3],
+        icon: icons["will-and-alex-drones-logo"],
         cover: images["will_and_alex_drones_multicolor"],
         coverSize: "50%",
+        intro: {
+          en: "A logo designed for my friend Will Wu, used for an Instagram account publishing media related to drone designing.",
+          zh: "为好友 Will Wu 设计的Instagram账号标志。"
+        }
       },
       "genres-logo": {
         title: {
@@ -208,11 +232,12 @@ export const projects = {
           zh: "Genres 网站标志"
         },
         date: [2021, 12],
+        icon: icons["genres-logo"],
         cover: images["genres_with_title"],
         coverSize: "70%",
         intro: {
           en: "A logo designed for Genres Website - a student startup project aiming to build a web novel community for both writer and reader.",
-          zh: "为 Genres 网站设计的logo。Genres是一个学生创业项目，致力于打造服务于作者与读者的在线网络小说社区。"
+          zh: "为 Genres 网站设计的标志。Genres 是一个学生创业项目，致力于打造服务于作者与读者的在线网络小说社区。"
         }
       }
     }
@@ -220,7 +245,7 @@ export const projects = {
   "midi-works": {
     title: {
       en: "MIDI Works",
-      zh: "MIDI作品",
+      zh: "MIDI 作品",
     },
     children: {
       "bs-rise": {

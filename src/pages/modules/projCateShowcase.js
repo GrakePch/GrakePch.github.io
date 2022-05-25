@@ -42,46 +42,53 @@ export default function ProjCateShowcase(props) {
         overflowX: "scroll",
         overflowY: "hidden",
       }}>
-        {keysInThisProjCate.map((key, index) => (
-          <div style={{
-            position: "relative",
-            marginLeft: index > 0 ? ".5rem" : 0,
-          }}>
-            <CardActionArea
-              key={key}
-              onClick={() => history.push(`/p/${key}`)}
-              onMouseEnter={() => setPreviewProjIndex(index)}
-              style={{
-                width: "max-content",
-                transform: keysInThisProjCate[previewProjIndex] == key ? "translateY(-0.3rem)" : null,
-                transition: "transform .2s cubic-bezier(0.18, 0.89, 0.32, 1.28)",
-              }}>
+        {keysInThisProjCate.sort((a, b) =>
+          ((thisProjCate.children[b].date ? thisProjCate.children[b].date[0] : 0)
+            -
+            (thisProjCate.children[a].date ? thisProjCate.children[a].date[0] : 0)) * 100
+          +
+          ((thisProjCate.children[b].date ? thisProjCate.children[b].date[1] : 0)
+            -
+            (thisProjCate.children[a].date ? thisProjCate.children[a].date[1] : 0))).map((key, index) => (
               <div style={{
-                width: 80,
-                height: 80,
-                backgroundImage: `url(${thisProjCate.children[key].icon
-                  ? thisProjCate.children[key].icon
-                  : noneIcon
-                  })`,
-                backgroundSize: 60,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                filter: !globalVars.isThemeLight ? "none" : "invert(1)"
-              }}></div>
-            </CardActionArea>
-            <div style={{
-              position: "absolute",
-              width: 25,
-              height: 25,
-              transform: `translate(-50%, 100%) scale(1, ${keysInThisProjCate[previewProjIndex] == key ? 1 : 0}) rotate(45deg)`,
-              transformOrigin: "center",
-              bottom: 0,
-              left: "50%",
-              backgroundColor: theme.palette.background.paper,
-              transition: "all .2s cubic-bezier(0.18, 0.89, 0.32, 1.28)",
-            }}></div>
-          </div>
-        ))}
+                position: "relative",
+                marginLeft: index > 0 ? ".5rem" : 0,
+              }}>
+                <CardActionArea
+                  key={key}
+                  onClick={() => history.push(`/p/${key}`)}
+                  onMouseEnter={() => setPreviewProjIndex(index)}
+                  style={{
+                    width: "max-content",
+                    transform: keysInThisProjCate[previewProjIndex] == key ? "translateY(-0.3rem)" : null,
+                    transition: "transform .2s cubic-bezier(0.18, 0.89, 0.32, 1.28)",
+                  }}>
+                  <div style={{
+                    width: 80,
+                    height: 80,
+                    backgroundImage: `url(${thisProjCate.children[key].icon
+                      ? thisProjCate.children[key].icon
+                      : noneIcon
+                      })`,
+                    backgroundSize: 60,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    filter: !globalVars.isThemeLight ? "none" : "invert(1)"
+                  }}></div>
+                </CardActionArea>
+                <div style={{
+                  position: "absolute",
+                  width: 25,
+                  height: 25,
+                  transform: `translate(-50%, 100%) scale(1, ${keysInThisProjCate[previewProjIndex] == key ? 1 : 0}) rotate(45deg)`,
+                  transformOrigin: "center",
+                  bottom: 0,
+                  left: "50%",
+                  backgroundColor: theme.palette.background.paper,
+                  transition: "all .2s cubic-bezier(0.18, 0.89, 0.32, 1.28)",
+                }}></div>
+              </div>
+            ))}
       </div>
       <div style={{
         display: "flex",
@@ -104,43 +111,105 @@ export default function ProjCateShowcase(props) {
           backgroundPosition: "center",
         }}></div>
         <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
-          <Typography variant="h4">
+          {
+            globalVars.vw > 1088
+              ?
+              <div style={{ position: "relative", marginBottom: "1rem" }}>
+                <Typography variant={globalVars.vw > 1584 ? "h1" : "h2"} style={{ lineHeight: 1 }}>
+                  {thisProjCate.children[keysInThisProjCate[previewProjIndex]].date
+                    ? thisProjCate.children[keysInThisProjCate[previewProjIndex]].date[0]
+                    : "2XXX"}
+                </Typography>
+                <Typography variant={globalVars.vw > 1584 ? "h1" : "h2"} align="right" style={{ lineHeight: 1 }}>
+                  {thisProjCate.children[keysInThisProjCate[previewProjIndex]].date
+                    ? thisProjCate.children[keysInThisProjCate[previewProjIndex]].date[1]
+                    : "X"}
+                </Typography>
+                <div style={{
+                  position: "absolute",
+                  right: 0,
+                  top: 0,
+                  width: 2,
+                  height: "120%",
+                  backgroundColor: theme.palette.text.primary,
+                  transformOrigin: "top",
+                  transform: "rotate(45deg)",
+                  marginTop: "5%"
+                }}></div>
+              </div>
+              :
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "end", marginBottom: "1rem" }}>
+
+                <IconButton
+                  color="inherit"
+                  size="small"
+                  style={{ borderWidth: 1, borderStyle: "solid", borderColor: theme.palette.background.invert + "80", marginRight: "1rem" }}
+                  onClick={() => setPreviewProjIndex((previewProjIndex - 1 + keysInThisProjCate.length) % keysInThisProjCate.length)}
+                ><ChevronLeft /></IconButton>
+                <IconButton
+                  color="inherit"
+                  size="small"
+                  style={{ borderWidth: 1, borderStyle: "solid", borderColor: theme.palette.background.invert + "80" }}
+                  onClick={() => setPreviewProjIndex((previewProjIndex + 1) % keysInThisProjCate.length)}
+                ><ChevronRight /></IconButton>
+                <div style={{ flexGrow: 1 }}></div>
+
+                <Typography variant="h4" style={{ lineHeight: 1, fontWeight: 200 }}>
+                  {thisProjCate.children[keysInThisProjCate[previewProjIndex]].date
+                    ? thisProjCate.children[keysInThisProjCate[previewProjIndex]].date[0]
+                    : "2XXX"}
+                </Typography>
+                <div style={{ position: "relative", width: "2rem", aspectRatio: "1 / 1" }}>
+                  <div style={{
+                    position: "absolute",
+                    right: 0,
+                    top: 0,
+                    width: 2,
+                    height: "120%",
+                    backgroundColor: theme.palette.text.primary,
+                    transformOrigin: "top",
+                    transform: "rotate(45deg)",
+                    marginTop: "5%",
+                    marginRight: "3%"
+                  }}></div>
+                </div>
+                <Typography variant="h4" align="right" style={{ lineHeight: 1, fontWeight: 200 }}>
+                  {thisProjCate.children[keysInThisProjCate[previewProjIndex]].date
+                    ? thisProjCate.children[keysInThisProjCate[previewProjIndex]].date[1]
+                    : "X"}
+                </Typography>
+              </div>
+          }
+          <Typography variant="h4" style={{marginBottom: ".5rem"}}>
             {thisProjCate.children[keysInThisProjCate[previewProjIndex]].title[globalVars.langList[globalVars.langId]]}
           </Typography>
-          <Typography variant="subtitle1">
-            {thisProjCate.children[keysInThisProjCate[previewProjIndex]].date
-              ? thisProjCate.children[keysInThisProjCate[previewProjIndex]].date[0] + " / " + thisProjCate.children[keysInThisProjCate[previewProjIndex]].date[1]
-              : "Date Unknown"}
-          </Typography>
           {
-            thisProjCate.children[keysInThisProjCate[previewProjIndex]].intro ?
-              <Typography variant="body1">
-                {thisProjCate.children[keysInThisProjCate[previewProjIndex]].intro[globalVars.langList[globalVars.langId]]}
-              </Typography>
-              :
-              null
+            thisProjCate.children[keysInThisProjCate[previewProjIndex]].intro &&
+            <Typography variant="body1">
+              {thisProjCate.children[keysInThisProjCate[previewProjIndex]].intro[globalVars.langList[globalVars.langId]]}
+            </Typography>
           }
           <div style={{ flexGrow: 1 }}></div>
           <div style={{ display: "flex", justifyContent: "end", paddingTop: "1rem", alignItems: "center" }}>
-            <IconButton
-              color="inherit"
-              size="small"
-              style={{ borderWidth: 1, borderStyle: "solid", borderColor: theme.palette.background.invert + "80", marginRight: "1rem" }}
-              onClick={() => setPreviewProjIndex(
-                previewProjIndex <= 0
-                  ? keysInThisProjCate.length - 1
-                  : previewProjIndex - 1)}><ChevronLeft /></IconButton>
-            <IconButton
-              color="inherit"
-              size="small"
-              style={{ borderWidth: 1, borderStyle: "solid", borderColor: theme.palette.background.invert + "80" }}
-              onClick={() => setPreviewProjIndex(
-                previewProjIndex >= keysInThisProjCate.length - 1
-                  ? 0
-                  : previewProjIndex + 1)}><ChevronRight /></IconButton>
-            <div style={{ flexGrow: 1 }}></div>
+            {
+              globalVars.vw > 1088 && <>
+                <IconButton
+                  color="inherit"
+                  size="small"
+                  style={{ borderWidth: 1, borderStyle: "solid", borderColor: theme.palette.background.invert + "80", marginRight: "1rem" }}
+                  onClick={() => setPreviewProjIndex((previewProjIndex - 1 + keysInThisProjCate.length) % keysInThisProjCate.length)}
+                ><ChevronLeft /></IconButton>
+                <IconButton
+                  color="inherit"
+                  size="small"
+                  style={{ borderWidth: 1, borderStyle: "solid", borderColor: theme.palette.background.invert + "80" }}
+                  onClick={() => setPreviewProjIndex((previewProjIndex + 1) % keysInThisProjCate.length)}
+                ><ChevronRight /></IconButton>
+                <div style={{ flexGrow: 1 }}></div>
+              </>
+            }
             <Button variant="text" color="inherit" endIcon={<ArrowForward />}
-              onClick={() => history.push(`/p/${keysInThisProjCate[previewProjIndex]}`)}>Learn More</Button>
+              onClick={() => history.push(`/p/${keysInThisProjCate[previewProjIndex]}`)}>Details</Button>
           </div>
         </div>
       </div>

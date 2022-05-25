@@ -17,6 +17,7 @@ export const lightTheme = {
   },
   typography: {
     fontFamily: "'Lexend', 'Roboto', 'Helvetica', 'Arial', sans-serif",
+    fontFamilyAccent: "'Geometos','Lexend', 'Roboto', 'Helvetica', 'Arial', sans-serif",
     fontWeightRegular: 500,
     fontWeightMedium: 600,
   },
@@ -43,6 +44,7 @@ export const darkTheme = {
   },
   typography: {
     fontFamily: "'Lexend', 'Roboto', 'Helvetica', 'Arial', sans-serif",
+    fontFamilyAccent: "'Geometos','Lexend', 'Roboto', 'Helvetica', 'Arial', sans-serif",
     fontWeightRegular: 500,
     fontWeightMedium: 600,
   },

@@ -22,6 +22,7 @@ import { Redirect } from "react-router-dom";
 
 // MDI icons
 import { mdiAccountMultipleOutline, mdiArchiveOutline, mdiPageFirst } from "@mdi/js";
+import Js2048 from "./pages/2048/2048";
 
 
 function App() {
@@ -89,6 +90,9 @@ function App() {
           </Route>
           <Route exact path="/bpext">
             <Redirect to="/p/bpext" />
+          </Route>
+          <Route exact path="/2048">
+            <Js2048 />
           </Route>
           <Route>
             <NotFound />

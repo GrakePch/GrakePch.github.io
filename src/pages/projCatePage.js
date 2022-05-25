@@ -47,59 +47,59 @@ export default function ProjCatePage(props) {
       </div>
       <div className={classes.main} id="main">
         {
-          projectsInThisCategory.sort((a, b) => 
-          ((projects[id].children[b].date ? projects[id].children[b].date[0]:0)
-           - 
-           (projects[id].children[a].date ? projects[id].children[a].date[0]:0)) * 100
-            + 
-            ((projects[id].children[b].date ? projects[id].children[b].date[1]:0)
-             - 
-             (projects[id].children[a].date ? projects[id].children[a].date[1]:0))).map(key => (
-            <Card className={classes.cards} key={key}>
-              <CardActionArea className={classes.cardActionArea} onClick={() => routeChange(`/p/${key}`)}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  style={{
-                    backgroundImage: `url(${projects[id].children[key].cover})`,
-                    backgroundSize: projects[id].children[key].coverSize? projects[id].children[key].coverSize : "cover",
-                    backgroundColor: "#fff"
-                  }}
-                />
-                <CardContent className={classes.cardContent}>
-                  <div style={{
-                    width: 60,
-                    height: 60,
-                    flexShrink: 0,
-                    margin: vw > 1088 ? ".5rem 0 1rem 0" : "0 .5rem 0 1rem",
-                    backgroundImage: `url(${projects[id].children[key].icon ?
-                      projects[id].children[key].icon
-                      :
-                      noneIcon
-                      })`,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                    filter: globalVars.isThemeLight ? "none" : "invert(1)"
-                  }}></div>
-                  <div style={{ flexGrow: 1 }}>
-                    <Typography variant={vw >= 1400 || vw <= 1088 ? "h4" : "h5"}>
-                      {projects[id].children[key].title[globalVars.langList[globalVars.langId]]}
-                    </Typography>
-                    <Typography variant={vw >= 1400 || vw <= 1088 ? "subtitle1" : "subtitle2"}>
-                      {projects[id].children[key].date ? projects[id].children[key].date[0] + " / " + projects[id].children[key].date[1] : "Date Unknown"}
-                    </Typography>
-                    {
-                      projects[id].children[key].intro ?
-                        <Typography variant={vw >= 1400 || vw <= 1088 ? "body1" : "body2"}>
-                          {projects[id].children[key].intro[globalVars.langList[globalVars.langId]]}
+          projectsInThisCategory.sort((a, b) =>
+            ((projects[id].children[b].date ? projects[id].children[b].date[0] : 0)
+              -
+              (projects[id].children[a].date ? projects[id].children[a].date[0] : 0)) * 100
+            +
+            ((projects[id].children[b].date ? projects[id].children[b].date[1] : 0)
+              -
+              (projects[id].children[a].date ? projects[id].children[a].date[1] : 0))).map(key => (
+                <Card className={classes.cards} key={key}>
+                  <CardActionArea className={classes.cardActionArea} onClick={() => routeChange(`/p/${key}`)}>
+                    <CardMedia
+                      className={classes.cardMedia}
+                      style={{
+                        backgroundImage: `url(${projects[id].children[key].cover})`,
+                        backgroundSize: projects[id].children[key].coverSize ? projects[id].children[key].coverSize : "cover",
+                        backgroundColor: "#fff"
+                      }}
+                    />
+                    <CardContent className={classes.cardContent}>
+                      <div style={{
+                        width: 60,
+                        height: 60,
+                        flexShrink: 0,
+                        margin: vw > 1088 ? ".5rem 0 1rem 0" : "0 .5rem 0 1rem",
+                        backgroundImage: `url(${projects[id].children[key].icon ?
+                          projects[id].children[key].icon
+                          :
+                          noneIcon
+                          })`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                        filter: globalVars.isThemeLight ? "none" : "invert(1)"
+                      }}></div>
+                      <div style={{ flexGrow: 1 }}>
+                        <Typography variant={vw >= 1400 || vw <= 1088 ? "h4" : "h5"}>
+                          {projects[id].children[key].title[globalVars.langList[globalVars.langId]]}
                         </Typography>
-                        :
-                        null
-                    }
-                  </div>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          ))
+                        <Typography variant={vw >= 1400 || vw <= 1088 ? "subtitle1" : "subtitle2"}>
+                          {projects[id].children[key].date ? projects[id].children[key].date[0] + " / " + projects[id].children[key].date[1] : "Date Unknown"}
+                        </Typography>
+                        {
+                          projects[id].children[key].intro ?
+                            <Typography variant={vw >= 1400 || vw <= 1088 ? "body1" : "body2"}>
+                              {projects[id].children[key].intro[globalVars.langList[globalVars.langId]]}
+                            </Typography>
+                            :
+                            null
+                        }
+                      </div>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              ))
         }
 
         <Footer />
