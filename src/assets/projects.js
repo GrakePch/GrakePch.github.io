@@ -57,11 +57,123 @@ export const projects = {
         icon: icons["9squares"],
         cover: images["9squares"],
         intro: {
-          en:
-            "Original resourcepack series. (Temporarily stop updating)",
+          en: "Original resourcepack series. (Temporarily stop updating)",
           zh: "原创的资源包系列。（暂停更新）"
         }
       },
+      "akn-tnt-piano": {
+        title: {
+          en: "Arknights: TNT Piano",
+          zh: "明日方舟：TNT炸毁钢琴"
+        },
+        date: [2019, 9],
+        icon: icons["tnt180piano"],
+        cover: images["arknights-tnt-piano"],
+        intro: {
+          en: "A video recorded that a scaled-up piano model exploded by tons of TNT, to perform a meme from the game Arknights.",
+          zh: "记录着一个大型的钢琴模型被巨量TNT炸毁的视频，演绎了一个来自游戏明日方舟的梗。"
+        }
+      },
+      "akn-originium": {
+        title: {
+          en: "Arknights Originium Model",
+          zh: "明日方舟源石模型"
+        },
+        date: [2019, 9],
+        icon: icons["originium"],
+        cover: images["arknights-originium"],
+        intro: {
+          en: "A resourcepack that includes a block model that mimic Originium crystal from the game Arknights.",
+          zh: "包含着一个模仿明日方舟源石晶体的方块模型的资源包。"
+        }
+      },
+      "akn-orundum": {
+        title: {
+          en: "Arknights Orundum Model",
+          zh: "明日方舟合成玉模型"
+        },
+        date: [2019, 8],
+        icon: icons["orundum"],
+        cover: images["arknights-orundum"],
+        intro: {
+          en: "A resourcepack that includes a block model that mimic orundum from the game Arknights.",
+          zh: "包含着一个模仿明日方舟合成玉的方块模型的资源包。"
+        }
+      },
+      "ftb2-diamond": {
+        title: {
+          en: "Find the Button 2: the Diamond Button",
+          zh: "寻找按钮2：钻石按钮"
+        },
+        date: [2017, 1],
+        icon: icons["find-the-button-2"],
+        cover: images["ftb2"],
+        intro: {
+          en: "The second of the puzzle map series - Find the Button. The goal of the levels is to find the button made up of diamond.",
+          zh: "寻找按钮地图系列之二。关卡目标为寻找钻石制的按钮。"
+        }
+      },
+      "ftb-wooden-stone": {
+        title: {
+          en: "Find the Button: the Wooden-Stone Button",
+          zh: "寻找按钮：半木半石制按钮"
+        },
+        date: [2016, 8],
+        icon: icons["find-the-button"],
+        cover: images["ftb"],
+        intro: {
+          en: "The first of the puzzle map series - Find the Button. The goal of the levels is to find the button that is half wooden and half stone.",
+          zh: "寻找按钮地图系列之二。关卡目标为寻找半木半石制的按钮。"
+        }
+      },
+      "piston-gate-2x0625": {
+        title: {
+          en: "2x0.625 Piston Door",
+          zh: "2x0.625 活塞门"
+        },
+        date: [2015, 8],
+        icon: icons["piston-gate-2x0625"],
+        intro: {
+          en: "A redstone system designed for 2x0.625 piston door.",
+          zh: "红石系统设计之 2x0.625 活塞门。"
+        }
+      },
+      "piston-gate-2x075": {
+        title: {
+          en: "2x0.75 Piston Door",
+          zh: "2x0.75 活塞门"
+        },
+        date: [2014, 9],
+        icon: icons["piston-gate-2x075"],
+        intro: {
+          en: "A redstone system designed for 2x0.75 piston door.",
+          zh: "红石系统设计之 2x0.75 活塞门。"
+        }
+      },
+      "slime-tree-farm-2": {
+        title: {
+          en: "Sticky TreeFarm 2.0",
+          zh: "粘液块树场2.0"
+        },
+        date: [2015, 1],
+        icon: icons["slime-tree-farm-2"],
+        intro: {
+          en: "The second redstone system design of a semi-auto wood farm using slime block.",
+          zh: "使用粘液块的半自动木头农场的第二种红石系统设计。"
+        }
+      },
+      "slime-tree-farm": {
+        title: {
+          en: "Sticky TreeFarm 1.0",
+          zh: "粘液块树场1.0"
+        },
+        date: [2014, 12],
+        icon: icons["slime-tree-farm"],
+        intro: {
+          en: "A redstone system design of a semi-auto wood farm using slime block.",
+          zh: "使用粘液块的半自动木头农场的红石系统设计。"
+        }
+      }
     }
   },
   "twisty-puzzle-design": {
@@ -147,15 +259,15 @@ export const projects = {
       "eaxt-logo": {
         title: {
           en: "Eaxt Logo",
-          zh: "Eaxt 标志"
+          zh: "食验 标志"
         },
         date: [2017, 1],
         icon: icons["eaxt-logo"],
         cover: images["eaxt-new"],
-        coverSize: "75%",
+        coverSize: "50%",
         intro: {
           en: "The app icon/logo is designed for a student project in my high school. ",
-          zh: "为高中时期的一个学生项目设计的应用图标/标志。"
+          zh: "为高中时期的一个学生项目设计的应用图标兼标志。"
         }
       },
       "ethan-logo": {

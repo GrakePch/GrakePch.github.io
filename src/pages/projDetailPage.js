@@ -67,36 +67,42 @@ export default function ProjDetailPage(props) {
     return (<>{links ?
       <div style={{
         display: "flex",
-        flexDirection: isLinkStacked ? "column" : "row",
         justifyContent: "center",
         alignItems: "center",
         marginTop: "1rem"
       }}>
-        {
-          links.map((item, index) => (
-            <Button
-              variant="text"
-              startIcon={
-                !iconTable._customIcons.includes(item[2]) ?
-                  <Icon size={1} path={iconTable[item[2]]} />
-                  :
-                  <div style={{
-                    backgroundImage: `url(${iconTable[item[2]]})`,
-                    backgroundSize: "cover",
-                    width: "1.5rem",
-                    height: "1.5rem",
-                    filter: globalVars.isThemeLight ? "none" : "invert(1)"
-                  }} />
-              }
-              href={process.env.PUBLIC_URL + item[1]}
-              target="_blank"
-              className={clsx(classes.friendLink, isLinkStacked ? classes.friendLinkStacked : classes.friendLinkRow)}
-              key={item[0]}
-            >
-              {item[0][globalVars.langList[globalVars.langId]]}
-            </Button>
-          ))
-        }
+        <div style={{
+          display: "flex",
+          flexDirection: isLinkStacked ? "column" : "row",
+          justifyContent: "center",
+          alignItems: "normal",
+        }}>
+          {
+            links.map((item, index) => (
+              <Button
+                variant="text"
+                startIcon={
+                  !iconTable._customIcons.includes(item[2]) ?
+                    <Icon size={1} path={iconTable[item[2]]} />
+                    :
+                    <div style={{
+                      backgroundImage: `url(${iconTable[item[2]]})`,
+                      backgroundSize: "cover",
+                      width: "1.5rem",
+                      height: "1.5rem",
+                      filter: globalVars.isThemeLight ? "none" : "invert(1)"
+                    }} />
+                }
+                href={process.env.PUBLIC_URL + item[1]}
+                target="_blank"
+                className={clsx(classes.friendLink, isLinkStacked ? classes.friendLinkStacked : classes.friendLinkRow)}
+                key={item[0]}
+              >
+                {item[0][globalVars.langList[globalVars.langId]]}
+              </Button>
+            ))
+          }
+        </div>
       </div>
       :
       <></>
@@ -133,46 +139,55 @@ export default function ProjDetailPage(props) {
                 vw >= 768 ? "row" : "column"
             }}>
               {
-                item.texts ?
-                  item.img ?
-                    vw >= 768 ?
-                      item.imgPositionLeft ?
-                        <>
-                          <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginRight: "2rem", backgroundColor: item.imgBgColor ? item.imgBgColor : "auto" }} />
-                          <div style={{ flexGrow: 1 }}>
-                            {renderText(item)}
-                            {renderLinks(item.links, item.isLinkStacked)}
-                          </div>
-                        </>
+                item.biliVid
+                  ? <div style={{ width: "100%", aspectRatio: "16 / 10" }}>
+                    <iframe src={item.biliVid + "&high_quality=1"} allowfullscreen="allowfullscreen" width="100%" height="100%" scrolling="no" frameborder="0">
+                    </iframe>
+                    {/* https://www.cnblogs.com/wkfvawl/p/12268980.html */}
+                  </div>
+                  : item.texts ?
+                    item.img ?
+                      vw >= 768 ?
+                        item.imgPositionLeft ?
+                          <>
+                            <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginRight: "2rem", backgroundColor: item.imgBgColor ? item.imgBgColor : "auto" }} />
+                            <div style={{ flexGrow: 1 }}>
+                              {renderText(item)}
+                              {renderLinks(item.links, item.isLinkStacked)}
+                            </div>
+                          </>
+                          :
+                          <>
+                            <div style={{ flexGrow: 1 }}>
+                              {renderText(item)}
+                              {renderLinks(item.links, item.isLinkStacked)}
+                            </div>
+                            <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginLeft: "2rem", backgroundColor: item.imgBgColor ? item.imgBgColor : "auto" }} />
+                          </>
                         :
                         <>
+                          <img src={images[item.img]} alt={item.img} width="100%" style={{ marginBottom: "2rem", backgroundColor: item.imgBgColor ? item.imgBgColor : "auto" }} />
                           <div style={{ flexGrow: 1 }}>
                             {renderText(item)}
                             {renderLinks(item.links, item.isLinkStacked)}
                           </div>
-                          <img src={images[item.img]} alt={item.img} style={{ width: "calc(50% - 1rem)", marginLeft: "2rem", backgroundColor: item.imgBgColor ? item.imgBgColor : "auto" }} />
                         </>
                       :
-                      <>
-                        <img src={images[item.img]} alt={item.img} width="100%" style={{ marginBottom: "2rem", backgroundColor: item.imgBgColor ? item.imgBgColor : "auto" }} />
-                        <div style={{ flexGrow: 1 }}>
-                          {renderText(item)}
-                          {renderLinks(item.links, item.isLinkStacked)}
-                        </div>
-                      </>
+                      <div style={{ flexGrow: 1 }}>
+                        {renderText(item)}
+                        {renderLinks(item.links, item.isLinkStacked)}
+                      </div>
                     :
-                    <div style={{ flexGrow: 1 }}>
-                      {renderText(item)}
-                      {renderLinks(item.links, item.isLinkStacked)}
-                    </div>
-                  :
-                  item.img ?
-                    <div style={{ flexGrow: 1 }}>
-                      <img src={images[item.img]} alt={item.img} style={{ width: "100%", backgroundColor: item.imgBgColor ? item.imgBgColor : "auto" }} />
-                      {renderLinks(item.links, item.isLinkStacked)}
-                    </div>
-                    :
-                    <></>
+                    item.img ?
+                      <div style={{ flexGrow: 1, display: "flex", flexDirection: "column", alignItems: "center" }}>
+                        <img src={images[item.img]} alt={item.img} style={{
+                          width: item.imgSize ? item.imgSize : "100%",
+                          backgroundColor: item.imgBgColor ? item.imgBgColor : "auto"
+                        }} />
+                        {renderLinks(item.links, item.isLinkStacked)}
+                      </div>
+                      :
+                      <></>
               }
             </div>
           ))

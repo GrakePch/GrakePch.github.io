@@ -56,8 +56,7 @@ export default function ProjCateShowcase(props) {
               }}>
                 <CardActionArea
                   key={key}
-                  onClick={() => history.push(`/p/${key}`)}
-                  onMouseEnter={() => setPreviewProjIndex(index)}
+                  onClick={() => index == previewProjIndex ? history.push(`/p/${key}`) : setPreviewProjIndex(index)}
                   style={{
                     width: "max-content",
                     transform: keysInThisProjCate[previewProjIndex] == key ? "translateY(-0.3rem)" : null,
@@ -180,7 +179,7 @@ export default function ProjCateShowcase(props) {
                 </Typography>
               </div>
           }
-          <Typography variant="h4" style={{marginBottom: ".5rem"}}>
+          <Typography variant="h4" style={{ marginBottom: ".5rem" }}>
             {thisProjCate.children[keysInThisProjCate[previewProjIndex]].title[globalVars.langList[globalVars.langId]]}
           </Typography>
           {

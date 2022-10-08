@@ -1,0 +1,25 @@
+{
+  "contents": [
+    {
+      "img": "eaxt-new",
+      "imgSize": "25%",
+      "imgBgColor": "#fff"
+    },
+    {
+      "texts": {
+        "en": "The app icon/logo is designed for a student project in my high school. The project is to redesign the menu ordering platform of the school refectory. Therefore, the logo is designed in the skeleton of the Chinese character “食”, with the center component substituted with the logo of my high school – SZSY. The color palette of the logo is inherited from the theme color of my high school.",
+        "zh": "此应用图标兼标志为高中时期的一个学生项目而设计。此项目旨在重新设计学校食堂订餐平台，因此本标志的设计以汉字“食”为骨架，替换中间的部分为高中学校的标志 - SZSY。而色彩则取自高中学校的主题色。"
+      },
+      "links": [
+        [
+          {
+            "en": "More Info about Eaxt by Ethan",
+            "zh": "来自Ethan的关于食验的更多信息"
+          },
+          "https://ethans.me/posts/2018-07-20-szsy-canteen-api-readme/",
+          "Web"
+        ]
+      ]
+    }
+  ]
+}
