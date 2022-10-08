@@ -8,7 +8,7 @@ export const useStylesWelcome = makeStyles(theme => ({
     height: '100vh',
     overflow: 'hidden',
     zIndex: 99,
-    pointerEvents: 'none',
+    // pointerEvents: 'none',
 
     // backgroundImage: `linear-gradient(${theme.palette.background.paper}e6, ${theme.palette.background.paper}e6), url(${GKPIconBlack})`,
     // backgroundRepeat: 'no-repeat',
@@ -38,6 +38,7 @@ export const useStylesWelcome = makeStyles(theme => ({
     // color: theme.palette.background.default,
     backgroundColor: theme.palette.background.paper,
 
+    zIndex: 100,
     "& > *": {
       zIndex: 100,
     }
@@ -118,5 +119,52 @@ export const useStylesWelcome = makeStyles(theme => ({
     top: "50%",
     left: "50%",
     transform: 'translate(-50%, -50%)',
+  },
+
+
+  matrix_container: {
+    left: "50%",
+    top: "50%",
+    transform: "translate(-50%, -50%)",
+    backgroundColor: "#000",
+  },
+  matrix_item: {
+    flexShrink: 0,
+    width: 70, 
+    height: 70, 
+    backgroundImage: `url(${GKPIconBlack})`, 
+    backgroundSize: "cover", 
+    opacity: .5,
+    filter: "invert(10%)",
+    transition: "all .8s .0s",
+
+    "&:hover": {
+      opacity: 1,
+      filter: "invert(77%) sepia(40%) saturate(870%) hue-rotate(110deg) brightness(91%) contrast(85%)",
+      transition: "all .0s",
+    }
+  },
+
+  mask_top: {
+    width: "100%",
+    height: 64,
+    backgroundColor: theme.palette.background.paper,
+  },
+  mask_bottom: {
+    bottom: 0,
+    width: "100%",
+    height: 64,
+    backgroundColor: theme.palette.background.paper,
+  },
+  mask_left: {
+    width: 64,
+    height: "100%",
+    backgroundColor: theme.palette.background.paper,
+  },
+  mask_right: {
+    right: 0,
+    width: 64,
+    height: "100%",
+    backgroundColor: theme.palette.background.paper,
   },
 }))

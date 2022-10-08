@@ -35,6 +35,7 @@ import { friends } from "../assets/friends";
 import { globalVars } from "./modules/globalVars";
 import { useStylesWelcome } from "./index/indexWelcome";
 import ProjCateShowcase from "./modules/projCateShowcase";
+import GKPIconBlack from "../assets/G-logo/GKP-2111-black.svg";
 
 export default function Index() {
   const history = useHistory();
@@ -210,7 +211,7 @@ export default function Index() {
     <>
       <div className={welcomeCls.welcome_screen}>
 
-        <div className={welcomeCls.logo_bg}></div>
+        {/* <div className={welcomeCls.logo_bg}></div>
 
         <div className={welcomeCls.logo_main}>
           <div className={welcomeCls.logo_line_1}></div>
@@ -218,45 +219,61 @@ export default function Index() {
           <div className={welcomeCls.logo_line_3}></div>
           <div className={welcomeCls.logo_line_4}></div>
           <div className={welcomeCls.logo_dot}></div>
+        </div> */}
+
+        <div className={welcomeCls.matrix_container}>
+          {vh &&
+            [...Array(Math.ceil(vh / 70)).keys()].map(i =>
+              <div style={{ display: "flex", width: "100%", height: 70 }} key={i}>
+                {
+                  [...Array(Math.ceil(vw / 70)).keys()].map(j =>
+                    <div className={welcomeCls.matrix_item} key={j}/>)
+                }
+              </div>
+            )
+          }
         </div>
 
-        {/* <div className={welcomeCls.mask_top}></div>
+        <div className={welcomeCls.mask_top}></div>
         <div className={welcomeCls.mask_right}></div>
         <div className={welcomeCls.mask_bottom}></div>
-        <div className={welcomeCls.mask_left}></div> */}
+        <div className={welcomeCls.mask_left}></div>
+
 
       </div>
 
       <div className={welcomeCls.first_page_bg}></div>
 
       <div className={welcomeCls.second_page}>
-        <Typography variant="h5" align="left">GrakePCH, a Sol III native who love graphic design and Minecraft contents. Interested in sci-fi stuffs related to space. Currently learning programming and music. Preferred music genres are synthwave, melodic dubstep, & classical.</Typography>
+        <Typography variant="h5" align="left"><span style={{color: theme.palette.primary.main}}>GrakePCH</span>, a Sol III native who love graphic design and Minecraft contents. Interested in sci-fi stuffs related to space. Currently learning programming and music. Preferred music genres are synthwave, melodic dubstep, & classical.</Typography>
       </div>
 
-      <div className={classes.main} id="main">
-        <div className={classes.section_projects} id="anchor-projects">
-          <div style={{
-            display: "flex",
-            flexDirection: "column",
-          }}>
-            <ProjCateShowcase projCateId="minecraft-contents" margin="1.5rem" />
-            <ProjCateShowcase projCateId="graphic-design" margin="1.5rem" />
+      <div style={{ position: "relative", backgroundColor: theme.palette.background.default, width: "100%", zIndex: 100 }}>
+        <div className={classes.main} id="main">
+          <div className={classes.section_projects} id="anchor-projects">
+            <div style={{
+              display: "flex",
+              flexDirection: "column",
+            }}>
+              <ProjCateShowcase projCateId="minecraft-contents" margin="1.5rem" />
+              <ProjCateShowcase projCateId="graphic-design" margin="1.5rem" />
+            </div>
+            <div style={{
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+            }}>
+              {renderProjects()}
+            </div>
           </div>
-          <div style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-          }}>
-            {renderProjects()}
+          <div className={classes.section_friends} id="anchor-friends">
+            <div>
+              {renderFriends()}
+            </div>
           </div>
-        </div>
-        <div className={classes.section_friends} id="anchor-friends">
-          <div>
-            {renderFriends()}
+          <div className={classes.footerWrapper}>
+            <Footer />
           </div>
-        </div>
-        <div className={classes.footerWrapper}>
-          <Footer />
         </div>
       </div>
     </>
