@@ -51,7 +51,6 @@ export const friends = {
   "Jakob.zero": {
     avatar: jakob_zero,
     links: [
-      ["Website", "https://blockpixel.net/", mdiWeb],
       ["Twitter", "https://twitter.com/Jakob_zero", mdiTwitter]
     ],
   },
@@ -65,10 +64,17 @@ export const friends = {
   "Lapernum": {
     avatar: "https://avatars.githubusercontent.com/u/64993946?v=4",
     links: [
+      ["Website", "http://lapernum.site/", mdiWeb],
       ["bilibili", "https://space.bilibili.com/57234212", iconBili],
       ["Youtube", "https://www.youtube.com/channel/UCPEzUOCC_9COTUwx4HA5_Gw", mdiYoutube],
-      ["Imgur", "https://imgur.com/user/laboner6/posts"]
     ],
-    descrip: "A Star Citizen Loving Photography."
+    descrip: "A Star Citizen, A Photographer, A Content Creator."
+  },
+  "Bo Fone": {
+    avatar: "https://avatars.githubusercontent.com/u/12705673?v=4",
+    links: [
+      ["Website", "https://bofone.space/", mdiWeb]
+    ],
+    descrip: "An interactive design artist."
   }
 }

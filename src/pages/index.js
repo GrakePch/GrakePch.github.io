@@ -245,7 +245,7 @@ export default function Index() {
       <div className={welcomeCls.first_page_bg}></div>
 
       <div className={welcomeCls.second_page}>
-        <Typography variant="h5" align="left"><span style={{color: theme.palette.primary.main}}>GrakePCH</span>, a Sol III native who love graphic design and Minecraft contents. Interested in sci-fi stuffs related to space. Currently learning programming and music. Preferred music genres are synthwave, melodic dubstep, & classical.</Typography>
+        <Typography variant="h5" align="left"><span style={{color: theme.palette.primary.main}}>GrakePCH</span>, a Sol III native who loves to realize aesthetic creativity through computer technologies.</Typography>
       </div>
 
       <div style={{ position: "relative", backgroundColor: theme.palette.background.default, width: "100%", zIndex: 100 }}>
