@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.fe26baf1.chunk.css",
-    "main.js": "/static/js/main.2aa5d3d8.chunk.js",
-    "main.js.map": "/static/js/main.2aa5d3d8.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f9651fe9.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f9651fe9.js.map",
-    "static/js/2.73b9301c.chunk.js": "/static/js/2.73b9301c.chunk.js",
-    "static/js/2.73b9301c.chunk.js.map": "/static/js/2.73b9301c.chunk.js.map",
-    "static/js/3.97cef853.chunk.js": "/static/js/3.97cef853.chunk.js",
-    "static/js/3.97cef853.chunk.js.map": "/static/js/3.97cef853.chunk.js.map",
+    "main.js": "/static/js/main.9f94b865.chunk.js",
+    "main.js.map": "/static/js/main.9f94b865.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4c65fed8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4c65fed8.js.map",
+    "static/js/2.4b6f4b36.chunk.js": "/static/js/2.4b6f4b36.chunk.js",
+    "static/js/2.4b6f4b36.chunk.js.map": "/static/js/2.4b6f4b36.chunk.js.map",
+    "static/js/3.bf80a840.chunk.js": "/static/js/3.bf80a840.chunk.js",
+    "static/js/3.bf80a840.chunk.js.map": "/static/js/3.bf80a840.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.fe26baf1.chunk.css.map": "/static/css/main.fe26baf1.chunk.css.map",
-    "static/js/2.73b9301c.chunk.js.LICENSE.txt": "/static/js/2.73b9301c.chunk.js.LICENSE.txt",
+    "static/js/2.4b6f4b36.chunk.js.LICENSE.txt": "/static/js/2.4b6f4b36.chunk.js.LICENSE.txt",
     "static/media/9S-models.png": "/static/media/9S-models.76f0307f.png",
     "static/media/9S-screenshot1_alt1.png": "/static/media/9S-screenshot1_alt1.9a711c65.png",
     "static/media/9S-screenshot2_alt1.png": "/static/media/9S-screenshot2_alt1.48dd6107.png",
@@ -87,6 +87,7 @@
     "static/media/impr-wave-particle.svg": "/static/media/impr-wave-particle.4ae1914a.svg",
     "static/media/jakob_zero_400x400.8ccbd90d.jpg": "/static/media/jakob_zero_400x400.8ccbd90d.jpg",
     "static/media/mere-news-icon.svg": "/static/media/mere-news-icon.42a663d8.svg",
+    "static/media/minecraft-alter.png": "/static/media/minecraft-alter.f6b909d1.png",
     "static/media/modjei.png": "/static/media/modjei.82c0264f.png",
     "static/media/none.svg": "/static/media/none.548f4103.svg",
     "static/media/originium.svg": "/static/media/originium.e6e8dd95.svg",
@@ -112,9 +113,9 @@
     "static/media/will_wu_1024x1024.f3fbca8e.png": "/static/media/will_wu_1024x1024.f3fbca8e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.f9651fe9.js",
-    "static/js/2.73b9301c.chunk.js",
+    "static/js/runtime-main.4c65fed8.js",
+    "static/js/2.4b6f4b36.chunk.js",
     "static/css/main.fe26baf1.chunk.css",
-    "static/js/main.2aa5d3d8.chunk.js"
+    "static/js/main.9f94b865.chunk.js"
   ]
 }
