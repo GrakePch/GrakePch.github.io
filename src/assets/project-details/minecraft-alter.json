@@ -1,0 +1,29 @@
+{
+  "contents": [
+    {
+      "texts": {
+        "en": "This is a project made in C++ with OpenGL. The goal is to create a small scene that mimics the Minecraft world.",
+        "zh": "这是一个C++和OpenGL项目，目标是实现模仿Minecraft世界的画面。"
+      }
+    },
+    {
+      "img": "minecraft-alter"
+    },
+    {
+      "texts": {
+        "en": "Main Features\n- Terrain Generation\n- Blinn-Phong lighting model\n- Shadow Mapping\n- Simple wave simulation\n- Player Movement\n- Player Collision\n- Controllable Sunlight Angle\n- Controllable Orbiting Camera\n\nUsed libraries\nGLFW, Glad, glm, stb.\n\nSource code & more info at:",
+        "zh": "主要特性\n- 地形生成\n- Blinn-Phong 光照\n- 阴影贴图\n- 简单的波浪模拟\n- 玩家移动\n- 玩家碰撞\n- 可控日照角度\n- 可控环绕相机\n\n使用库\nGLFW, Glad, glm, stb.\n\n源码及更多信息请前往："
+      },
+      "links": [
+        [
+          {
+            "en": "GitHub repo",
+            "zh": "GitHub 仓库"
+          },
+          "https://github.com/GrakePch/MinecraftAlter",
+          "Github"
+        ]
+      ]
+    }
+  ]
+}

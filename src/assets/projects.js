@@ -35,6 +35,19 @@ export const projects = {
       zh: "Minecraft 作品"
     },
     children: {
+      "minecraft-alter": {
+        title: {
+          en: "Minecraft Alter",
+          zh: "Minecraft 改"
+        },
+        date: [2023, 1],
+        icon: null,
+        cover: images["minecraft-alter"],
+        intro: {
+          en: "(Working title.) An OpenGL project to mimic the Minecraft. Work in progress.",
+          zh: "（暂用名）一个模仿Minecraft的OpenGL项目，开发中。"
+        }
+      },
       "bpext": {
         title: {
           en: "BlockPixel Extend",
@@ -386,10 +399,10 @@ export const projects = {
       }
     }
   },
-  "short-film": {
+  "star-citizen-contents": {
     title: {
-      en: "Short Film",
-      zh: "微电影"
+      en: "Star Citizen Contents",
+      zh: "星际公民作品"
     },
     children: {
       "carrack-exodus": {

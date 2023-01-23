@@ -69,7 +69,7 @@ export default function Index() {
   const welcomeCls = useStylesWelcome(props);
   const theme = useTheme();
 
-  const showProjectList = ["twisty-puzzle-design", "midi-works", "short-film"];
+  const showProjectList = ["twisty-puzzle-design", "midi-works", "star-citizen-contents"];
 
   const renderProjects = () => {
     let eleProjects = [];
