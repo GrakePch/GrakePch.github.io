@@ -35,7 +35,6 @@ import { friends } from "../assets/friends";
 import { globalVars } from "./modules/globalVars";
 import { useStylesWelcome } from "./index/indexWelcome";
 import ProjCateShowcase from "./modules/projCateShowcase";
-import GKPIconBlack from "../assets/G-logo/GKP-2111-black.svg";
 
 export default function Index() {
   const history = useHistory();

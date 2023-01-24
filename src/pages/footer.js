@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, makeStyles, Typography, useTheme } from "@material-ui/core";
 
-import GKPIconBlack from "../assets/G-logo/GKP-2111-black.svg";
+import GKPIconBlack from "../assets/G-logo/GKP-2301-vector.svg";
 import bilibiliIcon from "../assets/svgs/bilibili.svg";
 
 import Icon from '@mdi/react';

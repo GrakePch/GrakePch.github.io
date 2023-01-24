@@ -9,7 +9,7 @@ import { mdiBrightness4, mdiBrightness7, mdiCogOutline, mdiTranslate } from '@md
 // Data
 import { globalVars } from "./globalVars";
 import useScrollPosition from "./scrollPosition";
-import Glogo from "../../assets/G-logo/GKP-2111-black.svg";
+import Glogo from "../../assets/G-logo/GKP-2301-vector.svg";
 
 const ColoredTooltip = withStyles((theme) => ({
   tooltip: {

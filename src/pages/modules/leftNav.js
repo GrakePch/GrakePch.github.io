@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import Icon from '@mdi/react';
 
 // Data
-import Glogo from "../../assets/G-logo/GKP-2111-black.svg";
+import Glogo from "../../assets/G-logo/GKP-2301-vector.svg";
 import { globalVars } from "./globalVars";
 
 const ColoredTooltip = withStyles((theme) => ({

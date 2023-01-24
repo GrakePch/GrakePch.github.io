@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-import GKPIconBlack from "../../assets/G-logo/GKP-2111-black.svg";
+import GKPIconBlack from "../../assets/G-logo/GKP-2301-vector.svg";
 
 export const useStylesWelcome = makeStyles(theme => ({
   welcome_screen: {
