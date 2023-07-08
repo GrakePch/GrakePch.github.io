@@ -1,59 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --welcome-logo-size: max(100px, min(20vw, 20vh));
-  --welcome-logo-word-size: calc(.2 * var(--welcome-logo-size));
+  --welcome-logo-size: 12rem;
 }
 
-.welcome-logo-container {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, calc(-.5 * var(--welcome-logo-size)));
-  width: var(--welcome-logo-size);
-}
-
-.welcome-logo {
-  width: var(--welcome-logo-size);
-  height: var(--welcome-logo-size);
-  background-image: url("../../assets/G-logo/GKP-2111.svg");
-  background-size: cover;
-  /* filter: invert(21%) sepia(94%) saturate(0%) hue-rotate(171deg) brightness(91%) contrast(95%); */
-}
-
-.welcome-logo-word {
-  font-family: 'Red Hat Display', sans-serif;
-  font-size: var(--welcome-logo-word-size);
-  text-align: center;
-  letter-spacing: calc(-.05 * var(--welcome-logo-word-size));
-  margin: 0;
-  padding-top: calc((100vh - var(--welcome-logo-size)) / 4 - var(--welcome-logo-word-size) / 1.25);
-  color: #3e3e3e;
-  overflow: hidden;
-}
-
-.welcome-logo-word>.G {
-  letter-spacing: calc(-.04 * var(--welcome-logo-word-size));
-}
-
-.welcome-logo-word>.r {
-  letter-spacing: calc(-.03 * var(--welcome-logo-word-size));
-}
-
-.welcome-logo-word>.a {
-  letter-spacing: calc(-.05 * var(--welcome-logo-word-size));
-}
-
-.welcome-logo-word>.k {
-  letter-spacing: calc(-.1 * var(--welcome-logo-word-size));
-}
-
-.welcome-logo-word>.e {
-  letter-spacing: calc(.1 * var(--welcome-logo-word-size));
-}
 
 .noScrollBar::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+.welcomePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding-top: 10rem; */
+  height: 100vh;
+  background-color: #f5eedb;
+}
+
+.logoCard {
+  display: flex;
+  align-items: center;
+  width: auto;
+  height: auto;
+  padding: 4rem;
+  gap: 4rem;
+  border-radius: 100vw;
+  background: #f5eedb;
+  box-shadow: 20px 20px 60px #d0caba,
+    -20px -20px 60px #fffffc;
+  overflow: hidden;
+}
+
+.logo {
+  width: var(--welcome-logo-size);
+  aspect-ratio: 1;
+  flex-shrink: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.logoCard-content {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  height: auto;
+  gap: 1rem;
+}
+
+.logoCard-content h1, h3 {
+  margin: 0;
+  color: #333333;
+}
+
+.logoCard-content>h1 {
+  font-size: 3rem;
+  line-height: 100%;
+}
+
+.logoCard-content>h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  line-height: 100%;
+}
+
+@media (max-width: 1088px) {
+  :root {
+    --welcome-logo-size: 8rem;
+  }
+
+  .logoCard {
+    flex-direction: column;
+    padding: 3rem;
+    gap: 2rem;
+  }
+
+  .logoCard-content {
+    flex-direction: row-reverse;
+    width: auto;
+    height: 15rem;
+  }
+
+  .logoCard-content h1, h3 {
+    writing-mode: vertical-rl;
+  }
+
+  .logoCard-content>h1 {
+    font-size: 2.25rem;
+    line-height: 100%;
+  }
+
+  .logoCard-content>h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    line-height: 100%;
+  }
 }

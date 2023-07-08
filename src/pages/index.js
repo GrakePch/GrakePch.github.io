@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./index/index.css";
 import { useStyles } from "./index/indexStyles";
-import { useStylesLogo } from "./index/indexLogoStyles";
 import { useHistory } from "react-router";
 
 import {
@@ -27,13 +26,13 @@ import useScrollPosition from "./modules/scrollPosition";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Icon from '@mdi/react';
 import { mdiOpenInNew } from '@mdi/js';
+import GKPLogo from '../assets/G-logo/GKP-2305-cut-cropToLogo.png';
 
 /*Data*/
 import { projects } from "../assets/projects";
 import noneIcon from "../assets/project-icons/none.svg";
 import { friends } from "../assets/friends";
 import { globalVars } from "./modules/globalVars";
-import { useStylesWelcome } from "./index/indexWelcome";
 import ProjCateShowcase from "./modules/projCateShowcase";
 
 export default function Index() {
@@ -64,8 +63,6 @@ export default function Index() {
   }, 500);
 
   const classes = useStyles(props);
-  const logoSection = useStylesLogo(props);
-  const welcomeCls = useStylesWelcome(props);
   const theme = useTheme();
 
   const showProjectList = ["twisty-puzzle-design", "midi-works", "star-citizen-contents"];
@@ -208,43 +205,15 @@ export default function Index() {
 
   return (
     <>
-      <div className={welcomeCls.welcome_screen}>
-
-        {/* <div className={welcomeCls.logo_bg}></div>
-
-        <div className={welcomeCls.logo_main}>
-          <div className={welcomeCls.logo_line_1}></div>
-          <div className={welcomeCls.logo_line_2}></div>
-          <div className={welcomeCls.logo_line_3}></div>
-          <div className={welcomeCls.logo_line_4}></div>
-          <div className={welcomeCls.logo_dot}></div>
-        </div> */}
-
-        <div className={welcomeCls.matrix_container}>
-          {vh &&
-            [...Array(Math.ceil(vh / 70)).keys()].map(i =>
-              <div style={{ display: "flex", width: "100%", height: 70 }} key={i}>
-                {
-                  [...Array(Math.ceil(vw / 70)).keys()].map(j =>
-                    <div className={welcomeCls.matrix_item} key={j}/>)
-                }
-              </div>
-            )
-          }
+      <div className="welcomePage">
+        <div className="logoCard">
+          <div className="logo" style={{ backgroundImage: `url(${GKPLogo})` }}></div>
+          <div className="logoCard-content">
+            <h1>GrakePCH</h1>
+            <h3>A Sol III native who loves to realize aesthetic creativity through computer technologies.</h3>
+          </div>
         </div>
 
-        <div className={welcomeCls.mask_top}></div>
-        <div className={welcomeCls.mask_right}></div>
-        <div className={welcomeCls.mask_bottom}></div>
-        <div className={welcomeCls.mask_left}></div>
-
-
-      </div>
-
-      <div className={welcomeCls.first_page_bg}></div>
-
-      <div className={welcomeCls.second_page}>
-        <Typography variant="h5" align="left"><span style={{color: theme.palette.primary.main}}>GrakePCH</span>, a Sol III native who loves to realize aesthetic creativity through computer technologies.</Typography>
       </div>
 
       <div style={{ position: "relative", backgroundColor: theme.palette.background.default, width: "100%", zIndex: 100 }}>

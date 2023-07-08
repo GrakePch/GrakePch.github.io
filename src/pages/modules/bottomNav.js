@@ -81,7 +81,7 @@ export default function BottomNav(props) {
         position: "relative",
         width: "100%",
         height: "100%",
-        backgroundColor: `${theme.palette.background.paper}cc`,
+        backgroundColor: `#f5eedbcc`,
         transform:
           (dockAtTop && scrollPosY <= 0) || scrollPosY >= document.body.offsetHeight - globalVars.vh ?
             'translateY(0)' : 'translateY(-.2rem)',
