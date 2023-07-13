@@ -1,0 +1,37 @@
+{
+    "contents": [
+        {
+            "texts": {
+                "en": "A WIP react app that visualizes the complicated action maps of Star Citizen with icons.",
+                "zh": "A WIP react app that visualizes the complicated action maps of Star Citizen with icons."
+            }
+        },
+        {
+            "img": "preview_230418"
+        },
+        {
+            "texts": {
+                "en": "A preview for the current build. This is not the final design. Only showing the default keybindings. Squares with texts are placeholders for the actions that do not have an icon, and will be assigned with an icon in the future updates.",
+                "zh": "A preview for the current build. This is not the final design. Only showing the default keybindings. Squares with texts are placeholders for the actions that do not have an icon, and will be assigned with an icon in the future updates."
+            },
+            "links": [
+                [
+                    {
+                        "en": "Keybinding Visualizer",
+                        "zh": "键位可视化"
+                    },
+                    "https://grakep.ch/SC-Keybinding-Visualizer",
+                    "Web"
+                ],
+                [
+                    {
+                        "en": "GitHub Repo",
+                        "zh": "GitHub 仓库"
+                    },
+                    "https://github.com/GrakePch/sc-action-maps",
+                    "Github"
+                ]
+            ]
+        }
+    ]
+}

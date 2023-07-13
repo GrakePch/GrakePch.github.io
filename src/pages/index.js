@@ -4,10 +4,6 @@ import { useStyles } from "./index/indexStyles";
 import { useHistory } from "react-router";
 
 import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardActions,
   Typography,
   Button,
   Accordion,
@@ -29,8 +25,6 @@ import { mdiOpenInNew } from '@mdi/js';
 import GKPLogo from '../assets/G-logo/GKP-2305-cut-cropToLogo.png';
 
 /*Data*/
-import { projects } from "../assets/projects";
-import noneIcon from "../assets/project-icons/none.svg";
 import { friends } from "../assets/friends";
 import { globalVars } from "./modules/globalVars";
 import ProjCateShowcase from "./modules/projCateShowcase";
@@ -65,51 +59,13 @@ export default function Index() {
   const classes = useStyles(props);
   const theme = useTheme();
 
-  const showProjectList = ["twisty-puzzle-design", "midi-works", "star-citizen-contents"];
-
-  const renderProjects = () => {
-    let eleProjects = [];
-    for (let i in showProjectList) {
-      let k = showProjectList[i];
-      let projInThisCategory = Object.keys(projects[k].children)
-      eleProjects.push(
-        <Card className={classes.cards} key={k}>
-          <CardActionArea className={classes.cardsActionArea} onClick={() => routeChange(`/c/${k}`)}>
-            <CardContent>
-              <Typography variant="h4" align="center">
-                {projects[k].title[globalVars.langList[globalVars.langId]]}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions style={{ overflowX: "auto" }}>
-            {projInThisCategory.map(key => (
-              <Button
-                style={{ padding: 0, flexShrink: 0 }}
-                className={classes.cardsActionBtn}
-                key={key}
-                onClick={() => routeChange(`/p/${key}`)}
-              >
-                <div style={{
-                  width: 80,
-                  height: 80,
-                  backgroundImage: `url(${projects[k].children[key].icon ?
-                    projects[k].children[key].icon
-                    :
-                    noneIcon
-                    })`,
-                  backgroundSize: 60,
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  filter: globalVars.isThemeLight ? "none" : "invert(1)"
-                }}></div>
-              </Button>
-            ))}
-          </CardActions>
-        </Card>
-      )
-    }
-    return eleProjects
-  }
+  const showProjectList = [
+    "minecraft-contents",
+    "star-citizen-contents",
+    "graphic-design",
+    "twisty-puzzle-design",
+    "midi-works",
+  ];
 
   const renderFriendLinks = (link) => {
     const customIconList = ["bilibili"]
@@ -216,24 +172,23 @@ export default function Index() {
 
       </div>
 
-      <div style={{ position: "relative", backgroundColor: theme.palette.background.default, width: "100%", zIndex: 100 }}>
-        <div className={classes.main} id="main">
-          <div className={classes.section_projects} id="anchor-projects">
-            <div style={{
-              display: "flex",
-              flexDirection: "column",
-            }}>
-              <ProjCateShowcase projCateId="minecraft-contents" margin="1.5rem" />
-              <ProjCateShowcase projCateId="graphic-design" margin="1.5rem" />
-            </div>
-            <div style={{
-              display: "flex",
-              flexDirection: "row",
-              flexWrap: "wrap",
-            }}>
-              {renderProjects()}
-            </div>
+      <div
+        className="bodyPage"
+        style={{ backgroundColor: theme.palette.background.default }}
+      >
+        <div
+          className="sectionAllProjects"
+          id="anchor-projects"
+          style={{ padding: vw >= 600 ? 64 : "1.5rem" }}
+        >
+          <div style={{
+            display: "flex",
+            flexDirection: "column",
+          }}>
+            {showProjectList.map(key => <ProjCateShowcase projCateId={key} key={key} />)}
           </div>
+        </div>
+        <div className={classes.main} id="main">
           <div className={classes.section_friends} id="anchor-friends">
             <div>
               {renderFriends()}
@@ -243,7 +198,7 @@ export default function Index() {
             <Footer />
           </div>
         </div>
-      </div>
+      </div >
     </>
   )
 }

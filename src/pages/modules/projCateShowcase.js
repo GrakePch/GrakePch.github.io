@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Button, CardActionArea, IconButton, Typography, useTheme } from "@material-ui/core";
-import { ArrowForward, ChevronLeft, ChevronRight } from "@material-ui/icons";
+import "./projCateShowcase.css";
 
 /*Data*/
 import { projects } from "../../assets/projects";
@@ -10,207 +9,141 @@ import { useHistory } from "react-router";
 
 
 export default function ProjCateShowcase(props) {
-  const theme = useTheme();
   const history = useHistory();
   const thisProjCate = projects[props.projCateId];
   const keysInThisProjCate = Object.keys(thisProjCate.children);
   const [previewProjIndex, setPreviewProjIndex] = useState(0);
 
+  const padding = globalVars.vw >= 600
+    ? 64
+    : 1.5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+  const foldedCardSideLen = 100;
+  const unfoldedCardWidth = Math.min(globalVars.vw, 1920) - padding * 2 - foldedCardSideLen * 4
+    - 7 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+  const cardHeight = unfoldedCardWidth / 16 * 9;
+
+  const narrowLayoutMaxWidth = 1500;
+  const narrow_cardWidth = globalVars.vw - padding * 2;
+  const narrow_unfoldedCardHeight = narrow_cardWidth / 16 * 9;
+
   return (
-    <div style={{
-      color: theme.palette.background.default,
-      backgroundColor: theme.palette.background.invert,
-      margin: props.margin ? props.margin : 0,
-    }}>
-      <CardActionArea style={{
-        width: "100%",
-        padding: "1.5rem",
-        paddingTop: "2rem",
-        display: "flex",
-        justifyContent: "space-between"
-      }}
-        onClick={() => history.push(`/c/${props.projCateId}`)}>
-        <Typography variant="h4">
-          {thisProjCate.title[globalVars.langList[globalVars.langId]]}
-        </Typography>
-        <Button disableRipple color="inherit" endIcon={<ArrowForward />} style={{ flexShrink: 0 }}>See All</Button>
-      </CardActionArea>
-      <div className="noScrollBar" style={{
-        display: "flex",
-        padding: ".5rem",
-        width: "100%",
-        overflowX: "scroll",
-        overflowY: "hidden",
+    <div className="projShowcase">
+      <h1 className="projShowcase-cateTitle"
+        style={{ fontSize: globalVars.vw >= 600 ? "3rem" : "2rem" }}>
+        {thisProjCate.title[globalVars.langList[globalVars.langId]]}
+      </h1>
+      <div className="projShowcase-itemContainer" style={{
+        width: globalVars.vw - padding * 2,
+        flexDirection: globalVars.vw > narrowLayoutMaxWidth ? "row" : "column",
       }}>
+
         {keysInThisProjCate.sort((a, b) =>
           ((thisProjCate.children[b].date ? thisProjCate.children[b].date[0] : 0)
-            -
-            (thisProjCate.children[a].date ? thisProjCate.children[a].date[0] : 0)) * 100
-          +
-          ((thisProjCate.children[b].date ? thisProjCate.children[b].date[1] : 0)
-            -
-            (thisProjCate.children[a].date ? thisProjCate.children[a].date[1] : 0))).map((key, index) => (
-              <div style={{
-                position: "relative",
-                marginLeft: index > 0 ? ".5rem" : 0,
+            - (thisProjCate.children[a].date ? thisProjCate.children[a].date[0] : 0)) * 100
+          + ((thisProjCate.children[b].date ? thisProjCate.children[b].date[1] : 0)
+            - (thisProjCate.children[a].date ? thisProjCate.children[a].date[1] : 0)))
+          .slice(0, 5).map((key, index) =>
+            <div
+              key={key}
+              onClick={() => index == previewProjIndex
+                ? history.push(`/p/${key}`)
+                : setPreviewProjIndex(index)
+              }
+              className={
+                "projShowcase-item " + (
+                  keysInThisProjCate[previewProjIndex] == key
+                    ? "unfolded"
+                    : "folded"
+                ) + " " + (globalVars.vw >= 600
+                  ? ""
+                  : "superNarrow"
+                )}
+              style={globalVars.vw > narrowLayoutMaxWidth ? {
+                width: keysInThisProjCate[previewProjIndex] == key
+                  ? unfoldedCardWidth
+                  : foldedCardSideLen,
+                height: cardHeight,
+              } : {
+                width: narrow_cardWidth,
+                height: keysInThisProjCate[previewProjIndex] == key
+                  ? narrow_unfoldedCardHeight
+                  : foldedCardSideLen
               }}>
-                <CardActionArea
-                  key={key}
-                  onClick={() => index == previewProjIndex ? history.push(`/p/${key}`) : setPreviewProjIndex(index)}
-                  style={{
-                    width: "max-content",
-                    transform: keysInThisProjCate[previewProjIndex] == key ? "translateY(-0.3rem)" : null,
-                    transition: "transform .2s cubic-bezier(0.18, 0.89, 0.32, 1.28)",
-                  }}>
-                  <div style={{
-                    width: 80,
-                    height: 80,
-                    backgroundImage: `url(${thisProjCate.children[key].icon
-                      ? thisProjCate.children[key].icon
-                      : noneIcon
-                      })`,
-                    backgroundSize: 60,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                    filter: !globalVars.isThemeLight ? "none" : "invert(1)"
-                  }}></div>
-                </CardActionArea>
-                <div style={{
-                  position: "absolute",
-                  width: 25,
-                  height: 25,
-                  transform: `translate(-50%, 100%) scale(1, ${keysInThisProjCate[previewProjIndex] == key ? 1 : 0}) rotate(45deg)`,
-                  transformOrigin: "center",
-                  bottom: 0,
-                  left: "50%",
-                  backgroundColor: theme.palette.background.paper,
-                  transition: "all .2s cubic-bezier(0.18, 0.89, 0.32, 1.28)",
+              <div
+                className="projShowcase-itemCover"
+                style={{
+                  backgroundImage: `url(${thisProjCate.children[key].cover})`,
+                  backgroundSize: thisProjCate.children[key].coverSize
+                    ? globalVars.vw > narrowLayoutMaxWidth
+                      ? "auto " + thisProjCate.children[key].coverSize
+                      : thisProjCate.children[key].coverSize
+                    : "cover",
+                  filter: keysInThisProjCate[previewProjIndex] == key
+                    || "saturate(0) contrast(.2) brightness(1.3) sepia(.5)",
                 }}></div>
-              </div>
-            ))}
-      </div>
-      <div style={{
-        display: "flex",
-        flexDirection: globalVars.vw > 1088 ? "row" : "column",
-        width: "100%",
-        padding: globalVars.vw > 1088 ? "1.5rem" : "1rem",
-        color: theme.palette.text.primary,
-        backgroundColor: theme.palette.background.paper,
-      }}>
-        <div style={{
-          flexShrink: 0,
-          width: globalVars.vw > 1088 ? "75%" : "100%",
-          aspectRatio: "16 / 9",
-          marginRight: globalVars.vw > 1088 ? "1.5rem" : 0,
-          marginBottom: globalVars.vw > 1088 ? 0 : "1.5rem",
-          backgroundImage: `url(${thisProjCate.children[keysInThisProjCate[previewProjIndex]].cover})`,
-          backgroundSize: thisProjCate.children[keysInThisProjCate[previewProjIndex]].coverSize ? thisProjCate.children[keysInThisProjCate[previewProjIndex]].coverSize : "cover",
-          backgroundColor: "#fff",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}></div>
-        <div style={{ display: "flex", flexDirection: "column", flexGrow: 1 }}>
-          {
-            globalVars.vw > 1088
-              ?
-              <div style={{ position: "relative", marginBottom: "1rem" }}>
-                <Typography variant={globalVars.vw > 1584 ? "h1" : "h2"} style={{ lineHeight: 1 }}>
-                  {thisProjCate.children[keysInThisProjCate[previewProjIndex]].date
-                    ? thisProjCate.children[keysInThisProjCate[previewProjIndex]].date[0]
-                    : "2XXX"}
-                </Typography>
-                <Typography variant={globalVars.vw > 1584 ? "h1" : "h2"} align="right" style={{ lineHeight: 1 }}>
-                  {thisProjCate.children[keysInThisProjCate[previewProjIndex]].date
-                    ? thisProjCate.children[keysInThisProjCate[previewProjIndex]].date[1]
-                    : "X"}
-                </Typography>
-                <div style={{
-                  position: "absolute",
-                  right: 0,
-                  top: 0,
-                  width: 2,
-                  height: "120%",
-                  backgroundColor: theme.palette.text.primary,
-                  transformOrigin: "top",
-                  transform: "rotate(45deg)",
-                  marginTop: "5%"
-                }}></div>
-              </div>
-              :
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "end", marginBottom: "1rem" }}>
 
-                <IconButton
-                  color="inherit"
-                  size="small"
-                  style={{ borderWidth: 1, borderStyle: "solid", borderColor: theme.palette.background.invert + "80", marginRight: "1rem" }}
-                  onClick={() => setPreviewProjIndex((previewProjIndex - 1 + keysInThisProjCate.length) % keysInThisProjCate.length)}
-                ><ChevronLeft /></IconButton>
-                <IconButton
-                  color="inherit"
-                  size="small"
-                  style={{ borderWidth: 1, borderStyle: "solid", borderColor: theme.palette.background.invert + "80" }}
-                  onClick={() => setPreviewProjIndex((previewProjIndex + 1) % keysInThisProjCate.length)}
-                ><ChevronRight /></IconButton>
-                <div style={{ flexGrow: 1 }}></div>
-
-                <Typography variant="h4" style={{ lineHeight: 1, fontWeight: 200 }}>
-                  {thisProjCate.children[keysInThisProjCate[previewProjIndex]].date
-                    ? thisProjCate.children[keysInThisProjCate[previewProjIndex]].date[0]
-                    : "2XXX"}
-                </Typography>
-                <div style={{ position: "relative", width: "2rem", aspectRatio: "1 / 1" }}>
-                  <div style={{
-                    position: "absolute",
-                    right: 0,
-                    top: 0,
-                    width: 2,
-                    height: "120%",
-                    backgroundColor: theme.palette.text.primary,
-                    transformOrigin: "top",
-                    transform: "rotate(45deg)",
-                    marginTop: "5%",
-                    marginRight: "3%"
-                  }}></div>
-                </div>
-                <Typography variant="h4" align="right" style={{ lineHeight: 1, fontWeight: 200 }}>
-                  {thisProjCate.children[keysInThisProjCate[previewProjIndex]].date
-                    ? thisProjCate.children[keysInThisProjCate[previewProjIndex]].date[1]
-                    : "X"}
-                </Typography>
+              <div className={"projShowcase-foldedInfo " +
+                (keysInThisProjCate[previewProjIndex] == key
+                  ? "unfolded"
+                  : ""
+                )}
+                style={{ flexDirection: globalVars.vw > narrowLayoutMaxWidth ? "column" : "row" }}
+              >
+                <h1 style={{ writingMode: globalVars.vw > narrowLayoutMaxWidth ? "vertical-rl" : null }}>
+                  {thisProjCate.children[key].title[globalVars.langList[globalVars.langId]]}
+                </h1>
+                <div style={{ backgroundImage: `url(${thisProjCate.children[key].icon ?? noneIcon})` }}></div>
               </div>
-          }
-          <Typography variant="h4" style={{ marginBottom: ".5rem" }}>
-            {thisProjCate.children[keysInThisProjCate[previewProjIndex]].title[globalVars.langList[globalVars.langId]]}
-          </Typography>
-          {
-            thisProjCate.children[keysInThisProjCate[previewProjIndex]].intro &&
-            <Typography variant="body1">
-              {thisProjCate.children[keysInThisProjCate[previewProjIndex]].intro[globalVars.langList[globalVars.langId]]}
-            </Typography>
-          }
-          <div style={{ flexGrow: 1 }}></div>
-          <div style={{ display: "flex", justifyContent: "end", paddingTop: "1rem", alignItems: "center" }}>
-            {
-              globalVars.vw > 1088 && <>
-                <IconButton
-                  color="inherit"
-                  size="small"
-                  style={{ borderWidth: 1, borderStyle: "solid", borderColor: theme.palette.background.invert + "80", marginRight: "1rem" }}
-                  onClick={() => setPreviewProjIndex((previewProjIndex - 1 + keysInThisProjCate.length) % keysInThisProjCate.length)}
-                ><ChevronLeft /></IconButton>
-                <IconButton
-                  color="inherit"
-                  size="small"
-                  style={{ borderWidth: 1, borderStyle: "solid", borderColor: theme.palette.background.invert + "80" }}
-                  onClick={() => setPreviewProjIndex((previewProjIndex + 1) % keysInThisProjCate.length)}
-                ><ChevronRight /></IconButton>
-                <div style={{ flexGrow: 1 }}></div>
-              </>
-            }
-            <Button variant="text" color="inherit" endIcon={<ArrowForward />}
-              onClick={() => history.push(`/p/${keysInThisProjCate[previewProjIndex]}`)}>Details</Button>
+
+              <div className={"projShowcase-fullInfo " +
+                (keysInThisProjCate[previewProjIndex] == key
+                  ? "unfolded"
+                  : ""
+                )}>
+                <span>
+                  <h1>
+                    {thisProjCate.children[key].title[globalVars.langList[globalVars.langId]]}
+                  </h1>
+                  <h3>
+                    {
+                      (thisProjCate.children[key].date
+                        ? thisProjCate.children[key].date[0]
+                        : "2XXX") + " / " +
+                      (thisProjCate.children[key].date
+                        ? thisProjCate.children[key].date[1]
+                        : "X")
+                    }
+                  </h3>
+                </span>
+                {thisProjCate.children[key].intro
+                  ? <p>
+                    {thisProjCate.children[key].intro[globalVars.langList[globalVars.langId]]}
+                  </p>
+                  : null
+                }
+              </div>
+
+            </div>
+          )}
+
+        {keysInThisProjCate.length > 5
+          ? <div
+            className="projShowcase-showAll"
+            onClick={() => history.push(`/c/${props.projCateId}`)}
+            style={globalVars.vw > narrowLayoutMaxWidth ? {
+              flexDirection: "column",
+              width: "1.5rem",
+            } : {
+              flexDirection: "row",
+              height: "1.5rem",
+            }}
+          >
+            <div></div>
+            <div></div>
+            <div></div>
           </div>
-        </div>
+          : null
+        }
       </div>
     </div>
   );

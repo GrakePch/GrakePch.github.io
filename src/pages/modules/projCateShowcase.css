@@ -1,0 +1,231 @@
+.projShowcase {
+    width: 100%;
+    margin: 5rem 0;
+}
+
+.projShowcase-cateTitle {
+    margin: 0;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    line-height: 100%;
+}
+
+.projShowcase-itemContainer {
+    /* margin: 4rem 0; */
+    display: flex;
+    gap: 1rem;
+}
+
+.projShowcase-item {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(.5, 0, 0, 1);
+    overflow: hidden;
+}
+
+.projShowcase-itemCover {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    transition: all .3s cubic-bezier(.5, 0, 0, 1);
+    z-index: -1;
+}
+
+.projShowcase-item.folded:hover {
+    border-radius: 4rem;
+}
+
+.projShowcase-item.unfolded {
+    border-radius: 8rem;
+}
+
+.projShowcase-item.unfolded:hover {
+    border-radius: 4rem;
+}
+
+.projShowcase-item.folded.superNarrow:hover {
+    border-radius: 2rem;
+}
+
+.projShowcase-item.unfolded.superNarrow {
+    border-radius: 4rem;
+}
+
+.projShowcase-item.unfolded.superNarrow:hover {
+    border-radius: 2rem;
+}
+
+/* Information shown when folded */
+
+.projShowcase-foldedInfo {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    color: #000;
+    opacity: 1;
+    transition: opacity .15s .15s;
+}
+
+.projShowcase-foldedInfo.unfolded {
+    opacity: 0;
+    transition: opacity .15s;
+}
+
+.projShowcase-foldedInfo>h1 {
+    flex-grow: 1;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    /*Text ellipsis*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.projShowcase-foldedInfo>h3 {
+    flex-shrink: 0;
+    margin: 0;
+    writing-mode: vertical-rl;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.projShowcase-foldedInfo>div {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: 60px;
+}
+
+.projShowcase-item.superNarrow .projShowcase-foldedInfo {
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.projShowcase-item.superNarrow .projShowcase-foldedInfo>h1 {
+    font-size: 1.5rem;
+}
+
+.projShowcase-item.superNarrow .projShowcase-foldedInfo>h3 {
+    font-size: 1.5rem;
+}
+
+/* Information shown when unfolded */
+.projShowcase-fullInfo {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    max-width: 80%;
+    padding: 1.5rem 3rem;
+    opacity: 0;
+    color: #000;
+    background-color: #f5eedba0;
+    backdrop-filter: blur(10px);
+    border-radius: 0;
+    border-bottom-right-radius: 6rem;
+    transition: opacity .15s;
+}
+
+.projShowcase-item.unfolded:hover .projShowcase-fullInfo {
+    border-bottom-right-radius: 2rem;
+}
+
+.projShowcase-fullInfo.unfolded {
+    opacity: 1;
+    transition: opacity .15s .15s, border-bottom-right-radius .3s cubic-bezier(.5, 0, 0, 1);
+}
+
+.projShowcase-fullInfo span {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.projShowcase-fullInfo h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 120%;
+}
+
+.projShowcase-item.unfolded:hover .projShowcase-fullInfo h1 {
+    text-decoration: underline;
+}
+
+.projShowcase-fullInfo h3 {
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    line-height: 120%;
+}
+
+.projShowcase-fullInfo>p {
+    margin: 0;
+    margin-top: .5rem;
+    font-size: 1rem;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    line-height: 120%;
+}
+
+.projShowcase-item.superNarrow .projShowcase-fullInfo {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom-right-radius: 3rem;
+}
+
+.projShowcase-item.unfolded.superNarrow:hover .projShowcase-fullInfo {
+    border-bottom-right-radius: 1rem;
+}
+
+.projShowcase-item.superNarrow .projShowcase-fullInfo span {
+    gap: 1rem;
+}
+
+.projShowcase-item.superNarrow .projShowcase-fullInfo h1 {
+    font-size: 1.5rem;
+}
+
+.projShowcase-item.superNarrow .projShowcase-fullInfo h3 {
+    font-size: 1.5rem;
+}
+
+/* Show All ... */
+
+.projShowcase-showAll {
+    display: flex;
+    align-self: flex-end;
+    justify-content: end;
+    align-items: stretch;
+    gap: .5rem;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.projShowcase-showAll>div {
+    width: 1.5rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: #ddd0aa;
+    transition: background-color .15s;
+}
+
+.projShowcase-showAll:hover>div {
+    background-color: #e34848;
+}

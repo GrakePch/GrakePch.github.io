@@ -11,7 +11,7 @@ export const lightTheme = {
     },
     background: {
       paper: '#e1e3e5',
-      default: '#fff',
+      default: '#f5eedb',
       invert: '#333333',
     }
   },

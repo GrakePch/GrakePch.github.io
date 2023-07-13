@@ -70,7 +70,7 @@ export default function Footer(props) {
       }}
         onClick={() => history.push("/")}
       ></div>
-      <Typography variant="h5">GrakePCH © 2017-2022</Typography>
+      <Typography variant="h5">GrakePCH © 2017-2023</Typography>
       <Typography variant="subtitle1">grakep.ch</Typography>
 
       <div style={{ flexGrow: 1, minHeight: "2rem" }}></div>

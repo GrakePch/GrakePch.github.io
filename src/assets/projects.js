@@ -405,6 +405,31 @@ export const projects = {
       zh: "星际公民作品"
     },
     children: {
+      "sc-keybinding-visualizer": {
+        title: {
+          en: "Keybinding Visualizer",
+          zh: "键位可视化"
+        },
+        date: [2023, 6],
+        cover: "https://raw.githubusercontent.com/GrakePch/sc-action-maps/master/images/preview_230418.png",
+        intro: {
+          en: "An online keybinding visualizer for Star Citizen.",
+          zh: "在线的星际公民键位可视化工具"
+        }
+      },
+      "bar-citizen-shanghai-logo": {
+        title: {
+          en: "Bar Citizen Shanghai Logo",
+          zh: "Bar Citizen 上海 标志"
+        },
+        date: [2023, 6],
+        cover: images["bc-logo-colored"],
+        coverSize: "50%",
+        intro: {
+          en: "A logo designed for Bar Citizen Shanghai held in 2023.",
+          zh: "为2023年举办的 Bar Citizen 上海 设计的标志。"
+        }
+      },
       "carrack-exodus": {
         title: {
           en: "Carrack: Exodus",
